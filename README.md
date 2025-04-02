@@ -8,4 +8,3 @@ To-Do:
 * Linking to posts that replied to a post(at least in the same thread) on the post
 * Add board link header to the catalog page
 * Add board descriptions to the HTML title of thread pages
-* Spoiler Images
