@@ -8,4 +8,4 @@ To-Do:
 * Linking to posts that replied to a post(at least in the same thread) on the post
 * Add board link header to the catalog page
 * Add board descriptions to the HTML title of thread pages
-* Insert entire text content of recent posts within the "title" attribute of links to them on the front page, so hovering over shows this in a "tooltip"
+* Display entire text content of homepage recent posts in a tooltip, by inserting that data into the title attribute of those links
