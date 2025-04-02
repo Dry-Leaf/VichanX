@@ -9,4 +9,4 @@ To-Do:
 * Add board link header to the catalog page
 * Add board descriptions to the HTML title of thread pages
 * Display entire text content of homepage recent posts in a tooltip, by inserting that data into the title attribute of those links
-* Auto-refresh threads
+* Auto-update threads
