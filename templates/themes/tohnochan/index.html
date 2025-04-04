@@ -163,7 +163,7 @@ $results = $tc_db->
 </tr>
 
 {% for post in recent_posts %}
-	<tr> <td div style=" border: 0px solid #000000;  padding-top : 1px;border-top: 0px solid #000000;"> <div class="tablesub"><div class="replysub">
+<tr> <td div style=" border: 0px solid #000000;  padding-top : 1px;border-top: 0px solid #000000;"> <div class="tablesub"><div class="replysub"	title="{{ post.body|striptags }}">
 	{{ post.board_name }}: 
 	<a href="{{ post.link }}">
 	{{ post.snippet }}

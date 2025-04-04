@@ -213,7 +213,9 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
         $context['_seq'] = twig_ensure_traversable(($context["recent_posts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
             // line 166
-            echo "\t<tr> <td div style=\" border: 0px solid #000000;  padding-top : 1px;border-top: 0px solid #000000;\"> <div class=\"tablesub\"><div class=\"replysub\">
+            echo "<tr> <td div style=\" border: 0px solid #000000;  padding-top : 1px;border-top: 0px solid #000000;\"> <div class=\"tablesub\"><div class=\"replysub\"\ttitle=\"";
+            echo strip_tags($this->getAttribute($context["post"], "body", []));
+            echo "\">
 \t";
             // line 167
             echo $this->getAttribute($context["post"], "board_name", []);
@@ -709,7 +711,7 @@ We're very interested in what you think of the site and what you think might mak
 
     public function getDebugInfo()
     {
-        return array (  694 => 566,  692 => 565,  682 => 558,  678 => 557,  674 => 556,  342 => 226,  339 => 225,  331 => 223,  323 => 221,  319 => 219,  313 => 217,  311 => 216,  306 => 215,  301 => 214,  297 => 212,  295 => 211,  265 => 183,  257 => 182,  253 => 181,  250 => 180,  246 => 179,  235 => 170,  227 => 169,  223 => 168,  219 => 167,  216 => 166,  212 => 165,  53 => 8,  50 => 7,  44 => 6,  39 => 5,  35 => 4,  30 => 1,);
+        return array (  696 => 566,  694 => 565,  684 => 558,  680 => 557,  676 => 556,  344 => 226,  341 => 225,  333 => 223,  325 => 221,  321 => 219,  315 => 217,  313 => 216,  308 => 215,  303 => 214,  299 => 212,  297 => 211,  267 => 183,  259 => 182,  255 => 181,  252 => 180,  248 => 179,  237 => 170,  229 => 169,  225 => 168,  221 => 167,  216 => 166,  212 => 165,  53 => 8,  50 => 7,  44 => 6,  39 => 5,  35 => 4,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
