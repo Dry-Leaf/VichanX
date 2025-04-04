@@ -160,7 +160,7 @@ function pm_snippet($body, $len=null) {
 	$body = strip_tags($body);
 	
 	// Unescape HTML characters, to avoid splitting them in half
-	$body = html_entity_decode($body, ENT_COMPAT, 'UTF-8');
+	$body = html_entity_decode($body, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 	
 	// calculate strlen() so we can add "..." after if needed
 	$strlen = mb_strlen($body);
