@@ -8,7 +8,6 @@
 	{% include 'header.html' %}
 	<title>{{ title }}</title>
 </head>
-	{% include 'footer.html' %}
 <body class="8chan vichan {% if mod %}is-moderator{% else %}is-not-moderator{% endif %} active-page" data-stylesheet="{% if config.default_stylesheet.1 != '' %}{{ config.default_stylesheet.1 }}{% else %}default{% endif %}">
         {{ boardlist.top }}
 
