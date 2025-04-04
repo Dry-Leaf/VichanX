@@ -19,6 +19,9 @@
     {% include 'post/post_controls.html' %}
 	<div class="body" {% if post.files|length > 1 %}style="clear:both"{% endif %}>
 		{% endfilter %}{% if index %}{{ post.body|truncate_body(post.link) }}{% else %}{{ post.body }}{% endif %}{% filter remove_whitespace %}
+		{% if post.modifiers['history'] %}
+			{% include 'post/history.html' %}
+		{% endif %}
 		{% if post.modifiers['ban message'] %}
 			{{ config.mod.ban_message|sprintf(post.modifiers['ban message']) }}
 		{% endif %}

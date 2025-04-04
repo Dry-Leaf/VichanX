@@ -267,7 +267,144 @@ if (isset($_POST['delete'])) {
                 @fastcgi_finish_request();
 
 	rebuildThemes('post-delete', $board['uri']);
+	
+} elseif (isset($_POST['edit'])) {
+	if (!$config['allow_edit'])
+		error('Post editing is disabled!');
 
+	checkDNSBL();
+
+	// Check if board exists
+	if (!openBoard($_POST['board']))
+		error($config['error']['noboard']);
+
+	// Check if banned
+	checkBan($board['uri']);
+
+	// Check if password is empty
+	$password = &$_POST['password'];	
+	if ($password == '')
+		error($config['error']['invalidpassword']);
+
+	// Check if user is coming from edit template
+	$view_base = isset($_POST['body']);
+
+	if (!$view_base) {
+		// Fetch id list from $_POST
+		$ids = ids_from_postdata($_POST);
+		if (count($ids) == 0) {	
+			error('You have to select a post which you want to edit.');
+		} else if (count($ids) > 1) {
+			error('You have to select only one post which you want to edit.');
+		}		
+		// First and only id from ids array
+		$id = $ids[0];
+	} else { 
+		$id = (int)$_POST['id'];
+	}
+
+	$query = prepare(sprintf("SELECT * FROM ``posts_%s`` WHERE `id` = :id", $board['uri']));
+	$query->bindValue(':id', $id, PDO::PARAM_INT);
+	$query->execute() or error(db_error($query));
+
+	if ($post = $query->fetch(PDO::FETCH_ASSOC)) {
+		if ($post['password'] != $password) {
+			error($config['error']['invalidpassword']);
+		}
+/* 
+		if ($post['time'] < time() - $config['edit_time'])					 	<-- I believe there was a bug where this checked thread time instead of post time
+			 error('You can\'t edit this post anymore, as the edit time has expired.');
+		
+		$counter = extract_modifiers_no_decode($post['body_nomarkup']);
+		if (isset($counter['histcount']) && $counter['histcount'] == '5')
+			error('This message can\'t be edited anymore, because it was edited 5 times already.');
+ */		
+		$link = '<a href="' . $config['root'] . $board['dir'] . $config['dir']['res'] . link_for($post) . ($post['thread'] ? '#' . $id : '') . '">' .'Nr.' . $id .'</a>';
+
+		if (!$view_base) {
+			// Removes modifiers for showing 
+			$post['body_nomarkup'] = remove_modifiers($post['body_nomarkup']);
+			$post['body_nomarkup'] = utf8tohtml($post['body_nomarkup']);
+			if ($config['minify_html']) {
+				$post['body_nomarkup'] = str_replace("\n", '&#010;', $post['body_nomarkup']);
+				$post['body_nomarkup'] = str_replace("\r", '', $post['body_nomarkup']);
+				$post['body_nomarkup'] = str_replace("\t", '&#09;', $post['body_nomarkup']);
+			}
+
+			echo Element('page.html', array(
+				'config' => $config,
+				'mod' => false,
+				'title' => 'Edit post',
+				'subtitle' => $link,
+				'boardlist' => createBoardList(false),
+				'body' => Element('edit_post_form.html',
+						array_merge(
+							array('config' => $config, 'mod' => false), 
+							array('post' => array_merge($post, array('board' => $board['uri'])))
+						)
+					)
+				)
+			);
+		} else {
+			if (mb_strlen($_POST['body']) > $config['max_body'])
+				error($config['error']['toolong_body']);
+			
+			if (mb_strlen($_POST['body']) == 0)
+				error($config['error']['tooshort_body']);
+			
+			if (mb_strlen($_POST['body']) < $config['min_body'] && $post['thread'] == null)
+				error(sprintf(_('A thread\'s first post must be atleast %d characters long.'), $config['min_body']));
+			
+			// Remove any modifiers they may have put in
+			$_POST['body'] = remove_modifiers($_POST['body']);
+
+			// Add back modifiers from the original post
+			$modifiers = extract_modifiers_no_decode($post['body_nomarkup']);
+			
+			// If post was previously edited, it should have a history modifier
+			// then, we want to add the actual post to it.
+			$history_html = Element('post/history_item.html', array(
+				'post' => $post,
+				'config' => $config,
+				'edited_at' => time()
+			));
+			
+			if (isset($modifiers['history'])) {
+				$modifiers['history'] = $history_html.$modifiers['history'];
+			} else {
+				$modifiers['history'] = $history_html;
+			}
+			
+			if (isset($modifiers['histcount'])) {
+				$modifiers['histcount']++;
+			} else {
+				$modifiers['histcount'] = 1;
+			}
+
+			foreach ($modifiers as $key => $value) {
+				$_POST['body'] .= "<tinyboard $key>$value</tinyboard>";
+			};
+
+			$query = prepare(sprintf('UPDATE ``posts_%s`` SET `body_nomarkup` = :body_nomarkup WHERE `id` = :id', $board['uri']));
+			$query->bindValue(':id', $id);
+			$query->bindValue(':body_nomarkup', $_POST['body']);
+			$query->execute() or error(db_error($query));	
+
+			rebuildPost($id);
+
+			buildIndex();
+			rebuildThemes('post', $board['uri']);
+			
+			// header('Location: ' . $config['root'] . $board['dir'] . $config['file_index'], true, $config['redirect_http']);
+			header('Location: ' . $config['root'] . $board['dir'] . $config['dir']['res'] . link_for($post) . ($post['thread'] ? '#' . $id : ''), true, $config['redirect_http']);
+			
+			modLog("User edited his own post #$id");
+		}
+	} else {
+		// Invalid post
+		error($config['error']['404']);
+	}
+	
 } elseif (isset($_POST['report'])) {
 	if (!isset($_POST['board'], $_POST['reason']))
 		error($config['error']['bot']);

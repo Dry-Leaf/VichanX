@@ -2017,6 +2017,20 @@ function extract_modifiers($body) {
 	return $modifiers;
 }
 
+function extract_modifiers_no_decode($body) {
+	$modifiers = array();
+	
+	if (preg_match_all('@<tinyboard ([\w\s]+)>(.*?)</tinyboard>@us', $body, $matches, PREG_SET_ORDER)) {
+		foreach ($matches as $match) {
+			if (preg_match('/^escape /', $match[1]))
+				continue;
+			$modifiers[$match[1]] = $match[2];
+		}
+	}
+		
+	return $modifiers;
+}
+
 function remove_modifiers($body) {
 	return preg_replace('@<tinyboard ([\w\s]+)>(.+?)</tinyboard>@usm', '', $body);
 }
@@ -3072,4 +3086,14 @@ function uncloak_mask($mask) {
 	}
 
 	return $mask;
+}
+
+function ids_from_postdata($post, $prefix='delete') {
+	$ids = array();
+	foreach ($_POST as $post => $value) {
+		if (preg_match('/^'.$prefix.'_(\d+)$/', $post, $m)) {
+			$ids[] = (int)$m[1];
+		}
+	}
+	return array_unique($ids);
 }
