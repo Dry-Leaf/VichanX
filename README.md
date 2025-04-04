@@ -1,4 +1,4 @@
-Adding functionality to Vichan(v5.1.4) to reach feature-parity with Tohno-chan's prior KusabaX install, as well as further enhancements.
+Adding functionality to Vichan(final-pre-eol) to reach feature-parity with Tohno-chan's prior KusabaX install, as well as further enhancements.
 
 To-Do:
 
