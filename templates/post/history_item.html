@@ -1,0 +1,8 @@
+<div class="history_item">
+<details>
+<summary><span class="history_date">Before <time datetime="{{edited_at|date('%Y-%m-%dT%H:%M:%S') }}{{ timezone() }}">{{edited_at|date(config.post_date)}}<small>GMT</small></time></span></summary>
+<div class="history_comment">
+{{ post.body|e }}
+</div>
+</details>
+</div>

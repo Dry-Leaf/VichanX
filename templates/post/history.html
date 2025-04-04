@@ -1,0 +1,8 @@
+{% if post.modifiers.history %}
+<div class="edit_history">
+		<details style="display: inline;">
+			<summary style="list-style-position: outside;">This post was edited. Previous iterations of this post:</summary>
+			{{ post.modifiers.history }}
+		</details>
+</div>
+{% endif %}
