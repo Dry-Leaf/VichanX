@@ -693,8 +693,10 @@ We're very interested in what you think of the site and what you think might mak
         // line 565
         $this->loadTemplate("footer.html", "themes/tohnochan/index.html", 565)->display($context);
         // line 566
-        echo "
-</body>
+        echo "<script type=\"text/javascript\">
+\tinit_stylechooser();
+\treadyStyleSelector();
+</script>\t
 </html>
 ";
     }

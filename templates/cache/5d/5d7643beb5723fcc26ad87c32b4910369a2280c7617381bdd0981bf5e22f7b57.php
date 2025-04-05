@@ -27,8 +27,21 @@ class __TwigTemplate_848f0048eedf0c08111c06fcde8d3e1e331f8f3fa55044564b458c17125
     protected function doDisplay(array $context, array $blocks = [])
     {
         // line 1
-        echo "<!--no more board links in footer-->
-";
+        echo "<footer>
+    ";
+        // line 2
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["config"] ?? null), "footer", []));
+        foreach ($context['_seq'] as $context["_key"] => $context["footer"]) {
+            echo "<p class=\"unimportant\" style=\"text-align:center;\">";
+            echo $context["footer"];
+            echo "</p>";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['footer'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 3
+        echo "</footer>";
     }
 
     public function getTemplateName()
@@ -36,9 +49,14 @@ class __TwigTemplate_848f0048eedf0c08111c06fcde8d3e1e331f8f3fa55044564b458c17125
         return "footer.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  30 => 1,);
+        return array (  44 => 3,  33 => 2,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

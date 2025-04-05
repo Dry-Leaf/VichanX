@@ -1,1 +1,3 @@
-<!--no more board links in footer-->
+<footer>
+    {% for footer in config.footer %}<p class="unimportant" style="text-align:center;">{{ footer }}</p>{% endfor %}
+</footer>
