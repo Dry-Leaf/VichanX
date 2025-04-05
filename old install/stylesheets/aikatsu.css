@@ -1,0 +1,719 @@
+body {
+			/* main background image and color goes here */   
+        background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/bg1.jpg') !important; 
+	    background-position: left bottom, left top;
+        background-repeat: repeat;
+        background-attachment:fixed !important;
+        background-color: #ffffff;
+        	color:#ec79ac;
+        font-family:tahoma,helvetica,sans-serif;
+
+}
+
+
+
+a:link, a:visited, .intro a.email span.name {
+color:#e4007f;
+text-decoration: none;
+}
+
+a:hover {
+color:#308be8; 
+text-decoration: underline;
+}
+.reflink{
+    /* WTF is this? */
+	font-weight: bold;
+    font-family:courier;
+}
+.reflink a:hover{
+	/* WTF is this? */
+	font-weight: bold;
+    font-family:courier;
+}
+.adminbar {
+	/* WTF is this? */   
+	text-align:right;
+	clear:both;
+	float:right;
+}
+
+
+
+header div.boardname,h1 {
+	/* board name, such as "/a/ - anime" */
+text-shadow: #000000 2px 2px 3px;
+clear: both;
+font-size:24px;
+text-align: center;
+font-weight: bold;
+font-size: 2.3em;
+color: #ec79ac;
+width: 100%;
+padding-bottom: 10px;
+	
+ }
+ 
+header div.subtitle {
+	/* the text bellow the board name */
+	color:#ec79ac;
+    font-family:courier;
+    font-size:15px;
+	border:solid 0px #ffffff ;
+	padding: 4px;
+}
+
+
+div.banner {
+		/* posting mode bar at the top of the page, not the image banner */ 
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 110%;
+	background:#e4007f;
+	padding: 3px;
+}
+
+div.banner a {
+		/* WTF is this? */ 
+	color: #000000;
+}
+
+.boardbanner
+{ 
+		/* this is the frame around the banner */
+background: url('https://tohno-chan.org/stylesheets/img/aikatsu/bannerBG.png'); 
+background-position:center;
+background-repeat:no-repeat;
+padding: 40px 25px 50px 25px;
+}
+
+img.board_image
+{
+		/* this is the banner image*/
+	border:solid 0px #ffffff ;
+}
+
+
+
+.catalogmode {
+		/* it's the catalog */ 
+	background:#00ff00;
+	text-align:center;
+	padding:2px;
+	color:#FFFFFF;
+	width:100%;
+}
+.postarea {
+}
+
+.rules {
+	margin-left: 1em;
+	/*text-indent: 0em;*/
+	
+}
+.rules li {
+	margin-left: 1em;
+	/*text-indent: 0em;*/
+}
+
+.postblock {
+    /* boxes such as name email and comment next to new post text input boxes */ 
+background-color: transparent;
+background: transparent url('https://tohno-chan.org/stylesheets/img/aikatsu/postbox.png') no-repeat scroll center !important;
+color: #4bb2d3;
+border:0px solid #000000;
+font-size:10pt;
+font-weight: 800;
+width:180px; 
+text-align:center; 
+padding: 9px;
+padding-right: 2px;
+}
+
+.postform
+{
+	background: #000000;
+	color: #ffffff;
+    border:2px solid #ffffff;
+    font-size:10pt;
+    font-weight:bold;
+	padding: 1px;
+    font-family:courier;
+}
+
+.postbuttons {
+	/* WTF is this? */  
+}
+
+.unimportant, .unimportant * {
+	/* details about the a file posted, such as 294.84 KB, 666x950, 96874706_p0.jpg */  
+        font-family:courier;
+			font-size:10px;
+}
+
+.footer {
+	text-align:center;
+	font-size:15px;
+	font-family:serif;
+}
+.passvalid {
+	background:#000000;
+	text-align:center;
+	width:100%;
+	color:#ffffff;
+}
+.dellist {
+	font-weight: bold;
+	text-align:center;
+}
+.delbuttons {
+	text-align:center;
+	padding-bottom:4px;
+
+}
+.managehead {
+	background:#0000ff;
+	color:#ffffff;
+	padding:0px;
+}
+.postlists {
+	background:#0000ff;
+	color:#ffffff;
+}
+.row1 {
+	background:#0000ff;
+	color:#ffffff;
+}
+.row2 {
+	background:#0000ff;
+	color:#ff0000;
+}
+.unkfunc {
+	background:inherit;
+	color:#789922;
+}
+.filesize {
+	text-decoration:none;
+}
+.intro span.subject {
+		/* This is where the subject of a post or thread goes */ 
+background:inherit inherit inherit inherit inherit;
+color:#188ac8;
+font-weight:800;
+font-family:arial,helvetica,sans-serif;
+font-size:10pt;
+font-weight: bold;
+}
+.intro span.name {
+		/* This is a users name, typicaly Anonymous */ 
+-moz-background-clip:inherit;
+-moz-background-inline-policy:inherit;
+-moz-background-origin:inherit;
+background:inherit inherit inherit inherit inherit;
+color:#3ecafb;
+font-weight:800;
+font-family:arial,helvetica,sans-serif;
+font-size:10pt;
+}
+.postertrip {
+color:#3ecafb;
+font-family:arial,helvetica,sans-serif;
+font-size:10pt;
+}
+.oldpost {
+	color:#CC1105;
+	font-weight:800;
+}
+.omittedposts {
+	color:#707070;
+}
+div.post.reply {
+	/* This is the comment or reply box found in a thread responding to the OP */ 
+border-radius:10px;
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/postbg.jpg');
+background-position: left top;
+background-repeat:repeat-x;
+font-family:arial,helvetica,sans-serif;
+font-size:10pt;
+background-color: #ffffff;
+color: #ea7aac;
+font-size:10pt;
+ border:3px solid #00a0e9 !important;
+}
+
+
+div.post.reply.highlighted {
+		/* This is the comment or reply box WHEN HIGHLIGHTED (not sure if it really is)*/ 
+-moz-border-radius:20px;
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/posthighlight.jpg');
+background-position: left top;
+background-repeat:repeat;
+font-family:arial,helvetica,sans-serif;
+font-size:10pt;
+background-color: #ffb3d9;
+color: #c93396;
+font-size:10pt;
+border:4px solid #c93396;
+}
+
+div.post.reply div.body a:link, div.post.reply div.body a:visited {
+	color: #69ddd9;
+}
+div.post.reply div.body a:link:hover, div.post.reply div.body a:visited:hover {
+	color: #0000ff;
+}
+
+
+.doubledash {
+	color:#E5E5E5;
+	padding-right: 3px;
+	vertical-align: top;
+}
+.replytitle {
+	font-size: 1.2em;
+	color:#CC1105;
+	font-weight:800;
+}
+.commentpostername {
+			/* WTF is this? might be garbage */ 
+	color:#ff00ff;
+	font-weight:800;
+}
+.thumbnailmsg {
+	font-size: small;
+	color:#0000ff;
+}
+
+.abbrev {
+	color:#707070;
+}
+.highlight {
+background-color:#00ff00 !important;
+padding:3px !important;
+
+}
+
+#watchedthreads {
+	background-color: #0000ff !important;
+        border: 2px dotted #ffffff;
+}
+
+.reflinkpreview {
+	background-color: #0000ff !important;
+
+}
+
+input[type="text"], textarea, select {
+	/* text input boxes for making a new post */
+	border-radius: 10px;
+	background: url('https://tohno-chan.org/stylesheets/img/aikatsu/textBG.jpg'); font-weight:none;
+	color:#ea7aac; 
+	font-weight:none;
+	border: 2px solid #fee9ee; 
+	background-color: #ffffff !important;
+	background-position:bottom right;
+	background-repeat:repeat-x;
+}
+
+input[type="button"] {
+/* noko sage and BB code buttons around post box * also try class="btn"  */
+	border-radius: 10px;
+	color:#4bb2d3; 
+    font-family:courier;
+	background-color: #ffffff;
+    font-size: 10pt;
+    font-weight: 800;
+	border: 2px solid #fee9ee; 
+	padding:3px;
+}
+
+input[type="submit" i]{
+/* submit button ONLY next to post box */
+	border-radius: 10px;
+	color:#4bb2d3; 
+    font-family:courier;
+	background-color: #ffffff;
+    font-size: 10pt;
+    font-weight: 800;
+	border: 2px solid #fee9ee; 
+	padding:3px;
+
+}
+
+.boardinfo
+{
+font-weight:none;
+font-size: 10pt;
+color: #ffffff;
+text-align: left;
+padding:5px;
+}
+
+.hl
+{
+font-weight:bold;
+font-size:10pt;
+background-image:url(' ');
+background-color: #ff00ff !important;
+padding:5px;
+border: 22px solid #ff00ff;  
+}
+
+/* Stats box on the front page. */
+.mainBox h2 {
+	border-radius: 10px;
+	color:#4bb2d3; 
+    font-family:courier;
+	background-color: #ffffff;
+    font-size: 10pt;
+    font-weight: 800;
+	border: 2px solid #fee9ee; 
+	padding:3px;
+}
+
+
+
+.banner
+{ 
+background: url(' '); 
+background-position:center;
+background-repeat:no-repeat !important;
+padding: 0 6px 7px 0;
+}
+
+.fpfooter
+{
+background: url(' ');  
+background-position:left; 
+background-repeat:no-repeat !important;
+height:60px;
+top:30px;
+padding-top:50px;
+padding-bottom:-60px; 
+margin-bottom:-50px;
+
+}
+
+/* ///////////////////// staff page elements bellow here ////////////////////////// */
+
+
+/* rebuild page */ 
+div.ban h2 {
+    background: #0000ff;
+    color: #E5E5E5;
+    font-size: 12pt;
+	font-weight: bold;
+	border:2px solid #fff00;
+}
+
+form table tr th {
+/* bars on the top and side of the config editor page but also affects .postblock, use !important; on the post block so this doesn't effect that too. This ALSO changes the flags box in the post block area. */
+	border-radius: 10px;
+	color:#4bb2d3; 
+    font-family:courier;
+	background-color: #ffffff;
+    font-size: 10pt;
+    font-weight: 800;
+	border: 2px solid #fee9ee; 
+	padding:3px;
+}
+
+table.mod.config-editor td {
+/* devider line on config editor page */
+    text-align: left;
+    padding: 5px;
+    border-bottom: 2px solid #ff00ff;
+}
+
+
+table.modlog tr th {
+/*bar on top of the mod/users page that lists off staff */
+	border-radius: 10px;
+	color:#4bb2d3; 
+    font-family:courier;
+	background-color: #ffffff;
+    font-size: 10pt;
+    font-weight: 800;
+	border: 2px solid #fee9ee; 
+	padding:3px;
+}
+
+th.sortable {  
+/*bar on top of the ban list page */
+border:2px solid #fee9ee;
+background-color: #ffffff!important;
+}
+
+ .tabletop
+	/* on the front page, this will be the bar that says boardmap recent images and so on. */
+{
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/menubg2.png');
+background-repeat:no-repeat;
+background-position:center !important;
+font-weight:bold!important;
+font-size:10pt!important;
+background-color: rgba(0,0,0,0) !important;
+padding:16px!important;
+color:#3430dc!important;
+	border: 0px!important;
+}
+ .tabletop2
+{
+    /* on the front page, this will be the bar that says recent posts. */  
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/menubg1.png');
+background-repeat:no-repeat;
+background-position:center !important;
+font-weight:bold!important;
+font-size:10pt!important;
+background-color: rgba(0,0,0,0) !important;
+padding:16px!important;
+color:#3430dc!important;
+	border: 0px!important;
+}
+
+.boards
+{
+	/*on the front page, these are the boards */ 
+border-radius:10px;
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/boards1.jpg');
+background-repeat:no-repeat!important;
+background-position:center top !important;
+font-weight:none!important;
+background-color: rgba(0,0,0,0) !important;
+padding:12px!important;
+color:#07599C!important;
+text-align: center!important;
+border: 2px solid #fc9acb!important;
+
+}
+
+.boards:hover 
+{
+		/*on the front page, these are the boards when you hover over them*/ 
+border-radius:10px;
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/boards2.jpg');
+background-repeat:no-repeat;
+background-position:center top !important;
+font-weight:none;
+background-color: #none;
+padding:12px; 
+color:#07599C; 
+text-align: center;
+vertical-align:top
+height: 40px; 
+border: 2px solid #2dcaf5;   
+}
+
+
+
+.replysub
+{ 
+/* these are the recent posts on the front page */ 
+border-radius:10px;
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/postsv2.jpg');
+background-repeat:repeat;
+background-position:center !important;
+font-weight:none;
+background-color: #ffffff ;
+padding:5px;
+text-align:center;
+color: #07599C;
+border: 2px solid #ffce3a;   
+}
+
+
+.replysub:hover 
+{
+	/* these are the recent posts on the front page when you hover over them */ 
+	border-radius:10px;
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/postsHv2.jpg');
+background-repeat:repeat;
+background-position:center !important;
+font-weight:none;
+background-color: none !important;
+padding:5px;
+text-align:center !important;
+color: #07599c;
+border: 2px solid #e6027e;  
+}
+
+.picslot
+{
+					/* space around recent image thumbnails on the front page */ 
+border-radius:10px;
+background: url('https://tohno-chan.org/stylesheets/img/aikatsu/postbg.jpg');
+font-weight:none;
+background-color: #ffffff !important;
+background-position:center !important;
+background-repeat:no-repeat;
+padding:4px;
+border: 2px solid #ffce3a;  
+}
+
+.picitself
+					/* this can be used for adding effects to the recent image thumbnail, such as making it transparent */ 
+{
+img-position: center top;
+max-width:210px;
+max-height:160px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+padding-left:10px;
+padding-right:10px;
+}
+
+tablesub
+    /* on the front page, this is where the boards are listed as well as the recent posts. This is wrong and broken, use .boards instead*/  
+{
+border-radius:10px;
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/boards1.jp');
+background-repeat:no-repeat;
+background-position:center top !important;
+font-weight:none;
+background-color: #none;
+padding:12px; 
+color:#07599C; 
+text-align: center;
+vertical-align:top
+height: 40px; 
+border: 2px solid #fc9acb; 
+}
+
+ tablesub:hover 
+     /* This is the tablesub element when you hover over it whith your mouse. This is wrong and broken, use .boards:hover instead*/  
+{
+border-radius:10px;
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/boards2.jp');
+background-repeat:no-repeat;
+background-position:center top !important;
+font-weight:none;
+background-color: #none;
+padding:12px; 
+color:#07599C; 
+text-align: center;
+vertical-align:top
+height: 40px; 
+border: 2px solid #2dcaf5; 
+}
+
+.reply blockquote, blockquote
+{
+margin-bottom:0;
+padding-bottom:10px;
+}
+
+
+.NewsMenuCurrent
+{
+						/* currently selected tab on the front page, which doesn't work with main for some reason */ 
+background: none;
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/newstab.png');
+background-position:center;
+background-repeat: no-repeat; 
+text-align:center!important;
+padding-top: 3px; 
+padding-bottom: 2px; 
+padding-left: 10px;  
+padding-right: 10px; 
+cursor: hand;
+cursor: pointer;
+font-size:10pt;
+width:100px;
+height:40px;
+color:#3430DC;
+font-weight:bold;
+}	
+
+.NewsMenu
+{
+					/* tabs on the front page */ 
+text-align:center;
+padding-top: 3px; 
+padding-bottom: 2px; 
+padding-left: 10px;  
+padding-right: 10px; 
+background-color: none;	
+background-image:url('      ');
+background-position:center !important;
+background-repeat: no-repeat; 
+repeat scroll 0;
+cursor: hand;
+cursor: pointer;
+font-size:10pt;
+width:100px;
+height:40px;
+color:#E4007F;
+font-weight:bold;
+}
+
+.NewsTitleStrip
+{
+				/* bar on the front page that says main */ 
+
+background-color: none!important;
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/newsstrip.jpg');
+background-repeat:no-repeat;
+background-position:center Left!important;
+font-weight: bold;
+color:#3430DC;
+padding: 12px;
+border: 0px solid #e6027e; 
+}
+
+.NewsContent
+{
+	color: #ffffff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 10pt;
+}
+
+hr {
+			/* Divider line between posts */ 
+background:transparent url('https://tohno-chan.org/stylesheets/img/aikatsu/spacer.png') repeat-x scroll center;
+border:0px solid #07599C;
+height: 10px;
+margin-top: 5px;
+margin-bottom: 15px;
+float: clear;
+}
+
+div.pages {
+		/* board pages box on the bottom of a board page which also has the catalog link */ 
+	border-radius: 10px;
+	color:#4bb2d3; 
+    font-family:courier;
+	background-color: #ffffff;
+    font-size: 10pt;
+    font-weight: 800;
+	border: 2px solid #fee9ee; 
+	padding:3px;
+
+}
+div.pages a.selected {
+	color:#2ac5e3;
+}
+
+input
+{ 
+		/* box with the choose file button and no file selected text. This also controls the password input field on the bottom right of the screen */
+	border-radius: 10px;
+	color:#4bb2d3; 
+    font-family:courier;
+	background-color: #ffffff;
+    font-size: 10pt;
+    font-weight: 800;
+	border: 2px solid #fee9ee; 
+	padding:3px;
+}
+
+.comment
+{ 
+
+font-weight:none;
+background:#0000ff url( ) repeat scroll left top; 
+padding:1px;
+border: 2px solid #ffffff; 
+color:#E5E5E5;
+}

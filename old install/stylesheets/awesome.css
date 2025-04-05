@@ -1,0 +1,732 @@
+body {
+        background-image: url('http://tohno-chan.org/stylesheets/img/awesome/Osaka_Dance.gif'), url('http://tohno-chan.org/stylesheets/img/awesome/universe.gif');
+	background-position: center bottom, left top;
+        background-repeat: repeat-x, repeat;
+        background-color:#000000;
+        background-attachment:fixed,scroll;
+        color:#00ff00;
+        font-family:Comic Sans MS;
+
+}
+
+
+a:link, a:visited
+{
+color:#ffff00;
+text-decoration: none;
+}
+
+a:hover
+{
+color:#ff0000;
+text-decoration: underline;
+}
+
+a.AltLink:link, a.AltLink:visited
+{
+color:#0000ff;
+text-decoration: none;
+}
+a.AltLink:hover
+{
+color:#ffffff;
+text-decoration: none;
+}
+
+
+
+.reflink a:hover{
+	font-weight: bold;
+-moz-border-radius:0px 6px 6px 0px !important;border: 0px solid #d3f7c5 !important;
+}
+
+.reflinkpreview {
+	background-color: #fcbbdb !important; 
+-moz-border-radius:0px 6px 6px 0px !important;border: 3px solid #00a0e9 !important;
+}
+
+.oldpost {
+	color:#CC1105;
+	font-weight:800;
+}
+
+img
+{
+border: 0px;
+}
+
+.BoardList
+{
+letter-spacing: 1px;
+}
+
+
+div.subtitle,h1 {
+	       font-family:Comic Sans MS;
+text-shadow: #ff0000 5px 5px 5px;
+clear: both;
+font-size:45px;
+text-align: center;
+font-weight: bold;
+font-size: 3.3em;
+color: #ffffff;
+width: 100%;
+padding-bottom: 10px;
+}
+
+div.subtitle {
+text-shadow: #000000 2px 2px 3px;
+clear: both;
+font-size:45px;
+text-align: center;
+font-weight: bold;
+font-size: 3.3em;
+color: #ffff00;
+width: 100%;
+padding-bottom: 10px;
+}
+
+
+
+.Description
+{
+text-align: center;
+color: #ffffff;
+}
+
+hr {
+background:transparent url('http://tohno-chan.org/stylesheets/img/awesome/7upspot.gif') repeat-x scroll center;
+border:0px solid #07599C;
+height: 30px;
+margin-top: 5px;
+margin-bottom: 2px;
+float: clear;
+}
+
+.Post
+{
+text-align: center;
+}
+
+.Post table
+{
+margin: 0px auto; 
+text-align: left
+}
+
+.postblock {
+background: none;
+background:transparent url('http://tohno-chan.org/stylesheets/img/awesome/arrow.gif') no-repeat scroll center;
+color: #000000;
+border:0px solid #000000;
+font-size:10pt;
+font-weight: 800;
+width:125px; 
+text-align:center; 
+padding: 9px;
+padding-left: 17px;
+}
+
+.Rules
+{
+padding-top: 10px;
+font-size: 75%;
+}
+
+.PagingTable
+{
+background: #ffffff;
+background: url('http://tohno-chan.org/stylesheets/img/awesome/firewall.jpg') no-repeat scroll center;
+border: 2px outset #646464;  
+}
+
+.PagingTable td
+{
+border: 0px;
+padding: 0px;
+}
+
+.SmallText
+{
+font-size: 75%;
+}
+
+
+
+.FileDeleted
+{
+color: rgb(255, 37, 84);
+font-weight: bold;
+border: 1px solid #000000;
+display: table-cell;
+float: left;
+margin-left: 18px;
+margin-right: 18px;
+text-align: center;
+vertical-align: middle;
+}
+
+.ThumbnailImageReply
+{
+margin-left: 0px;
+margin-right: 20px;
+}
+
+.FileDeletedReply
+{
+color: rgb(255, 37, 84);
+font-weight: bold;
+border: 1px solid #000000;
+display: table-cell;
+float: left;
+margin-left: 0px;
+margin-right: 20px;
+margin-bottom: 20px;
+text-align: center;
+vertical-align: middle;
+}
+
+.FileDetails
+{
+margin-bottom: 5px;
+}
+
+.UserDetails
+{
+margin-bottom: 5px;
+}
+
+.PostDetails
+{
+margin-bottom: 8px;
+}
+
+.intro span.name {
+color:#0000ff;
+font-weight:800;
+        font-family:Comic Sans MS;
+font-size:12pt;
+}
+
+span.trip
+{
+color:#ffffff;
+        font-family:Comic Sans MS;
+font-size:12pt;
+}
+
+
+.CapCodeMod
+{
+color: rgb(128, 0, 151);
+}
+
+.CapCodeCustom
+{
+color: rgb(255, 87, 134);
+}
+
+.Subject
+{
+background:inherit inherit inherit inherit inherit;
+color:#00ff00;
+font-weight:800;
+font-family:arial,helvetica,sans-serif;
+font-size:10pt;
+font-weight: bold;
+} 
+
+.OmissionText
+{
+color: rgb(112, 112, 134);
+}
+.adminbar {
+	text-align:right;
+	background:;
+	clear:both;
+	float:right;
+        padding-right:5px;
+
+}
+.ReplyBoxTable
+{
+margin-top: 5px;
+}
+
+
+div.post.reply {
+
+background-image:url('           ');
+background-position: left top;
+background-repeat:repeat;
+        font-family:Comic Sans MS;
+font-size:12pt;
+background-color: #ededed;
+color: #000000;
+font-size:10pt;
+border: 4px outset #646464;  
+}
+
+div.post.reply.highlighted {
+background-image:url('https://www.tohno-chan.org/stylesheets/img/awesome/firewall.jpg');
+background-position: left top;
+background-repeat:repeat;
+font-family:Comic Sans MS;
+    font-weight: bold;
+font-size:10pt;
+background-color: #000000;
+color: #000000;
+font-size:12pt;
+border: 2px outset #ff0000;  
+}
+
+.ReplyContentOuter
+{
+padding-left: 20px;
+padding-right: 20px;
+padding-bottom: 5px;
+}
+
+.ReplyContentOuterImage
+{
+padding-left: 20px;
+padding-right: 20px;
+padding-bottom: 15px;
+}
+
+.ReplyContent
+{
+margin-left: 20px;
+margin-right: 40px;
+margin-top: 15px;
+margin-bottom: 15px;
+}	
+
+.ReplyImageContent
+{
+margin-left: 20px;
+margin-right: 40px;
+margin-top: 15px;
+margin-bottom: 15px;
+}	
+
+
+.unkfunc
+{
+color: #00ff00;
+}
+.PostingMode
+{
+color: #ffffff
+font-weight: bold;
+font-size: 120%;
+background-color: #07599C;
+background-image:url('');
+padding: 3px;
+}
+.ErrorMessage
+{
+color: rgb(255, 37, 84);
+font-size: 150%;
+padding: 10px;
+text-align: center;
+}
+.MenuBarSiteTitle
+{
+background: #D6DAF0;
+border: 1px solid #000000;
+font-weight: bold;
+font-size: 125%;
+padding-left: 5px;
+}
+
+.MenuBarSiteGroup
+{
+margin-top: 10px;
+background: #D6DAF0;
+border: 1px solid #000000;
+font-size: 100%;
+padding-left: 10px;
+}
+
+a.MenuBarLink:link, a.MenuBarLink:visited
+{
+color: #000000;
+text-decoration: none;
+}
+a.MenuBarLink:hover
+{
+color: #ff0000;
+text-decoration: none;
+}
+
+.MenuBarList
+{
+list-style: none; 
+padding: 0px;
+margin: 0px;
+font-size:10pt;
+}
+
+.MenuBarList li
+{
+margin: 0px;
+padding: 0px;
+}
+
+.MenuBarList li:hover
+{
+background-color: #D6DAF0;
+}
+
+.MenuToggleButton
+{
+width: 20px;
+text-align: center;
+vertical-align: middle;
+border: 0px solid #000000;
+background-color: #9988EE;
+cursor: hand;
+cursor: pointer;
+}
+
+.NewsDiv
+{
+padding-left: 70px;
+padding-right: 70px;
+}
+
+
+.NewsMenuCurrent
+{
+background: none;
+background-image:url('http://tohno-chan.org/stylesheets/img/awesome/globe.gif');
+background-position:center;
+background-repeat: no-repeat; 
+text-align:center!important;
+padding-top: 3px; 
+padding-bottom: 2px; 
+padding-left: 10px;  
+padding-right: 10px; 
+cursor: hand;
+cursor: pointer;
+font-size:10pt;
+width:100px;
+height:40px;
+color:#0000ff;
+font-weight:bold;
+}	
+
+.NewsMenu
+{
+text-align:center;
+padding-top: 3px; 
+padding-bottom: 2px; 
+padding-left: 10px;  
+padding-right: 10px; 
+background-color: none;	
+background-image:url('    ');
+background-position:center !important;
+background-repeat: no-repeat; 
+repeat scroll 0;
+cursor: hand;
+cursor: pointer;
+font-size:10pt;
+width:100px;
+height:40px;
+color:#0000ff;
+font-weight:bold;
+}
+
+.NewsTitleStrip
+{
+background-color: #ffff00;
+background-image:url('    ');
+background-repeat:no-repeat;
+background-position:center Left!important;
+font-weight: bold;
+color:#000000;
+padding: 5px;
+padding-left: 27px;
+font-size: 80%;
+height:17px;
+border: 2px outset #646464;   
+}
+
+.NewsContent
+{
+	color:#ffffff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 10pt;
+}
+
+.banForPost
+{
+color: #FF0000;
+font-weight: bold;
+font-style: ; 
+font-family:arial,helvetica,sans-serif;
+font-size:10pt;
+}
+
+
+.MediaEmbed
+{
+margin-right: 18px;
+margin-bottom: 18px;
+}
+
+
+
+.board_nav ul 
+{
+margin: 0;
+padding: 0;
+padding-right: 1px;
+list-style: none;
+float: left;
+}
+
+.board_nav ul li 
+{
+position: relative;
+}
+
+.board_nav li ul 
+{
+position: absolute;
+top: 15;
+width: 300px;
+display: none;
+}
+
+.board_nav li:hover ul 
+{ 
+display: block; 
+width: 750px;
+}
+
+
+#watchedthreads 
+{
+background-color: #F0E0D6 !important;
+border: 2px solid #07599c !important;
+}
+
+#watchedthreadsdraghandle
+{
+background: #EEAA88;
+color: #000000;
+font-weight: 800;
+text-align: center;
+cursor: move;
+}
+
+#watchedthreadlist
+{
+padding: 10px;
+font-size: 75%;
+overflow: auto;
+}
+
+#watchedthreadsbuttons
+{
+position: absolute; 
+bottom: 0; 
+font-size: 75%;
+padding-top: 3px;
+background-color: #F0E0D6 !important;
+border: 2px solid #07599c;
+}
+
+.blotter
+{
+color: #FF0000;
+}
+
+.tabletop
+{
+background-image:url('            ');
+background-repeat:no-repeat;
+background-position:center !important;
+font-weight:bold;
+font-size:10pt;
+background-color: none!important;
+padding:7px;
+color:#ff0000;
+ }
+
+.tabletop2
+{
+background-image:url('           ');
+background-repeat:no-repeat;
+background-position:center !important;
+font-weight:bold;
+font-size:10pt;
+background-color: none!important;
+padding:7px;
+color:#ff0000;
+ }
+
+
+.boards
+{
+background-image:url('http://Tohno-chan.com/images/themes/yuru/boardbg');
+background-repeat:no-repeat;
+background-position:center !important;
+font-weight:none;
+background-color: #ededed;
+padding:12px; 
+color:#00ff00; 
+text-align: center;
+vertical-align:bottom
+height: 40px; 
+border: 2px outset #646464;  
+        font-family:Comic Sans MS;
+ 
+}
+
+.boards:hover 
+{
+background-image:url('http://tohno-chan.org/stylesheets/img/awesome/dragon.gif');
+background-repeat:no-repeat;
+background-position:center !important;
+font-weight:none;
+background-color: #000000;
+padding:12px; 
+color:#07599C; 
+text-align: center;
+vertical-align:bottom
+height: 40px; 
+border: 2px inset #ff0000;   
+}
+ 
+.replysub{ 
+background-image:url('');
+background-repeat:no-repeat;
+background-position:center !important;
+font-weight:none;
+background-color: none;
+padding:5px;
+text-align:center;
+color: #ffff00;
+border: 2px outset #646464;   
+}
+
+
+.replysub:hover 
+{
+background-image:url('      ');
+background-repeat:no-repeat;
+background-position:center !important;
+font-weight:none;
+background-color: #ffff00 !important;
+padding:5px;
+text-align:center !important;
+color: #ff0000;
+border: 2px inset #646464; 
+}
+
+.picslot
+{
+font-weight:none;
+background-color: none !important;
+background-position:center !important;
+background-repeat:no-repeat;
+padding:4px;
+border: 2px outset #646464;   
+}
+
+
+.picitself
+{
+img-position: center top;
+max-width:210px;
+max-height:160px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+padding-left:10px;
+padding-right:10px;
+}
+
+
+.boardbanner
+{ 
+background: url('http://tohno-chan.org/stylesheets/img/awesome/awesome.png'); 
+background-position:center;
+background-repeat:no-repeat;
+padding: 15px 5px 20px 5px;
+}
+
+div.banner
+{
+	background: url('http://tohno-chan.org/stylesheets/img/awesome/code.gif'); 
+	padding:4px;
+background-color: #000000; 
+border: 4px outset #00ff00;
+color: #00ff00;
+}
+
+.header
+{
+background: url('          ') repeat-x scroll left top;
+background-position:top;
+padding-bottom: 25px;
+}
+
+.footer
+{
+background: url('  '); 
+background-position:bottom;
+background-repeat:repeat-x;
+height:55px;
+top:65px;
+padding-top:20px;
+padding-bottom:-40px;
+margin-bottom:-10px;
+
+}
+.sitemap{
+Color:#07599c;
+background-image: url('http://tohno-chan.org/stylesheets/img/awesome/counter.gif'), url('http://tohno-chan.org/stylesheets/img/awesome/noframes.gif');
+background-position: center bottom, left bottom;
+margin-top: 4px;
+margin-bottom: 4px;
+background-repeat:no-repeat;
+}
+
+input{ 
+background-color: #ffff00 !important;
+background-repeat:no-repeat;
+padding:1px;
+border: 2px outset #646464;   
+}
+
+textarea{ 
+background: url('http://tohno-chan.org/stylesheets/img/awesome/animedance.gif'); font-weight:none;
+height:155px;
+font-weight:none;
+background-color: #ff6b94 !important;
+background-repeat:no-repeat;
+background-position:center !important;
+padding:1px;
+border: 2px outset #646464;   
+}
+
+.extra {
+background: none;
+background:transparent url('http://tohno-chan.org/stylesheets/img/awesome/tumblr_m2nmtsxQqp1ru71nxo1_250.gif') no-repeat scroll center;
+border:0px solid #000000;
+width:125px; 
+padding: 24px;
+}
+
+.extra2 {
+background: none;
+background:transparent url('http://tohno-chan.org/stylesheets/img/awesome/tumblr_m2nmtm01jA1qdyzi6.gif') no-repeat scroll center;
+border:0px solid #000000;
+width:211px; 
+padding: 24px;
+}
