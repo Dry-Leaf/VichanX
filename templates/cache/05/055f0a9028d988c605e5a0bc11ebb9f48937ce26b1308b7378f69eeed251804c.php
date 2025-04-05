@@ -51,11 +51,6 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
         echo "
 \t";
         // line 14
-        $this->loadTemplate("footer.html", "thread.html", 14)->display($context);
-        // line 15
-        echo "
-\t";
-        // line 16
         ob_start(function () { return ''; });
         if (($this->getAttribute(($context["config"] ?? null), "thread_subject_in_title", []) && $this->getAttribute(($context["thread"] ?? null), "subject", []))) {
             echo twig_escape_filter($this->env, $this->getAttribute(($context["thread"] ?? null), "subject", []));
@@ -63,10 +58,10 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
             echo twig_escape_filter($this->env, twig_slice($this->env, remove_modifiers($this->getAttribute(($context["thread"] ?? null), "body_nomarkup", [])), 0, 256));
         }
         $context["meta_subject"] = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
-        // line 17
+        // line 15
         echo "
 \t<meta name=\"description\" content=\"";
-        // line 18
+        // line 16
         echo $this->getAttribute(($context["board"] ?? null), "url", []);
         echo " - ";
         echo twig_escape_filter($this->env, $this->getAttribute(($context["board"] ?? null), "title", []));
@@ -75,12 +70,12 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
         echo "\" />
 \t<meta name=\"twitter:card\" value=\"summary\">
 \t<meta property=\"og:title\" content=\"";
-        // line 20
+        // line 18
         echo ($context["meta_subject"] ?? null);
         echo "\" />
 \t<meta property=\"og:type\" content=\"article\" />
 \t<meta property=\"og:url\" content=\"";
-        // line 22
+        // line 20
         echo $this->getAttribute(($context["config"] ?? null), "domain", []);
         echo "/";
         echo $this->getAttribute(($context["board"] ?? null), "uri", []);
@@ -89,7 +84,7 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
         echo $this->getAttribute(($context["thread"] ?? null), "id", []);
         echo ".html\" />
 \t";
-        // line 23
+        // line 21
         if ($this->getAttribute($this->getAttribute($this->getAttribute(($context["thread"] ?? null), "files", []), 0, []), "thumb", [])) {
             echo "<meta property=\"og:image\" content=\"";
             echo $this->getAttribute(($context["config"] ?? null), "domain", []);
@@ -100,20 +95,20 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
             echo $this->getAttribute($this->getAttribute($this->getAttribute(($context["thread"] ?? null), "files", []), 0, []), "thumb", []);
             echo "\" />";
         }
-        // line 24
+        // line 22
         echo "\t<meta property=\"og:description\" content=\"";
         echo twig_escape_filter($this->env, remove_modifiers($this->getAttribute(($context["thread"] ?? null), "body_nomarkup", [])));
         echo "\" />
 
 \t<title>";
-        // line 26
+        // line 24
         echo $this->getAttribute(($context["board"] ?? null), "url", []);
         echo " - ";
         echo ($context["meta_subject"] ?? null);
         echo "</title>
 </head>
 <body class=\"8chan vichan ";
-        // line 28
+        // line 26
         if (($context["mod"] ?? null)) {
             echo "is-moderator";
         } else {
@@ -127,12 +122,12 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
         }
         echo "\">
 \t";
-        // line 29
+        // line 27
         echo $this->getAttribute(($context["boardlist"] ?? null), "top", []);
         echo "
 \t<a name=\"top\"></a>
 \t";
-        // line 31
+        // line 29
         if (($context["pm"] ?? null)) {
             echo "<div class=\"top_notice\">You have <a href=\"?/PM/";
             echo $this->getAttribute(($context["pm"] ?? null), "id", []);
@@ -144,7 +139,7 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
             }
             echo ".</div><hr />";
         }
-        // line 32
+        // line 30
         echo "\t";
         if ($this->getAttribute(($context["config"] ?? null), "url_banner", [])) {
             echo "<img class=\"board_image\" src=\"";
@@ -167,54 +162,54 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
             }
             echo "alt=\"\" />";
         }
-        // line 33
+        // line 31
         echo "\t<header>
 \t\t<h1>";
-        // line 34
+        // line 32
         echo $this->getAttribute(($context["board"] ?? null), "url", []);
         echo " - ";
         echo twig_escape_filter($this->env, $this->getAttribute(($context["board"] ?? null), "title", []));
         echo "</h1>
 \t\t<div class=\"subtitle\">
 \t\t\t";
-        // line 36
+        // line 34
         if ($this->getAttribute(($context["board"] ?? null), "subtitle", [])) {
-            // line 37
+            // line 35
             echo "\t\t\t\t";
             if ($this->getAttribute(($context["config"] ?? null), "allow_subtitle_html", [])) {
-                // line 38
+                // line 36
                 echo "\t\t\t\t\t";
                 echo $this->getAttribute(($context["board"] ?? null), "subtitle", []);
                 echo "
 \t\t\t\t";
             } else {
-                // line 40
+                // line 38
                 echo "\t\t\t\t\t";
                 echo twig_escape_filter($this->env, $this->getAttribute(($context["board"] ?? null), "subtitle", []));
                 echo "
 \t\t\t\t";
             }
-            // line 42
+            // line 40
             echo "\t\t\t";
         }
-        // line 43
+        // line 41
         echo "\t\t\t";
         if (($context["mod"] ?? null)) {
             echo "<p><a href=\"?/\">";
             echo gettext("Return to dashboard");
             echo "</a></p>";
         }
-        // line 44
+        // line 42
         echo "\t\t</div>
 \t</header>
 
 \t";
-        // line 47
-        $this->loadTemplate("attention_bar.html", "thread.html", 47)->display($context);
-        // line 48
+        // line 45
+        $this->loadTemplate("attention_bar.html", "thread.html", 45)->display($context);
+        // line 46
         echo "
 \t<div class=\"banner\">";
-        // line 49
+        // line 47
         echo gettext("Posting mode: Reply");
         echo " <a class=\"unimportant\" href=\"";
         echo ($context["return"] ?? null);
@@ -225,60 +220,60 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
         echo "]</a></div>
 
 \t";
-        // line 51
+        // line 49
         echo $this->getAttribute($this->getAttribute(($context["config"] ?? null), "ad", []), "top", []);
         echo "
 
 \t";
-        // line 53
-        $this->loadTemplate("post_form.html", "thread.html", 53)->display($context);
-        // line 54
+        // line 51
+        $this->loadTemplate("post_form.html", "thread.html", 51)->display($context);
+        // line 52
         echo "
 \t";
-        // line 55
+        // line 53
         if ($this->getAttribute(($context["config"] ?? null), "global_message", [])) {
             echo "<hr /><div class=\"blotter\">";
             echo $this->getAttribute(($context["config"] ?? null), "global_message", []);
             echo "</div>";
         }
-        // line 56
+        // line 54
         echo "\t<hr />
 \t<form name=\"postcontrols\" action=\"";
-        // line 57
+        // line 55
         echo $this->getAttribute(($context["config"] ?? null), "post_url", []);
         echo "\" method=\"post\">
 \t\t<input type=\"hidden\" name=\"board\" value=\"";
-        // line 58
+        // line 56
         echo $this->getAttribute(($context["board"] ?? null), "uri", []);
         echo "\" />
 \t\t";
-        // line 59
+        // line 57
         if (($context["mod"] ?? null)) {
             echo "<input type=\"hidden\" name=\"mod\" value=\"1\" />";
         }
-        // line 60
+        // line 58
         echo "\t\t
 \t\t";
-        // line 61
+        // line 59
         echo ($context["body"] ?? null);
         echo "
 \t\t
 \t\t<div id=\"thread-interactions\">
 \t\t\t<span id=\"thread-links\">
 \t\t\t\t<a id=\"thread-return\" href=\"";
-        // line 65
+        // line 63
         echo ($context["return"] ?? null);
         echo "\">[";
         echo gettext("Return");
         echo "]</a>
 \t\t\t\t<a id=\"thread-top\" href=\"#top\">[";
-        // line 66
+        // line 64
         echo gettext("Go to top");
         echo "]</a>
                 \t\t";
-        // line 67
+        // line 65
         if ($this->getAttribute(($context["config"] ?? null), "catalog_link", [])) {
-            // line 68
+            // line 66
             echo "\t\t\t\t\t<a id=\"thread-catalog\" href=\"";
             echo $this->getAttribute(($context["config"] ?? null), "root", []);
             if (($context["mod"] ?? null)) {
@@ -292,20 +287,20 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
             echo "</a>
 \t\t                ";
         }
-        // line 70
+        // line 68
         echo "\t\t\t</span>
 \t\t\t
 \t\t\t<span id=\"thread-quick-reply\">
 \t\t\t\t<a id=\"link-quick-reply\" href=\"#\">[";
-        // line 73
+        // line 71
         echo gettext("Post a Reply");
         echo "]</a>
 \t\t\t</span>
 \t\t\t
 \t\t\t";
-        // line 76
-        $this->loadTemplate("report_delete.html", "thread.html", 76)->display($context);
-        // line 77
+        // line 74
+        $this->loadTemplate("report_delete.html", "thread.html", 74)->display($context);
+        // line 75
         echo "\t\t</div>
 \t\t
 \t\t<div class=\"clearfix\"></div>
@@ -313,22 +308,22 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
 \t
 \t<a name=\"bottom\"></a>
 \t";
-        // line 83
+        // line 81
         echo $this->getAttribute(($context["boardlist"] ?? null), "bottom", []);
         echo "
 
 \t";
-        // line 85
+        // line 83
         echo $this->getAttribute($this->getAttribute(($context["config"] ?? null), "ad", []), "bottom", []);
         echo "
 
 \t";
-        // line 87
-        $this->loadTemplate("footer.html", "thread.html", 87)->display($context);
-        // line 88
+        // line 85
+        $this->loadTemplate("footer.html", "thread.html", 85)->display($context);
+        // line 86
         echo "\t
 \t<script type=\"text/javascript\">";
-        // line 91
+        // line 89
         echo "
 \t\tready();
 \t";
@@ -350,7 +345,7 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
 
     public function getDebugInfo()
     {
-        return array (  332 => 91,  329 => 88,  327 => 87,  322 => 85,  317 => 83,  309 => 77,  307 => 76,  301 => 73,  296 => 70,  282 => 68,  280 => 67,  276 => 66,  270 => 65,  263 => 61,  260 => 60,  256 => 59,  252 => 58,  248 => 57,  245 => 56,  239 => 55,  236 => 54,  234 => 53,  229 => 51,  218 => 49,  215 => 48,  213 => 47,  208 => 44,  201 => 43,  198 => 42,  192 => 40,  186 => 38,  183 => 37,  181 => 36,  174 => 34,  171 => 33,  148 => 32,  136 => 31,  131 => 29,  117 => 28,  110 => 26,  104 => 24,  93 => 23,  84 => 22,  79 => 20,  70 => 18,  67 => 17,  59 => 16,  56 => 15,  54 => 14,  51 => 13,  49 => 12,  43 => 9,  39 => 8,  30 => 1,);
+        return array (  327 => 89,  324 => 86,  322 => 85,  317 => 83,  312 => 81,  304 => 75,  302 => 74,  296 => 71,  291 => 68,  277 => 66,  275 => 65,  271 => 64,  265 => 63,  258 => 59,  255 => 58,  251 => 57,  247 => 56,  243 => 55,  240 => 54,  234 => 53,  231 => 52,  229 => 51,  224 => 49,  213 => 47,  210 => 46,  208 => 45,  203 => 42,  196 => 41,  193 => 40,  187 => 38,  181 => 36,  178 => 35,  176 => 34,  169 => 32,  166 => 31,  143 => 30,  131 => 29,  126 => 27,  112 => 26,  105 => 24,  99 => 22,  88 => 21,  79 => 20,  74 => 18,  65 => 16,  62 => 15,  54 => 14,  51 => 13,  49 => 12,  43 => 9,  39 => 8,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

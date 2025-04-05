@@ -696,7 +696,9 @@ We're very interested in what you think of the site and what you think might mak
         echo "<script type=\"text/javascript\">
 \tinit_stylechooser();
 \treadyStyleSelector();
-</script>\t
+</script>
+
+</body>
 </html>
 ";
     }

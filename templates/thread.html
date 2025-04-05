@@ -11,8 +11,6 @@
 
 	{% include 'header.html' %}
 
-	{% include 'footer.html' %}
-
 	{% set meta_subject %}{% if config.thread_subject_in_title and thread.subject %}{{ thread.subject|e }}{% else %}{{ thread.body_nomarkup|remove_modifiers[:256]|e }}{% endif %}{% endset %}
 
 	<meta name="description" content="{{ board.url }} - {{ board.title|e }} - {{ meta_subject }}" />
