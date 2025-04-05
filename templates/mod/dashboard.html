@@ -1,36 +1,5 @@
 {% if config.url_banner %}<img class="board_image" src="{{ config.url_banner }}" {% if config.banner_width or config.banner_height %}style="{% if config.banner_width %}width:{{ config.banner_width }}px{% endif %};{% if config.banner_width %}height:{{ config.banner_height }}px{% endif %}" {% endif %}alt="" />{% endif %}
-<fieldset>
-	<legend>{% trans 'Boards' %}</legend>
-	
-	<ul>
-		{% for board in boards %}
-			<li>
-				<a href="?/{{ config.board_path|sprintf(board.uri) }}{{ config.file_index }}">{{ config.board_abbreviation|sprintf(board.uri) }}</a>
-					 - 
-				{{ board.title|e }}
-				{% if board.subtitle %}
-					<small>&mdash; 
-						{% if config.allow_subtitle_html %}
-							{{ board.subtitle }}
-						{% else %}
-							{{ board.subtitle|e }}
-						{% endif %}
-					</small>
-				{% endif %}
-				{% if mod|hasPermission(config.mod.manageboards) %}
-					 <a href="?/edit/{{ board.uri }}"><small>[{% trans 'edit' %}]</small></a>
-				{% endif %}
-				{% if mod|hasPermission(config.mod.edit_pages) %}
-					 <a href="?/edit_pages/{{ board.uri }}"><small>[{% trans 'pages' %}]</small></a>
-				{% endif %}
-			</li>
-		{% endfor %}
-		
-		{% if mod|hasPermission(config.mod.newboard) %}
-			<li style="margin-top:15px"><a href="?/new-board"><strong>{% trans 'Create new board' %}</strong></a></li>
-		{% endif %}
-	</ul>
-</fieldset>
+
 
 <fieldset>
 	<legend>{% trans 'Messages' %}</legend>
@@ -169,6 +138,38 @@
 		</ul>
 	</fieldset>
 {% endif %}
+<fieldset>
+	<legend>{% trans 'Boards' %}</legend>
+	
+	<ul>
+		{% for board in boards %}
+			<li>
+				<a href="?/{{ config.board_path|sprintf(board.uri) }}{{ config.file_index }}">{{ config.board_abbreviation|sprintf(board.uri) }}</a>
+					 - 
+				{{ board.title|e }}
+				{% if board.subtitle %}
+					<small>&mdash; 
+						{% if config.allow_subtitle_html %}
+							{{ board.subtitle }}
+						{% else %}
+							{{ board.subtitle|e }}
+						{% endif %}
+					</small>
+				{% endif %}
+				{% if mod|hasPermission(config.mod.manageboards) %}
+					 <a href="?/edit/{{ board.uri }}"><small>[{% trans 'edit' %}]</small></a>
+				{% endif %}
+				{% if mod|hasPermission(config.mod.edit_pages) %}
+					 <a href="?/edit_pages/{{ board.uri }}"><small>[{% trans 'pages' %}]</small></a>
+				{% endif %}
+			</li>
+		{% endfor %}
+		
+		{% if mod|hasPermission(config.mod.newboard) %}
+			<li style="margin-top:15px"><a href="?/new-board"><strong>{% trans 'Create new board' %}</strong></a></li>
+		{% endif %}
+	</ul>
+</fieldset>
 
 <fieldset>
 	<legend>{% trans 'User account' %}</legend>
