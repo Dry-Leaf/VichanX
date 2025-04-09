@@ -55,7 +55,7 @@ class __TwigTemplate_fcc5002b51a723b7a866eb08055e51db96b29a418f3b17d66a8708a79b8
         if (($this->getAttribute(($context["config"] ?? null), "thread_subject_in_title", []) && $this->getAttribute(($context["thread"] ?? null), "subject", []))) {
             echo twig_escape_filter($this->env, $this->getAttribute(($context["thread"] ?? null), "subject", []));
         } else {
-            echo twig_escape_filter($this->env, twig_slice($this->env, remove_modifiers($this->getAttribute(($context["thread"] ?? null), "body_nomarkup", [])), 0, 256));
+            echo $this->getAttribute(($context["board"] ?? null), "title", []);
         }
         $context["meta_subject"] = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
         // line 15
