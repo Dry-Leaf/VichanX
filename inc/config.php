@@ -304,6 +304,22 @@
 		'tag'
 	);
 
+	// Path to the spam file. Please  make sure the path to the file exists,
+	// although the file itself doesn't need to be, and that its properly
+	// protected so that clients can't access it.
+	$config['spam']['file'] = 'spam.txt';
+
+	// Whether to log posts caught using the spam file.
+	$config['spam']['log']['enabled'] = true;
+
+	// Path to the spam log file. Please make sure the path to the file exists,
+	// although the file itself doesn't need to be, and that its properly
+	// protected so that clients can't access it.
+	$config['spam']['log']['file'] = 'spam.log';
+
+	// The size (in bytes) a spam log can become.
+	$config['spam']['log']['max_size'] = 4096;
+
 	// Enable reCaptcha to make spam even harder. Rarely necessary.
 	$config['recaptcha'] = false;
 
@@ -469,6 +485,50 @@
 	// Set to -1 to disable.
 	// $config['flood_cache'] = 60 * 60 * 24; // 24 hours
 	$config['flood_cache'] = -1;
+
+	$config['filters'][] = array(
+		'condition' => array(
+			'custom' => function($p) use ($config) {
+				$matched = false;
+				$f = fopen($config['spam']['file'], 'rb');
+
+				while (!feof($f)) {
+					$l = trim(fgets($f));
+
+					if (strlen($l) > 0 && strpos($p['body'], $l) !== false) {
+						if ($config['spam']['log']['enabled']) {
+							// Overwrite and start anew if the log file is
+							// greater than the maximum allowal size. Otherwise
+							// just append to it.
+							$flags =
+								(file_exists($config['spam']['log']['file'])
+									&& filesize($config['spam']['log']['file'])
+										> $config['spam']['log']['max_size'])
+								? 0 : FILE_APPEND;
+
+							// Details the date, time, thread, matched phrase,
+							// and the post's body.
+							$msg = '[' . date('m/d/y|H:i:s', time())
+								. "]\nThread: /" . $p['board'] . '/' . $p['thread']
+								. "\nPhrase: " . $l
+								. "\nPost: " . $p['body'] . "\n\n";
+
+							file_put_contents($config['spam']['log']['file'], $msg, $flags);
+						}
+
+						$matched = true;
+
+						break;
+					}
+				}
+
+				fclose($f);
+
+				return $matched;
+			}
+		),
+		'action' => 'reject'
+	);
 
 /*
  * ====================

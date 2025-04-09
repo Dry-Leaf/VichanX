@@ -359,8 +359,134 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 <div id=\"Tab2\" style=\"display: none;\">
 <?php
 //Faq
-\$results = \$tc_db-><div class=\"NewsTitleStrip\">'xxxxxxxxxxxxxx'</div>
-<div class=\"NewsContent\">'yyyyyyyyyyyyyy'</div>
+\$results = \$tc_db-><div class=\"NewsTitleStrip\">Introduction</div>
+<div class=\"NewsContent\">T.o.h.n.o - Chan<br/>
+True<br/>
+Otaku<br/>
+Hikikomori<br/>
+Neet<br/>
+Organization<br/>
+Channel<br/><br/>
+<div class=\"NewsTitleStrip\">Tips</div>
+
+<div class=\"NewsContent\">Spoiler tags are done in the same way as back on 4chan:<br/>
+<br/>
+Spoiler: [spoiler]text[/spoiler]<br/>
+<i>Italic:</i> [i]text[/i]<br/>
+<b>Bold:</b> [b]text[/b]<br/>
+<s>Strike-through:</s> [s]text[/s]<br/>
+<u>Underline:</u> [u]text[/u]<br/>
+ASCII art: [aa]text[/aa]<br/>
+<br/>
+A few possibly useful tips:<br/>
+To post an embedded video, paste only the code at the end of the url into the Media ID field.<br/>
+Example: http://www.youtube.com/watch?v=<b>GgF99qTtHpE</b>&feature;=related<br/>
+<br/>
+Embedded video posts can not be combined with pics or .mp3s. If you try to post those with an embedded video, only the video will show up.<br/>
+<br/>
+Youtube deletes videos all the time, primarily that of anime previews (copyrights bs) so it's not really recommended that you make threads using these ( only a recomendacion, not a rule or anything like that. ) and no, images and embedded videos can not be edited after posting, at this time.<br/>
+<br/>
+Most site errors can be easily fixed by hitting the back button, refreshing the page. </div>
+<div class=\"NewsTitleStrip\">Links</div>
+<div class=\"NewsContent\">Our IRC channel:<br/>
+#tohno-chan on irc.rizon.net.<br/>
+If you do not have an IRC client, you can still join by heading over to our /irc/ board.<br/>
+<a href=\"https://web.archive.org/web/20250126093552/http://tohno-chan.com/irc/\">http://tohno-chan.com/irc/</a><br/>
+<br/>
+Our MAL club:<br/>
+<a href=\"https://web.archive.org/web/20250126093552/http://myanimelist.net/clubs.php?cid=22369\">http://myanimelist.net/clubs.php?cid=22369</a><br/>
+<br/>
+Our Steam group:<br/>
+<a href=\"https://web.archive.org/web/20250126093552/http://steamcommunity.com/groups/tohno-chan\">http://steamcommunity.com/groups/tohno-chan</a><br/>
+<br/>
+Our figure collection club:<br/>
+<a href=\"https://web.archive.org/web/20250126093552/http://myfigurecollection.net/club/524\">http://myfigurecollection.net/club/524</a><br/>
+<br/>
+There is no official tohno-chan facebook, discord, twitter, or reddit page and there never will be. If you come across one be aware it is not supported or affiliated with us in any way shape or form.</div>
+<div class=\"NewsTitleStrip\">Credits</div>
+<div class=\"NewsContent\">I'd like to extend a special thanks to a few guys that really helped out around here.<br/>
+To Popo for giving me the push I needed to break away from the original version of our site, and who helped in finding our current host, and with setting things up.<br/>
+To Hamish who's helping a lot in the development of our kusaba site that we used for many years<br/>
+To Imoto, fbw, plasticman, and himidere for going above and beyond to not only fix issues with our current version of TC, but to create new features for it as well.<br/>
+To asie for helping in his own way. <br/>
+To DSG for beign gay<br/>
+To Ayu-Ayu for proffreeding thi's mess.<br/>
+To our mods who do an awesome job of keeping this place nice and clean.<br/>
+And to everyone else who has stuck with us for whatever reason all this time. You are what keeps the site going, because after all, without all the users, this site would be nothing.</div>
+<div class=\"NewsTitleStrip\">Frequently asked questions.</div>
+<div class=\"NewsContent\">
+Q: Will you ever force Anonymous?<br/>
+A: No, shut up.<br/>
+<br/>
+Q: How does I became a mod????<br/>
+A: If you would like to be a moderator for the site, message \"Tohno_\" or \"Tohno\" via IRC on Rizon.<br/>
+<br/>
+Q: What's the significance of the site logo thing? <br/>
+A: It's an envelope, commonly used in japan for giving gifts of money. Tohno Minagi, would hand out rice tickets in these envelopes.<br/>
+<br/>
+Q: What's the deal with \"Ford Driver\"?<br/>
+A: It's what we call normalfags.<br/>
+<br/>
+Q: \"are you gonna send us to dubai tohno?\"<br/>
+A: Yes.<br/>
+<br/>
+Q: Can you add X theme/style to the site?<br/>
+A: Yeah sure, why not?<br/>
+<br/>
+Q: How about this banner I made, can you add it to the site?<br/>
+A: sure, post it in /fb/ and I'll add it in when I get a chance.<br/>
+<br/>
+Q: How can I contact the site staff or admin?<br/>
+A: Quickest way to do this is on the IRC channel, there's usually two or three mods there at any given time. You can also message \"Tohno_\" or \"Tohno\" on rizon.net. This loser has no life, so if he doesn't respond right away he's either asleep or... probably just asleep.<br/>
+<br/>
+Q: Are you guys serious about the waifu thing?<br/>
+A: Yes, stop asking that.<br/>
+<br/>
+Q: How does post edit work?<br/>
+A: That's currently being worked on. For the time being it doesn't work.<br/>
+<br/>
+Q: Why is tohno-chan so slow?<br/>
+A: Because shut up.<br/>
+<br/>
+Q: Do you sell user data? <br/>
+A: No.<br/>
+<br/>
+Q: I don't see any ads, How does this site make money?<br/>
+A: It doesn't.<br/>
+<br/>
+Q: Do you collect user data?<br/>
+A: We don't need or want your data. We just use Cookies for passwords and theme/style selection.<br/>
+<br/>
+Q: Who or what is this \"Haruhi\"?<br/>
+A: The almighty lord and savior of this world.<br/>
+<br/>
+Q: Why did my post get deleted?<br/>
+A: Because it sucked.<br/>
+<br/>
+Q: How do I donate money to help with the site's server costs?<br/>
+A: You know damn well you'd never ask that.<br/>
+<br/>
+Q: What is love?<br/>
+A: Baby don't hurt me.<br/>
+<br/>
+Q: Where do I go to make a request for a feature?<br/>
+A: Head on over to /fb/ to drop us some feedback.<br/>
+<br/>
+Q: Is this where the party's at?<br/>
+A: No, it's the next website over.<br/>
+<br/>
+Q: I don't agree with someone's opinion, what do I do?<br/>
+A: Tell them they don't belong on this site in the most condescending way possible. That's what all the cool kids do, you want to be cool right?<br/>
+<br/>
+Q: Do tripcodes here work the same as on 4chan?<br/>
+A: Unsecured trips should work the same, secure trips would use a different algorithm (kinda impossible to use the same one they got) so the trip would come out different.
+<br/>
+</div>
+<div class=\"NewsTitleStrip\">other stuff</div>
+
+
+
+</div>
 <br/>
 <br/>
 <br/>
@@ -672,15 +798,15 @@ We're very interested in what you think of the site and what you think might mak
 \t\t\t<h2>Stats</h2>
 \t\t\t<ul>
 \t\t\t\t<li>Total posts: ";
-        // line 556
+        // line 682
         echo $this->getAttribute(($context["stats"] ?? null), "total_posts", []);
         echo "</li>
 \t\t\t\t<li>Unique posters: ";
-        // line 557
+        // line 683
         echo $this->getAttribute(($context["stats"] ?? null), "unique_posters", []);
         echo "</li>
 \t\t\t\t<li>Active content: ";
-        // line 558
+        // line 684
         echo format_bytes($this->getAttribute(($context["stats"] ?? null), "active_content", []));
         echo "</li>
 \t\t\t</ul>
@@ -690,9 +816,9 @@ We're very interested in what you think of the site and what you think might mak
 \t<hr/>
 
 \t";
-        // line 565
-        $this->loadTemplate("footer.html", "themes/tohnochan/index.html", 565)->display($context);
-        // line 566
+        // line 691
+        $this->loadTemplate("footer.html", "themes/tohnochan/index.html", 691)->display($context);
+        // line 692
         echo "<script type=\"text/javascript\">
 \tinit_stylechooser();
 \treadyStyleSelector();
@@ -715,7 +841,7 @@ We're very interested in what you think of the site and what you think might mak
 
     public function getDebugInfo()
     {
-        return array (  696 => 566,  694 => 565,  684 => 558,  680 => 557,  676 => 556,  344 => 226,  341 => 225,  333 => 223,  325 => 221,  321 => 219,  315 => 217,  313 => 216,  308 => 215,  303 => 214,  299 => 212,  297 => 211,  267 => 183,  259 => 182,  255 => 181,  252 => 180,  248 => 179,  237 => 170,  229 => 169,  225 => 168,  221 => 167,  216 => 166,  212 => 165,  53 => 8,  50 => 7,  44 => 6,  39 => 5,  35 => 4,  30 => 1,);
+        return array (  822 => 692,  820 => 691,  810 => 684,  806 => 683,  802 => 682,  344 => 226,  341 => 225,  333 => 223,  325 => 221,  321 => 219,  315 => 217,  313 => 216,  308 => 215,  303 => 214,  299 => 212,  297 => 211,  267 => 183,  259 => 182,  255 => 181,  252 => 180,  248 => 179,  237 => 170,  229 => 169,  225 => 168,  221 => 167,  216 => 166,  212 => 165,  53 => 8,  50 => 7,  44 => 6,  39 => 5,  35 => 4,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

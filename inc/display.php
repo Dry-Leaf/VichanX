@@ -30,7 +30,7 @@ function doBoardListPart($list, $root, &$boards) {
 			if (gettype($key) == 'string') {
 				$body .= ' <a href="' . $board . '">' . $key . '</a> /';
 			} else {
-				$title = '';
+				$title = 'title="' . $config['board_descriptions'][$board] .'"';
 				if (isset ($boards[$board])) {
 					$title = ' title="'.$boards[$board].'"';
 				}
