@@ -5,21 +5,21 @@ font-family:calibri;
     font-size:16px;
 
 }
-a:link, a:visited, .intro a.email span.name {
+a:link, a:visited {
 	color:#0dc1bb;
 	text-decoration: none;
 }
 a:hover {
-	color:#000000;
+	color:#69ddd9;
 	text-decoration: underline;
 }
 .reflink{
-	color:#0dc1bb !important;
+	color:#0000ff !important;
 	text-decoration: none;
 }
 .reflink a:hover{
 	font-weight: bold;
-	color:#000000 !important;
+	color:#69ddd9 !important;
 	text-decoration: underline;
 }
 .adminbar {
@@ -27,6 +27,8 @@ a:hover {
 	clear:both;
 	float:right;
 }
+
+
 
 header div.boardname,h1 {
 	/* board name, such as "/a/ - anime" */
@@ -159,13 +161,26 @@ text-align:center ;
 	color: #335e99;
 	font-weight: bold;
 }
+
+
 .intro span.name {
         color:#338099 !important;
 	font-weight: bold;
 }
 .postertrip {
-	color:#338099 !important
+	color:#338099 !important;
 }
+
+.intro a.email span.name {
+	color:#31a9e4 !important;
+	text-decoration: none !important;
+}
+.intro a.email span.name:hover {
+	color:#69ddd9 !important;
+	text-decoration: none !important;
+}
+
+
 .oldpost {
 	color:#CC1105;
 	font-weight:800;
@@ -187,10 +202,10 @@ padding:3px !important;
 }
 
 div.post.reply div.body a:link, div.post.reply div.body a:visited {
-	color: #69ddd9;
+	color: #31a9e4;
 }
 div.post.reply div.body a:link:hover, div.post.reply div.body a:visited:hover {
-	color: #000000;
+	color: #69ddd9;
 }
 
 
@@ -358,16 +373,29 @@ margin-bottom:-50px;
 
 }
 
+
+/* search.php box */ 
+.ban {
+    background: #333333!important;
+    color: #E5E5E5!important;
+	border:1px solid #4b4b4b!important;
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+
 /* ///////////////////// staff page elements bellow here ////////////////////////// */
 
 
 /* rebuild page */ 
 div.ban h2 {
-    background: #072e4f;
-    color: #E5E5E5;
+    background: #333333!important;
+    color: #E5E5E5!important;
     font-size: 12pt;
-	border:1px solid #000000;
+	border:1px solid #4b4b4b!important;
+
 }
+
 
 form table tr th {
 /* bars on the top and side of the config editor page but also affects .postblock, use !important; on the post block so this doesn't effect that too */

@@ -81,10 +81,7 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 </script>
 
 <br/><br/>
-<center><b>
- 
-<p style=\"color:#ff0000\";>Goodbye, Kusaba!<br/>As of today, we're boldly going where every other imageboard has gone before by kicking Kusaba to the curb and moving forward with all-new software for Tohno-chan. <br/><br/>Not only that! You'll notice that we'll also be switching over to Tohno-chan.org, and https. <br/> </p>
-</b></center>
+<center><b></b></center>
 <div class=\"NewsDiv\">
 
 \t<table cellspacing=\"0px\" cellpadding=\"0px\">
@@ -208,24 +205,24 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 </tr>
 
 ";
-        // line 165
+        // line 162
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["recent_posts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 166
+            // line 163
             echo "<tr> <td div style=\" border: 0px solid #000000;  padding-top : 1px;border-top: 0px solid #000000;\"> <div class=\"tablesub\"><div class=\"replysub\"\ttitle=\"";
             echo strip_tags($this->getAttribute($context["post"], "body", []));
             echo "\">
 \t";
-            // line 167
+            // line 164
             echo $this->getAttribute($context["post"], "board_name", []);
             echo ": 
 \t<a href=\"";
-            // line 168
+            // line 165
             echo $this->getAttribute($context["post"], "link", []);
             echo "\">
 \t";
-            // line 169
+            // line 166
             echo $this->getAttribute($context["post"], "snippet", []);
             echo "
 \t";
@@ -233,7 +230,7 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 170
+        // line 167
         echo "</a></div></td></tr>
 
 </table></td>
@@ -244,18 +241,18 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 
 
 \t";
-        // line 179
+        // line 176
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["recent_images"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 180
+            // line 177
             echo "\t<tr>
     <td div style=\" border: 0px solid #000000; padding: 0px; border-top: 0px solid #000000;\"> <div class=\"picslot\"> <div class=\"picitself\"> <center> <a href=\"";
-            // line 181
+            // line 178
             echo $this->getAttribute($context["post"], "link", []);
             echo "\"> </div>
 \t<img src=\"";
-            // line 182
+            // line 179
             echo $this->getAttribute($context["post"], "src", []);
             echo "\"  border=\"0\" /  div class=\"picitself\">
 \t\t\t\t";
@@ -263,7 +260,7 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 183
+        // line 180
         echo " </a></td></div>
 
 </tr></table>
@@ -293,35 +290,35 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 <div id=\"Tab1\" style=\"display: none;\">
 
 \t\t";
-        // line 211
+        // line 208
         if ((twig_length_filter($this->env, ($context["news"] ?? null)) == 0)) {
-            // line 212
+            // line 209
             echo "\t\t\t<p style=\"text-align:center\" class=\"unimportant\">(No news to show.)</p>
 \t\t";
         } else {
-            // line 214
+            // line 211
             echo "\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["news"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["entry"]) {
-                // line 215
+                // line 212
                 echo "\t\t\t\t<div class=\"NewsTitleStrip\"><h2 id=\"";
                 echo $this->getAttribute($context["entry"], "id", []);
                 echo "\">
 \t\t\t\t\t";
-                // line 216
+                // line 213
                 if ($this->getAttribute($context["entry"], "subject", [])) {
-                    // line 217
+                    // line 214
                     echo "\t\t\t\t\t\t";
                     echo $this->getAttribute($context["entry"], "subject", []);
                     echo "
 \t\t\t\t\t";
                 } else {
-                    // line 219
+                    // line 216
                     echo "\t\t\t\t\t\t<em>no subject</em>
 \t\t\t\t\t";
                 }
-                // line 221
+                // line 218
                 echo "\t\t\t\t\t<span class=\"unimportant\"> &mdash; by ";
                 echo $this->getAttribute($context["entry"], "name", []);
                 echo " at ";
@@ -329,7 +326,7 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
                 echo "</span>
 \t\t\t\t</h2></div>
 \t\t\t\t<div class=\"NewsContent\"><p>";
-                // line 223
+                // line 220
                 echo $this->getAttribute($context["entry"], "body", []);
                 echo "</p></div>
 \t\t\t";
@@ -337,10 +334,10 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entry'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 225
+            // line 222
             echo "\t\t";
         }
-        // line 226
+        // line 223
         echo "
 <div class=\"NewsTitleStrip\"> news subject </div>
 <div class=\"NewsContent\"> news content </div>
@@ -407,12 +404,12 @@ There is no official tohno-chan facebook, discord, twitter, or reddit page and t
 <div class=\"NewsContent\">I'd like to extend a special thanks to a few guys that really helped out around here.<br/>
 To Popo for giving me the push I needed to break away from the original version of our site, and who helped in finding our current host, and with setting things up.<br/>
 To Hamish who's helping a lot in the development of our kusaba site that we used for many years<br/>
-To Imoto, fbw, plasticman, and himidere for going above and beyond to not only fix issues with our current version of TC, but to create new features for it as well.<br/>
+To Imoto, fbw, and plasticman, for going above and beyond to not only fix issues with our current version of TC, but to create new features for it as well.<br/>
 To asie for helping in his own way. <br/>
-To DSG for beign gay<br/>
+To DSG for being gay<br/>
 To Ayu-Ayu for proffreeding thi's mess.<br/>
 To our mods who do an awesome job of keeping this place nice and clean.<br/>
-And to everyone else who has stuck with us for whatever reason all this time. You are what keeps the site going, because after all, without all the users, this site would be nothing.</div>
+And to everyone else who has stuck with us for whatever reason all this time. You are what keeps the site going, because after all, without all the users, this site would be nothing.<br/></div>
 <div class=\"NewsTitleStrip\">Frequently asked questions.</div>
 <div class=\"NewsContent\">
 Q: Will you ever force Anonymous?<br/>
@@ -480,7 +477,9 @@ A: Tell them they don't belong on this site in the most condescending way possib
 <br/>
 Q: Do tripcodes here work the same as on 4chan?<br/>
 A: Unsecured trips should work the same, secure trips would use a different algorithm (kinda impossible to use the same one they got) so the trip would come out different.
-<br/>
+<br/><br/>
+Q: HTTPS touched my no-no places, can you remove it?<br/>
+A: Life is rape. Deal with it.<br/>
 </div>
 <div class=\"NewsTitleStrip\">other stuff</div>
 
@@ -798,15 +797,15 @@ We're very interested in what you think of the site and what you think might mak
 \t\t\t<h2>Stats</h2>
 \t\t\t<ul>
 \t\t\t\t<li>Total posts: ";
-        // line 682
+        // line 681
         echo $this->getAttribute(($context["stats"] ?? null), "total_posts", []);
         echo "</li>
 \t\t\t\t<li>Unique posters: ";
-        // line 683
+        // line 682
         echo $this->getAttribute(($context["stats"] ?? null), "unique_posters", []);
         echo "</li>
 \t\t\t\t<li>Active content: ";
-        // line 684
+        // line 683
         echo format_bytes($this->getAttribute(($context["stats"] ?? null), "active_content", []));
         echo "</li>
 \t\t\t</ul>
@@ -816,9 +815,9 @@ We're very interested in what you think of the site and what you think might mak
 \t<hr/>
 
 \t";
+        // line 690
+        $this->loadTemplate("footer.html", "themes/tohnochan/index.html", 690)->display($context);
         // line 691
-        $this->loadTemplate("footer.html", "themes/tohnochan/index.html", 691)->display($context);
-        // line 692
         echo "<script type=\"text/javascript\">
 \tinit_stylechooser();
 \treadyStyleSelector();
@@ -841,7 +840,7 @@ We're very interested in what you think of the site and what you think might mak
 
     public function getDebugInfo()
     {
-        return array (  822 => 692,  820 => 691,  810 => 684,  806 => 683,  802 => 682,  344 => 226,  341 => 225,  333 => 223,  325 => 221,  321 => 219,  315 => 217,  313 => 216,  308 => 215,  303 => 214,  299 => 212,  297 => 211,  267 => 183,  259 => 182,  255 => 181,  252 => 180,  248 => 179,  237 => 170,  229 => 169,  225 => 168,  221 => 167,  216 => 166,  212 => 165,  53 => 8,  50 => 7,  44 => 6,  39 => 5,  35 => 4,  30 => 1,);
+        return array (  821 => 691,  819 => 690,  809 => 683,  805 => 682,  801 => 681,  341 => 223,  338 => 222,  330 => 220,  322 => 218,  318 => 216,  312 => 214,  310 => 213,  305 => 212,  300 => 211,  296 => 209,  294 => 208,  264 => 180,  256 => 179,  252 => 178,  249 => 177,  245 => 176,  234 => 167,  226 => 166,  222 => 165,  218 => 164,  213 => 163,  209 => 162,  53 => 8,  50 => 7,  44 => 6,  39 => 5,  35 => 4,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

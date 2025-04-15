@@ -54,6 +54,8 @@ $pages = array(
 	'/new-board'				=> 'secure_POST new_board',	// create a new board
 	
 	'/rebuild'				=> 'secure_POST rebuild',	// rebuild static files
+	'/spam_log'				=> 'spam_log',
+
 	'/reports'				=> 'reports',			// report queue
 	'/reports/(\d+)/dismiss(all)?'		=> 'secure report_dismiss',	// dismiss a report
 	

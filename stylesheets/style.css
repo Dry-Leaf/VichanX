@@ -191,6 +191,11 @@ img.banner,img.board_image {
   margin: 12px auto 0 auto;
 }
 
+img.board_image {
+  max-width: 80vw;
+  height: auto !important;
+}
+
 .post-image {
   display: block;
   float: left;
@@ -199,7 +204,9 @@ img.banner,img.board_image {
 }
 
 .full-image {
-  max-width: 98%;
+  max-width: 80vw;
+  max-height: 80vh;
+
 }
 
 div.post .post-image {
@@ -1225,4 +1232,118 @@ table.fileboard .intro a {
 
 div.mix {
 	display: inline-block;
+}
+
+ .tabletop
+ /* on the front page, this will be the bar that says boardmap recent images and so on. */
+{
+font-weight:bold;
+color: #0a4283;
+border:0px solid #000000;
+background-color: #e3e3e3!important;
+padding:5px;
+}
+ .tabletop2
+{
+    /* on the front page, this will be the bar that says recent posts. */  
+font-weight:bold;
+color: #0a4283;
+border:0px solid #000000;
+background-color: #e3e3e3;
+padding:5px;
+}
+
+.tablesub
+    /* on the front page, this is where the boards are listed as well as the recent posts */  
+{
+font-weight:none;
+color: #E5E5E5;
+border:0px solid #000000;
+background-color: #91aedc!important;
+padding:5px;
+}
+
+ .tablesub:hover 
+     /* This is the tablesub element when you hover over it whith your mouse. */  
+{
+border:0px solid #000000;
+background-color:#4697cc;
+color:#E5E5E5;
+font-weight:none;
+font-size:10pt;
+padding:5px;
+}
+
+.picslot
+{
+					/* space around recent image thumbnails on the front page */ 
+font-weight:bold;
+color: #0a4283;
+border:0px solid #000000;
+background-color: #e3e3e3;
+padding:5px;
+}
+
+.picitself
+					/* this can be used for adding effects to the recent image thumbnail, such as making it transparent */ 
+{
+img-position: center top !important;
+filter:alpha(opacity=60);
+opacity:0.9;
+max-width:200px;
+max-height:113px;
+display: block;
+ margin-left: auto;
+margin-right: auto;
+}
+
+.reply blockquote, blockquote
+{
+margin-bottom:0;
+padding-bottom:10px;
+}
+
+
+.NewsMenuCurrent
+{
+						/* currently selected tab on the front page, which doesn't work with main for some reason */ 
+font-weight:bold;
+color: #0a4283;
+border:0px solid #000000;
+background-color: #e3e3e3;
+padding:5px;
+}	
+
+.NewsMenu
+{
+					/* tabs on the front page */ 
+	border: 0px solid #E5E5E5;  
+	padding-top: 3px; 
+	padding-bottom: 2px; 
+	padding-left: 10px; 
+	padding-right: 10px; 
+	background-color: #91aedc ;	
+        color: #E5E5E5;
+        background-repeat: no-repeat;
+        repeat scroll 0;
+        cursor: hand;
+	cursor: pointer;
+}
+
+.NewsTitleStrip
+{
+				/* bar on the front page that says main */ 
+font-weight:bold;
+color: #0a4283;
+border:0px solid #000000;
+background-color: #e3e3e3;
+padding:5px;
+}
+
+.NewsContent
+{
+	color: #E5E5E5;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 10pt;
 }

@@ -486,6 +486,12 @@
 	// $config['flood_cache'] = 60 * 60 * 24; // 24 hours
 	$config['flood_cache'] = -1;
 
+	// A filter that checks posts' bodies against known spam phrases in a file.
+	// Each line in the file is interpreted as a spam phrase. Empty lines are
+	// ignored.
+	// 
+	// Note: This filter's logic intermixes various concerns that would be better
+	// refactored out.
 	$config['filters'][] = array(
 		'condition' => array(
 			'custom' => function($p) use ($config) {
@@ -495,29 +501,37 @@
 				while (!feof($f)) {
 					$l = trim(fgets($f));
 
+					// Use strlen to ignore empty lines.
+					// strpos only performs literal checks. Regular expressions or fuzzy
+					// search would be better but more costly methods.
 					if (strlen($l) > 0 && strpos($p['body'], $l) !== false) {
 						if ($config['spam']['log']['enabled']) {
 							// Overwrite and start anew if the log file is
-							// greater than the maximum allowal size. Otherwise
+							// greater than the maximum allowable size. Otherwise
 							// just append to it.
-							$flags =
+							$mode =
 								(file_exists($config['spam']['log']['file'])
 									&& filesize($config['spam']['log']['file'])
 										> $config['spam']['log']['max_size'])
-								? 0 : FILE_APPEND;
+								? 'wb' : 'ab';
 
-							// Details the date, time, thread, matched phrase,
-							// and the post's body.
-							$msg = '[' . date('m/d/y|H:i:s', time())
-								. "]\nThread: /" . $p['board'] . '/' . $p['thread']
-								. "\nPhrase: " . $l
-								. "\nPost: " . $p['body'] . "\n\n";
+							// Format: timestamp|board|thread #|spam phrase|post
+							$entry = implode('|', [
+								date('m/d/y H:i:s', time()),
+								$p['board'],
+								$p['thread'],
+								'"' . addcslashes($l, '"') . '"',
+								'"' . addcslashes($p['body'], '"') . '"'
+							]);
 
-							file_put_contents($config['spam']['log']['file'], $msg, $flags);
+							$log_file = fopen($config['spam']['log']['file'], $mode);
+							if (flock($log_file, LOCK_EX)) {
+								fwrite($log_file, "{$entry}\n");
+							}
+							fclose($log_file);
 						}
 
 						$matched = true;
-
 						break;
 					}
 				}
@@ -527,8 +541,19 @@
 				return $matched;
 			}
 		),
-		'action' => 'reject'
+		'action' => 'reject',
+		'message' => 'Your post is considered to be spam.'
 	);
+	
+	// Filter flood prevention conditions ("flood-match") depend on a table which contains a cache of recent
+	// posts across all boards. This table is automatically purged of older posts, determining the maximum
+	// "age" by looking at each filter. However, when determining the maximum age, vichan does not look
+	// outside the current board. This means that if you have a special flood condition for a specific board
+	// (contained in a board configuration file) which has a flood-time greater than any of those in the
+	// global configuration, you need to set the following variable to the maximum flood-time condition value.
+	// Set to -1 to disable.
+	// $config['flood_cache'] = 60 * 60 * 24; // 24 hours
+	$config['flood_cache'] = -1;
 
 /*
  * ====================
@@ -634,7 +659,6 @@
 	// $config['custom_tripcode']['#test123'] = '!HelloWorld';
 	// Example: Custom secure tripcode.
 	// $config['custom_tripcode']['##securetrip'] = '!!somethingelse';
-    $config['custom_tripcode']['# ( best character ever )'] = '!UhnG3iuGcmC Minagi is mai waifu';
 	$config['custom_tripcode']['#buttplug'] = '<font color="red"> ## Admin ##</font>';
 
 
@@ -1341,6 +1365,8 @@
 
 	$config['file_mod_pages'] = 'mod/pages.html';
 	$config['file_mod_edit_page'] = 'mod/edit_page.html';
+
+	$config['file_mod_spam_log'] = 'mod/spam_log.html';
 
 	$config['file_mod_debug_antispam'] = 'mod/debug/antispam.html';
 	$config['file_mod_debug_recent_posts'] = 'mod/debug/recent_posts.html';
