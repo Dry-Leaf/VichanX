@@ -8,3 +8,4 @@ To-Do:
 * Linking to posts that replied to a post(at least in the same thread) on the post
 * Auto-update threads
 * Allow users to select from which boards recent posts are visible on the front page.
+* Kakusu (allows users to hide threads and posts)
