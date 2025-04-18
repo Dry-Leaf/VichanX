@@ -586,3 +586,22 @@ padding:1px;
 border: 1px solid #cecece; 
 color:#E5E5E5;
 }
+
+
+/* stats box on the front page */ 
+.mainBox {
+font-weight:none;
+color: #E5E5E5;
+border:0px solid #000000;
+background-color: #91aedc!important;
+padding:5px;
+}
+
+/* bar at the top of the stats box on the front page */ 
+.mainBox h2 {
+font-weight:bold;
+color: #0a4283;
+border:0px solid #000000;
+background-color: #e3e3e3!important;
+padding:5px; 
+}

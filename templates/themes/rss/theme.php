@@ -72,7 +72,7 @@
 				
 				$post['link'] = $config['root'] . $board['dir'] . $config['dir']['res'] . sprintf($config['file_page'], ($post['thread'] ? $post['thread'] : $post['id'])) . '#' . $post['id'];
 				$post['snippet'] = pm_snippet($post['body'], 30);
-				$post['board_name'] = $board['name'];
+				$post['board_name'] = htmlspecialchars($board['name']);
 				
 				$recent_posts[] = $post;
 			}

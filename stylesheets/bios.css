@@ -326,7 +326,7 @@ border: 2px solid #ffffff;
 	border: 2px solid #ffffff;  
 }
 
-.tablesub
+.tablesub, .mainBox
 {
 font-weight:none;
 color: #ffffff;

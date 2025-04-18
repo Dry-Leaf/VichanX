@@ -1234,67 +1234,76 @@ div.mix {
 	display: inline-block;
 }
 
- .tabletop
+ .tabletop, .mainBox h2
  /* on the front page, this will be the bar that says boardmap recent images and so on. */
 {
 font-weight:bold;
-color: #0a4283;
-border:0px solid #000000;
-background-color: #e3e3e3!important;
+font-size:10pt;
+
+background-color: #9988EE;
 padding:5px;
+border: 1px solid #000000;  
 }
  .tabletop2
 {
-    /* on the front page, this will be the bar that says recent posts. */  
 font-weight:bold;
-color: #0a4283;
-border:0px solid #000000;
-background-color: #e3e3e3;
+font-size:10pt;
+
+background-color: #9988EE;
+background-size: auto 200%; 
 padding:5px;
+border: 1px solid #000000; 
 }
 
-.tablesub
+.tablesub, .mainBox
     /* on the front page, this is where the boards are listed as well as the recent posts */  
 {
 font-weight:none;
-color: #E5E5E5;
-border:0px solid #000000;
-background-color: #91aedc!important;
+
+background-color: #D6DAF0;
+font-size:10pt;
 padding:5px;
+border: 1px solid #000000; 
+border-top: 1px solid #000000; 
+border-left: 1px solid #000000;
 }
 
  .tablesub:hover 
      /* This is the tablesub element when you hover over it whith your mouse. */  
 {
-border:0px solid #000000;
-background-color:#4697cc;
-color:#E5E5E5;
 font-weight:none;
+
+color:#0000ff;
+background-color: #D6DAF0;
 font-size:10pt;
 padding:5px;
+border: 1px solid #000000; 
+border-top: 1px solid #000000; 
+border-left: 1px solid #000000;
 }
 
 .picslot
 {
 					/* space around recent image thumbnails on the front page */ 
-font-weight:bold;
-color: #0a4283;
-border:0px solid #000000;
-background-color: #e3e3e3;
-padding:5px;
+font-weight:none;
+
+background-color: #D6DAF0;
+padding:4px;
+border: 1px solid #000000;  
+border-top: 1px solid #000000;
 }
 
 .picitself
 					/* this can be used for adding effects to the recent image thumbnail, such as making it transparent */ 
 {
-img-position: center top !important;
+img-position: center top;
 filter:alpha(opacity=60);
 opacity:0.9;
 max-width:200px;
-max-height:113px;
+max-height:120px;
 display: block;
- margin-left: auto;
-margin-right: auto;
+margin-left: auto;
+margin-right: auto
 }
 
 .reply blockquote, blockquote
@@ -1307,42 +1316,53 @@ padding-bottom:10px;
 .NewsMenuCurrent
 {
 						/* currently selected tab on the front page, which doesn't work with main for some reason */ 
-font-weight:bold;
-color: #0a4283;
-border:0px solid #000000;
-background-color: #e3e3e3;
-padding:5px;
+background: #D6DAF0;
+
+border: 1px solid #000000;
+border-bottom: 0px;
+padding-top: 3px; 
+padding-bottom: 2px; 
+padding-left: 10px; 
+padding-right: 10px; 
+cursor: hand;
+cursor: pointer;
+font-size:10pt;
 }	
 
 .NewsMenu
 {
 					/* tabs on the front page */ 
-	border: 0px solid #E5E5E5;  
-	padding-top: 3px; 
-	padding-bottom: 2px; 
-	padding-left: 10px; 
-	padding-right: 10px; 
-	background-color: #91aedc ;	
-        color: #E5E5E5;
-        background-repeat: no-repeat;
-        repeat scroll 0;
-        cursor: hand;
-	cursor: pointer;
+border: 1px solid #000000;   
+border-bottom: 0px solid #000000;  
+padding-top: 3px; 
+padding-bottom: 2px; 
+padding-left: 10px; 
+padding-right: 10px; 
+background-color: #9988EE;	
+
+background-repeat: repeat-x; 
+repeat scroll 0;
+cursor: hand;
+cursor: pointer;
+font-size:10pt;
 }
 
 .NewsTitleStrip
 {
 				/* bar on the front page that says main */ 
-font-weight:bold;
-color: #0a4283;
-border:0px solid #000000;
-background-color: #e3e3e3;
-padding:5px;
+background: #D6DAF0;
+
+border: 1px solid #000000;
+font-weight: bold;
+color: #000000;
+padding: 3px;
+	padding-left: 5px;
+	font-size: 80%;
 }
 
 .NewsContent
 {
-	color: #E5E5E5;
+	color: #000000;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-size: 10pt;

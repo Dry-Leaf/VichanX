@@ -197,7 +197,6 @@ div.post.reply {
 
 div.post.reply.highlighted {
 background-color:#072e4f !important;
-padding:3px !important;
 -moz-border-radius:0px 6px 6px 0px !important;border: 1px solid #4B4B4B !important;width: 100% !important;
 }
 
@@ -250,7 +249,6 @@ padding:3px !important;
 
 input[type="text"], textarea, select {
  color:#E5E5E5; 
-  font: bold 70% 'trebuchet ms',helvetica,sans-serif; 
   background-color:#4B4B4B; 
 	border: #666666 1px solid;
     padding: 2px;
@@ -529,7 +527,7 @@ padding-bottom:10px;
 	font-size: 80%;
 }
 
-.NewsContent
+.NewsContent, h2 
 {
 	color: #E5E5E5;
 	padding-top: 10px;
@@ -546,7 +544,9 @@ hr {
 	float: clear;
 	font-size: 0px; 
 }
-
+span.quote {
+		color: #789922;
+}
 div.pages {
 	color: #E5E5E5;
 	background: #333333;
@@ -580,4 +580,25 @@ color:#E5E5E5;
 
 div.boardlist {
   color: #E5E5E5;
+}
+
+/* stats box on the front page */ 
+.mainBox {
+	background-color: #333333;
+
+font-weight:none;
+padding:1px;
+border:1px solid #000000;
+	color: #E5E5E5;
+}
+
+/* bar at the top of the stats box on the front page */ 
+.mainBox h2 {
+	background-color: #072e4f !important;
+background-repeat:repeat;
+background-position:center !important;
+font-weight:none;
+text-align:center !important;
+	color: #E5E5E5;
+border:1px solid #000000;
 }

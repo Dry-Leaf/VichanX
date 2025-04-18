@@ -370,8 +370,18 @@ border: 22px solid #ff00ff;
 	border: 2px solid #fee9ee; 
 	padding:3px;
 }
-
-
+.mainBox {
+border-radius:10px;
+background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/postsv2.jpg');
+background-repeat:repeat;
+background-position:center !important;
+font-weight:none;
+background-color: #ffffff ;
+padding:5px;
+text-align:center;
+color: #07599C;
+border: 2px solid #ffce3a;  
+}
 
 .banner
 { 
@@ -452,9 +462,10 @@ background-repeat:no-repeat;
 background-position:center !important;
 font-weight:bold;
 font-size:10pt;
-background-color: none!important;
+background-color:  transparent;
 padding:16px;
 color:#3430dc;
+	border: transparent; 
 }
  .tabletop2
 {
@@ -464,9 +475,10 @@ background-repeat:no-repeat;
 background-position:center !important;
 font-weight:bold;
 font-size:10pt;
-background-color: none!important;
+background-color:  transparent;
 padding:16px;
 color:#3430dc;
+	border: transparent; 
 }
 
 .boards
@@ -588,7 +600,7 @@ background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/boards2.jp'
 background-repeat:no-repeat;
 background-position:center top !important;
 font-weight:none;
-background-color: #none;
+background-color:  transparent;
 padding:12px; 
 color:#07599C; 
 text-align: center;
@@ -607,7 +619,7 @@ padding-bottom:10px;
 .NewsMenuCurrent
 {
 						/* currently selected tab on the front page, which doesn't work with main for some reason */ 
-background: none;
+background-color:  transparent;
 background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/newstab.png');
 background-position:center;
 background-repeat: no-repeat; 
@@ -623,6 +635,7 @@ width:100px;
 height:40px;
 color:#3430DC;
 font-weight:bold;
+border: 0px solid #fc9acb; 
 }	
 
 .NewsMenu
@@ -633,7 +646,7 @@ padding-top: 3px;
 padding-bottom: 2px; 
 padding-left: 10px;  
 padding-right: 10px; 
-background-color: none;	
+background-color:  transparent;
 background-image:url('      ');
 background-position:center !important;
 background-repeat: no-repeat; 
@@ -645,13 +658,14 @@ width:100px;
 height:40px;
 color:#E4007F;
 font-weight:bold;
+border: 0px solid #fc9acb; 
 }
 
 .NewsTitleStrip
 {
 				/* bar on the front page that says main */ 
 
-background-color: none!important;
+background-color:  transparent;
 background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/newsstrip.jpg');
 background-repeat:no-repeat;
 background-position:center Left!important;
@@ -716,4 +730,11 @@ background:#0000ff url( ) repeat scroll left top;
 padding:1px;
 border: 2px solid #ffffff; 
 color:#E5E5E5;
+}
+
+.tablesub, .tablesub:hover {
+    background-color: unset;
+	font-size: unset;
+	padding: unset;
+	border: unset;
 }

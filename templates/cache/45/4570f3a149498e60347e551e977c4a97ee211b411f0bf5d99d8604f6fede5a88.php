@@ -62,8 +62,10 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 
 \t\t<div class=\"slogan\"><p id=\"slogan\"></p></div>
 \t</header>
-<!--------------------------------------news tab test zone------------------------------------------------------>
+<!--------------------------------------news tab------------------------------------------------------>
 \t\t
+<center><div class=\"extra\"></div></center>
+<center><div class=\"extra2\"></a></div></center>
 
 <script type=\"text/javascript\">
 
@@ -205,24 +207,24 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 </tr>
 
 ";
-        // line 162
+        // line 164
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["recent_posts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 163
+            // line 165
             echo "<tr> <td div style=\" border: 0px solid #000000;  padding-top : 1px;border-top: 0px solid #000000;\"> <div class=\"tablesub\"><div class=\"replysub\"\ttitle=\"";
             echo strip_tags($this->getAttribute($context["post"], "body", []));
             echo "\">
 \t";
-            // line 164
+            // line 166
             echo $this->getAttribute($context["post"], "board_name", []);
             echo ": 
 \t<a href=\"";
-            // line 165
+            // line 167
             echo $this->getAttribute($context["post"], "link", []);
             echo "\">
 \t";
-            // line 166
+            // line 168
             echo $this->getAttribute($context["post"], "snippet", []);
             echo "
 \t";
@@ -230,7 +232,7 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 167
+        // line 169
         echo "</a></div></td></tr>
 
 </table></td>
@@ -241,18 +243,18 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 
 
 \t";
-        // line 176
+        // line 178
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["recent_images"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 177
+            // line 179
             echo "\t<tr>
     <td div style=\" border: 0px solid #000000; padding: 0px; border-top: 0px solid #000000;\"> <div class=\"picslot\"> <div class=\"picitself\"> <center> <a href=\"";
-            // line 178
+            // line 180
             echo $this->getAttribute($context["post"], "link", []);
             echo "\"> </div>
 \t<img src=\"";
-            // line 179
+            // line 181
             echo $this->getAttribute($context["post"], "src", []);
             echo "\"  border=\"0\" /  div class=\"picitself\">
 \t\t\t\t";
@@ -260,7 +262,7 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 180
+        // line 182
         echo " </a></td></div>
 
 </tr></table>
@@ -290,35 +292,35 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 <div id=\"Tab1\" style=\"display: none;\">
 
 \t\t";
-        // line 208
+        // line 210
         if ((twig_length_filter($this->env, ($context["news"] ?? null)) == 0)) {
-            // line 209
+            // line 211
             echo "\t\t\t<p style=\"text-align:center\" class=\"unimportant\">(No news to show.)</p>
 \t\t";
         } else {
-            // line 211
+            // line 213
             echo "\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["news"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["entry"]) {
-                // line 212
+                // line 214
                 echo "\t\t\t\t<div class=\"NewsTitleStrip\"><h2 id=\"";
                 echo $this->getAttribute($context["entry"], "id", []);
                 echo "\">
 \t\t\t\t\t";
-                // line 213
+                // line 215
                 if ($this->getAttribute($context["entry"], "subject", [])) {
-                    // line 214
+                    // line 216
                     echo "\t\t\t\t\t\t";
                     echo $this->getAttribute($context["entry"], "subject", []);
                     echo "
 \t\t\t\t\t";
                 } else {
-                    // line 216
+                    // line 218
                     echo "\t\t\t\t\t\t<em>no subject</em>
 \t\t\t\t\t";
                 }
-                // line 218
+                // line 220
                 echo "\t\t\t\t\t<span class=\"unimportant\"> &mdash; by ";
                 echo $this->getAttribute($context["entry"], "name", []);
                 echo " at ";
@@ -326,7 +328,7 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
                 echo "</span>
 \t\t\t\t</h2></div>
 \t\t\t\t<div class=\"NewsContent\"><p>";
-                // line 220
+                // line 222
                 echo $this->getAttribute($context["entry"], "body", []);
                 echo "</p></div>
 \t\t\t";
@@ -334,10 +336,10 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entry'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 222
+            // line 224
             echo "\t\t";
         }
-        // line 223
+        // line 225
         echo "
 <div class=\"NewsTitleStrip\"> news subject </div>
 <div class=\"NewsContent\"> news content </div>
@@ -797,15 +799,15 @@ We're very interested in what you think of the site and what you think might mak
 \t\t\t<h2>Stats</h2>
 \t\t\t<ul>
 \t\t\t\t<li>Total posts: ";
-        // line 681
+        // line 683
         echo $this->getAttribute(($context["stats"] ?? null), "total_posts", []);
         echo "</li>
 \t\t\t\t<li>Unique posters: ";
-        // line 682
+        // line 684
         echo $this->getAttribute(($context["stats"] ?? null), "unique_posters", []);
         echo "</li>
 \t\t\t\t<li>Active content: ";
-        // line 683
+        // line 685
         echo format_bytes($this->getAttribute(($context["stats"] ?? null), "active_content", []));
         echo "</li>
 \t\t\t</ul>
@@ -815,9 +817,9 @@ We're very interested in what you think of the site and what you think might mak
 \t<hr/>
 
 \t";
-        // line 690
-        $this->loadTemplate("footer.html", "themes/tohnochan/index.html", 690)->display($context);
-        // line 691
+        // line 692
+        $this->loadTemplate("footer.html", "themes/tohnochan/index.html", 692)->display($context);
+        // line 693
         echo "<script type=\"text/javascript\">
 \tinit_stylechooser();
 \treadyStyleSelector();
@@ -840,7 +842,7 @@ We're very interested in what you think of the site and what you think might mak
 
     public function getDebugInfo()
     {
-        return array (  821 => 691,  819 => 690,  809 => 683,  805 => 682,  801 => 681,  341 => 223,  338 => 222,  330 => 220,  322 => 218,  318 => 216,  312 => 214,  310 => 213,  305 => 212,  300 => 211,  296 => 209,  294 => 208,  264 => 180,  256 => 179,  252 => 178,  249 => 177,  245 => 176,  234 => 167,  226 => 166,  222 => 165,  218 => 164,  213 => 163,  209 => 162,  53 => 8,  50 => 7,  44 => 6,  39 => 5,  35 => 4,  30 => 1,);
+        return array (  823 => 693,  821 => 692,  811 => 685,  807 => 684,  803 => 683,  343 => 225,  340 => 224,  332 => 222,  324 => 220,  320 => 218,  314 => 216,  312 => 215,  307 => 214,  302 => 213,  298 => 211,  296 => 210,  266 => 182,  258 => 181,  254 => 180,  251 => 179,  247 => 178,  236 => 169,  228 => 168,  224 => 167,  220 => 166,  215 => 165,  211 => 164,  53 => 8,  50 => 7,  44 => 6,  39 => 5,  35 => 4,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

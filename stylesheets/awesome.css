@@ -399,7 +399,7 @@ padding-right: 70px;
 
 .NewsMenuCurrent
 {
-background: none;
+background-color: transparent !important;
 background-image:url('http://tohno-chan.org/stylesheets/img/awesome/globe.gif');
 background-position:center;
 background-repeat: no-repeat; 
@@ -424,8 +424,7 @@ padding-top: 3px;
 padding-bottom: 2px; 
 padding-left: 10px;  
 padding-right: 10px; 
-background-color: none;	
-background-image:url('    ');
+background-color: transparent !important;
 background-position:center !important;
 background-repeat: no-repeat; 
 repeat scroll 0;
@@ -441,7 +440,6 @@ font-weight:bold;
 .NewsTitleStrip
 {
 background-color: #ffff00;
-background-image:url('    ');
 background-repeat:no-repeat;
 background-position:center Left!important;
 font-weight: bold;
@@ -547,24 +545,24 @@ color: #FF0000;
 
 .tabletop
 {
-background-image:url('            ');
+
 background-repeat:no-repeat;
 background-position:center !important;
 font-weight:bold;
 font-size:10pt;
-background-color: none!important;
+background-color: transparent !important;
 padding:7px;
 color:#ff0000;
  }
 
 .tabletop2
 {
-background-image:url('           ');
+
 background-repeat:no-repeat;
 background-position:center !important;
 font-weight:bold;
 font-size:10pt;
-background-color: none!important;
+background-color: transparent !important;
 padding:7px;
 color:#ff0000;
  }
@@ -572,18 +570,15 @@ color:#ff0000;
 
 .boards
 {
-background-image:url('http://Tohno-chan.com/images/themes/yuru/boardbg');
-background-repeat:no-repeat;
-background-position:center !important;
-font-weight:none;
-background-color: #ededed;
-padding:12px; 
-color:#00ff00; 
-text-align: center;
-vertical-align:bottom
-height: 40px; 
-border: 2px outset #646464;  
-        font-family:Comic Sans MS;
+font-weight:none!important;
+    background-color: unset;
+padding:12px!important;
+color:#00ff00!important;
+text-align: center!important;
+vertical-align:bottom !important;  
+height: 30px!important; 
+border: 2px outset #646464!important;  
+font-family:Comic Sans MS!important;
  
 }
 
@@ -593,9 +588,9 @@ background-image:url('http://tohno-chan.org/stylesheets/img/awesome/dragon.gif')
 background-repeat:no-repeat;
 background-position:center !important;
 font-weight:none;
-background-color: #000000;
+background-color: transparent !important;
 padding:12px; 
-color:#07599C; 
+color:#00ff00; 
 text-align: center;
 vertical-align:bottom
 height: 40px; 
@@ -603,35 +598,34 @@ border: 2px inset #ff0000;
 }
  
 .replysub{ 
-background-image:url('');
-background-repeat:no-repeat;
-background-position:center !important;
+	background: url('http://tohno-chan.org/stylesheets/img/awesome/code.gif'); 
+	background-repeat:repeat;
+background-color: transparent !important;
 font-weight:none;
-background-color: none;
 padding:5px;
-text-align:center;
-color: #ffff00;
-border: 2px outset #646464;   
+text-align:center !important;
+color:#00ff00; 
+border: 2px outset #646464;  
 }
 
 
 .replysub:hover 
 {
-background-image:url('      ');
-background-repeat:no-repeat;
+	background: url('http://tohno-chan.org/stylesheets/img/awesome/code.gif'); 
+	background-color: transparent !important;
+background-repeat:repeat;
 background-position:center !important;
 font-weight:none;
-background-color: #ffff00 !important;
-padding:5px;
 text-align:center !important;
 color: #ff0000;
 border: 2px inset #646464; 
 }
 
 .picslot
+/* space around recent image thumbnails on the front page */ 
 {
 font-weight:none;
-background-color: none !important;
+background-color: transparent !important;
 background-position:center !important;
 background-repeat:no-repeat;
 padding:4px;
@@ -655,6 +649,7 @@ padding-right:10px;
 .boardbanner
 { 
 background: url('http://tohno-chan.org/stylesheets/img/awesome/awesome.png'); 
+background-color: transparent !important;
 background-position:center;
 background-repeat:no-repeat;
 padding: 15px 5px 20px 5px;
@@ -692,9 +687,11 @@ margin-bottom:-10px;
 Color:#07599c;
 background-image: url('http://tohno-chan.org/stylesheets/img/awesome/counter.gif'), url('http://tohno-chan.org/stylesheets/img/awesome/noframes.gif');
 background-position: center bottom, left bottom;
-margin-top: 4px;
-margin-bottom: 4px;
+margin-top: 10px;
+margin-bottom: 10px;
 background-repeat:no-repeat;
+background-color: transparent !important;
+padding:15px;
 }
 
 input{ 
@@ -715,18 +712,62 @@ padding:1px;
 border: 2px outset #646464;   
 }
 
+/* Just a dumb little thing to add an image under the slogan on the front page */ 
 .extra {
-background: none;
+background-color: transparent !important;
 background:transparent url('http://tohno-chan.org/stylesheets/img/awesome/tumblr_m2nmtsxQqp1ru71nxo1_250.gif') no-repeat scroll center;
 border:0px solid #000000;
 width:125px; 
 padding: 24px;
 }
 
+/* Just a dumb little thing to add an image under the slogan on the front page */ 
 .extra2 {
-background: none;
+background-color: transparent !important;
 background:transparent url('http://tohno-chan.org/stylesheets/img/awesome/tumblr_m2nmtm01jA1qdyzi6.gif') no-repeat scroll center;
 border:0px solid #000000;
 width:211px; 
 padding: 24px;
 }
+
+/* stats box on the front page */ 
+.mainBox {
+background: url('http://tohno-chan.org/stylesheets/img/awesome/animedance.gif'); font-weight:none;
+height:155px;
+font-weight:none;
+background-color: #ff6b94 !important;
+background-repeat:no-repeat;
+background-position:center !important;
+padding:1px;
+border: 2px outset #646464;   
+}
+
+/* bar at the top of the stats box on the front page */ 
+.mainBox h2 {
+	background: url('http://tohno-chan.org/stylesheets/img/awesome/code.gif'); 
+	background-color: transparent !important;
+background-repeat:repeat;
+background-position:center !important;
+font-weight:none;
+text-align:center !important;
+color: #ff0000;
+border: 2px inset #646464; 
+}
+
+.tablesub, .tablesub:hover {
+    background-color: unset;
+	font-size: unset;
+	padding: unset;
+	border: unset;
+}
+
+div.pages {
+		background: url('http://tohno-chan.org/stylesheets/img/awesome/code.gif'); 
+	background-color: transparent !important;
+background-repeat:repeat;
+background-position:center !important;
+font-weight:none;
+text-align:center !important;
+color: #ff0000;
+border: 2px inset #646464; 
+	}

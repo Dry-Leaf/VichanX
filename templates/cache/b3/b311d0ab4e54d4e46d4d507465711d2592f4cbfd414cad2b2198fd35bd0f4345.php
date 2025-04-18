@@ -79,53 +79,66 @@ class __TwigTemplate_38173af27a2e552db94432abe342ba2ea1d9a10c1ba30f853a751817536
                     echo "\t\t<p class=\"fileinfo\">File: <a href=\"";
                     echo $this->getAttribute(($context["config"] ?? null), "uri_img", []);
                     echo $this->getAttribute($context["file"], "file", []);
-                    echo "\">";
+                    echo "\"
+\t\t";
+                    // line 11
+                    if (($this->getAttribute(($context["config"] ?? null), "show_filename", []) && $this->getAttribute($context["file"], "filename", []))) {
+                        // line 12
+                        echo "\t\t\tdownload=\"";
+                        echo $this->getAttribute($context["file"], "filename", []);
+                        echo "\"
+\t\t";
+                    }
+                    // line 13
+                    echo ">
+\t\t";
+                    // line 14
                     echo $this->getAttribute($context["file"], "file", []);
                     echo "</a> <span class=\"unimportant\">
 \t\t(
 \t\t\t";
-                    // line 12
+                    // line 16
                     if (($this->getAttribute($context["file"], "thumb", []) == "spoiler")) {
-                        // line 13
+                        // line 17
                         echo "\t\t\t\t";
                         echo gettext("Spoiler Image");
                         echo ", 
 \t\t\t";
                     }
-                    // line 15
+                    // line 19
                     echo "\t\t\t";
                     echo format_bytes($this->getAttribute($context["file"], "size", []));
                     echo "
 \t\t\t";
-                    // line 16
+                    // line 20
                     if (($this->getAttribute($context["file"], "width", []) && $this->getAttribute($context["file"], "height", []))) {
-                        // line 17
+                        // line 21
                         echo "\t\t\t\t, ";
                         echo $this->getAttribute($context["file"], "width", []);
                         echo "x";
                         echo $this->getAttribute($context["file"], "height", []);
                         echo "
 \t\t\t\t";
-                        // line 18
+                        // line 22
                         if ($this->getAttribute(($context["config"] ?? null), "show_ratio", [])) {
-                            // line 19
+                            // line 23
                             echo "\t\t\t\t\t, ";
                             echo twig_ratio_function($this->getAttribute($context["file"], "width", []), $this->getAttribute($context["file"], "height", []));
                             echo "
 \t\t\t\t";
                         }
-                        // line 21
+                        // line 25
                         echo "\t\t\t";
                     }
-                    // line 22
+                    // line 26
                     echo "\t\t\t";
                     if (($this->getAttribute(($context["config"] ?? null), "show_filename", []) && $this->getAttribute($context["file"], "filename", []))) {
-                        // line 23
+                        // line 27
                         echo "\t\t\t\t, 
 \t\t\t\t";
-                        // line 24
+                        // line 28
                         if ((twig_length_filter($this->env, $this->getAttribute($context["file"], "filename", [])) > $this->getAttribute(($context["config"] ?? null), "max_filename_display", []))) {
-                            // line 25
+                            // line 29
                             echo "\t\t\t\t\t<span class=\"postfilename\" title=\"";
                             echo bidi_cleanup(twig_escape_filter($this->env, $this->getAttribute($context["file"], "filename", [])));
                             echo "\">";
@@ -133,31 +146,31 @@ class __TwigTemplate_38173af27a2e552db94432abe342ba2ea1d9a10c1ba30f853a751817536
                             echo "</span>
 \t\t\t\t";
                         } else {
-                            // line 27
+                            // line 31
                             echo "\t\t\t\t\t<span class=\"postfilename\">";
                             echo bidi_cleanup(twig_escape_filter($this->env, $this->getAttribute($context["file"], "filename", [])));
                             echo "</span>
 \t\t\t\t";
                         }
-                        // line 29
+                        // line 33
                         echo "\t\t\t";
                     }
-                    // line 30
+                    // line 34
                     echo "\t\t)
 \t\t";
-                    // line 31
-                    $this->loadTemplate("post/image_identification.html", "post/fileinfo.html", 31)->display($context);
-                    // line 32
+                    // line 35
+                    $this->loadTemplate("post/image_identification.html", "post/fileinfo.html", 35)->display($context);
+                    // line 36
                     echo "\t\t";
-                    $this->loadTemplate("post/file_controls.html", "post/fileinfo.html", 32)->display($context);
+                    $this->loadTemplate("post/file_controls.html", "post/fileinfo.html", 36)->display($context);
                     echo "</span></p>
 \t";
-                    // line 33
-                    $this->loadTemplate("post/image.html", "post/fileinfo.html", 33)->display(twig_array_merge($context, ["post" => $context["file"]]));
-                    // line 34
+                    // line 37
+                    $this->loadTemplate("post/image.html", "post/fileinfo.html", 37)->display(twig_array_merge($context, ["post" => $context["file"]]));
+                    // line 38
                     echo "\t";
                 }
-                // line 35
+                // line 39
                 echo "</div>
     ";
                 ++$context['loop']['index0'];
@@ -172,7 +185,7 @@ class __TwigTemplate_38173af27a2e552db94432abe342ba2ea1d9a10c1ba30f853a751817536
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['file'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 37
+            // line 41
             echo "</div>
     ";
         }
@@ -190,7 +203,7 @@ class __TwigTemplate_38173af27a2e552db94432abe342ba2ea1d9a10c1ba30f853a751817536
 
     public function getDebugInfo()
     {
-        return array (  176 => 37,  161 => 35,  158 => 34,  156 => 33,  151 => 32,  149 => 31,  146 => 30,  143 => 29,  137 => 27,  129 => 25,  127 => 24,  124 => 23,  121 => 22,  118 => 21,  112 => 19,  110 => 18,  103 => 17,  101 => 16,  96 => 15,  90 => 13,  88 => 12,  79 => 10,  72 => 8,  70 => 7,  59 => 6,  42 => 5,  39 => 4,  33 => 2,  30 => 1,);
+        return array (  189 => 41,  174 => 39,  171 => 38,  169 => 37,  164 => 36,  162 => 35,  159 => 34,  156 => 33,  150 => 31,  142 => 29,  140 => 28,  137 => 27,  134 => 26,  131 => 25,  125 => 23,  123 => 22,  116 => 21,  114 => 20,  109 => 19,  103 => 17,  101 => 16,  96 => 14,  93 => 13,  87 => 12,  85 => 11,  79 => 10,  72 => 8,  70 => 7,  59 => 6,  42 => 5,  39 => 4,  33 => 2,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
