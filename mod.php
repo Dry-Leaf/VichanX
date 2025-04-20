@@ -55,8 +55,10 @@ $pages = array(
 	
 	'/rebuild'				=> 'secure_POST rebuild',	// rebuild static files
 
-	'/spam_log'				=> 'spam_log',
-	'/edit_spam'			=> 'edit_spam',
+	'/spam_log'						  => 'spam_log',
+	'/spam/patterns'			  => 'spam_patterns',
+	'/spam/patterns/add'	  => 'secure_POST spam_patterns_add',
+	'/spam/patterns/delete' => 'secure_POST spam_patterns_delete',
 
 	'/reports'				=> 'reports',			// report queue
 	'/reports/(\d+)/dismiss(all)?'		=> 'secure report_dismiss',	// dismiss a report

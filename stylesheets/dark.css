@@ -2,42 +2,54 @@ body {
 	background:#2C2C2C;
 	color:#E5E5E5;
 font-family:calibri;
-font-size:inherit ;
+    font-size:16px;
+
 }
 a:link, a:visited {
-	color:#339999;
+	color:#0dc1bb;
 	text-decoration: none;
 }
 a:hover {
-	color:#000000;
+	color:#69ddd9;
 	text-decoration: underline;
+}
+.reflink{
+	color:#0000ff !important;
+	text-decoration: none;
 }
 .reflink a:hover{
 	font-weight: bold;
+	color:#69ddd9 !important;
+	text-decoration: underline;
 }
 .adminbar {
 	text-align:right;
 	clear:both;
 	float:right;
 }
+
+
+
 header div.boardname,h1 {
 	/* board name, such as "/a/ - anime" */
 	clear: both;
-        font-size:24px;
+    font-size:37px;
 	text-align: center;
-	font-weight: bold;
-	font-size: 2.3em;
-        color: #E5E5E5;
+    color: #E5E5E5;
 	width: 100%;
+	padding-top: 30px;
 	padding-bottom: 10px;
-}
+ }
+ 
 header div.subtitle {
 	/* the text bellow the board name */
-	        color: #E5E5E5;
+    color: #E5E5E5;
+    font-size:15px;
+	padding-bottom: 30px;
 }
-div.banner {
-		/* posting mode bar at the top of the page, not the image banner */ 
 
+
+div.banner {
 	background-color: #E5E5E5;
 	color: #000000;
 	font-weight: bold;
@@ -45,6 +57,16 @@ div.banner {
 	padding: 3px;
 	text-align: center;
 }
+div.banner a {
+	color: #000000;
+}
+
+img.board_image
+{
+border:solid 0px #000000 ;
+}
+
+
 .catalogmode {
 	background:#0040E0;
 	text-align:center;
@@ -54,6 +76,7 @@ div.banner {
 }
 .postarea {
 }
+
 .rules {
 	/*font-size:0.7em;*/
 	width: 468px;
@@ -64,18 +87,30 @@ div.banner {
 	margin-left: 1em;
 	/*text-indent: 0em;*/
 }
+
 .postblock {
+	background: #2C2C2C!important;
+	color: #E5E5E5;
+	font-family:calibri!important;
+		font-weight: normal!important;
+	text-align: left;
 
-margin-right:-1px !important;
+  padding-right: 10px!important;
+  padding-left: 10px!important;
 
-padding:0 3px !important;
+margin-right:-1px ;
+padding:0px ;
+border:solid 1px #555 ;
 
-border:solid 1px #555 !important;
-
-border-right-style: none !important;
-
-text-align:center !important;
+text-align:center ;
 }
+
+.postbuttons {
+
+}
+
+
+
 .footer {
 	text-align:center;
 	font-size:12px;
@@ -105,15 +140,15 @@ text-align:center !important;
 	background:#FFFFFF;
 	width:100%;
 	padding:0px;
-	color:#800000;
+	color:#000000;
 }
 .row1 {
 	background:#EEEECC;
-	color:#800000;
+	color:#000000;
 }
 .row2 {
 	background:#DDDDAA;
-	color:#800000;
+	color:#000000;
 }
 .unkfunc {
 	background:inherit;
@@ -123,17 +158,29 @@ text-align:center !important;
 	text-decoration:none;
 }
 .intro span.subject {
-	color: #E5E5E5;
+	color: #335e99;
 	font-weight: bold;
 }
-.intro span.name {
-        color:#D3D3D3 !important;
-font-family: calibri;
 
+
+.intro span.name {
+        color:#338099 !important;
+	font-weight: bold;
 }
-span.trip {
-	color:#D3D3D3 !important
+.postertrip {
+	color:#338099 !important;
 }
+
+.intro a.email span.name {
+	color:#31a9e4 !important;
+	text-decoration: none !important;
+}
+.intro a.email span.name:hover {
+	color:#69ddd9 !important;
+	text-decoration: none !important;
+}
+
+
 .oldpost {
 	color:#CC1105;
 	font-weight:800;
@@ -142,27 +189,25 @@ span.trip {
 	color:#707070;
 }
 div.post.reply {
-	/* This is the comment or reply box found in a thread responding to the OP */ 
 	background: #333333;
 	color: #e5e5e5;
         -moz-border-radius:0px 6px 6px 0px !important;border: 1px solid #4b4b4b!important;width: 100% !important;
-
 }
+
+
 div.post.reply.highlighted {
-		/* This is the comment or reply box WHEN HIGHLIGHTED (not sure if it really is)*/ 
-background-color:#003333 !important;
+background-color:#072e4f !important;
 -moz-border-radius:0px 6px 6px 0px !important;border: 1px solid #4B4B4B !important;width: 100% !important;
 }
 
 div.post.reply div.body a:link, div.post.reply div.body a:visited {
-	color: #339999;
+	color: #31a9e4;
 }
 div.post.reply div.body a:link:hover, div.post.reply div.body a:visited:hover {
-	color: #000000;
+	color: #69ddd9;
 }
-span.quote {
-		color: #737373;
-}
+
+
 .doubledash {
 	color:#E5E5E5;
 	padding-right: 3px;
@@ -179,14 +224,14 @@ span.quote {
 }
 .thumbnailmsg {
 	font-size: small;
-	color:#800000;
+	color:#000000;
 }
 
 .abbrev {
 	color:#707070;
 }
 .highlight {
-background-color:#003333 !important;
+background-color:#072e4f !important;
 padding:3px !important;
 -moz-border-radius:0px 6px 6px 0px !important;border: 1px solid #4B4B4B !important;width: 100% !important;
 }
@@ -203,18 +248,45 @@ padding:3px !important;
 }
 
 input[type="text"], textarea, select {
-  color:#E5E5E5; 
-  font: bold 70% 'trebuchet ms',helvetica,sans-serif; 
-  background-color:#4B4B4B; 
-border: 1px solid #cecece;
-} 
+ color:#E5E5E5; 
+  background-color:#4B4B4B; url( ) repeat scroll left top; 
+	border: 1px solid #cecece;
+    padding: 1px;
+}
 
+input[type="button"] {
+/* also try class="btn" */
+  border: #555 1px solid !important;
+  text-align: center;
+	font: bold 70% 'trebuchet ms',helvetica,sans-serif;
+	color: #E5E5E5;
+  background-color: #333333;
+
+}
+
+input[type="submit" i]{
+/* submit button next to post box */
+  border: 1px solid #cecece;
+  padding: 1px;
+  text-align: center;
+  color: #E5E5E5;
+  background-color: #4B4B4B;
+}
+
+.boardinfo
+{
+font-weight:none;
+font-size: 10pt;
+color: #E5E5E5;
+text-align: left;
+padding:5px;
+}
 
 .hl
 {
 font-weight:bold;
 font-size:10pt;
-background-image:url('http://www.tohno-chan.com/uploads/user/submenubgv2_ib4f.png');
+background-image:url(' ');
 background-color: #9988EE !important;
 padding:5px;
 border: 1px solid #000000;  
@@ -235,7 +307,7 @@ padding:5px;
 .tablesub:hover 
 {
 font-weight:none;
-background-image:url('http://www.tohno-chan.com/uploads/user/tablesubBGHOVER_ib4f.png');
+background-image:url(' ');
 color:#0000ff;
 background-color: #D6DAF0 !important;
 font-size:10pt;
@@ -249,7 +321,7 @@ border-left: 1px solid #000000;
 .picslot
 {
 font-weight:none;
-background-image:url('http://www.tohno-chan.com/uploads/user/picslotBG_ib4f.png');
+background-image:url(' ');
 background-color: #D6DAF0 !important;
 padding:4px;
 border: 1px solid #000000;  
@@ -271,7 +343,7 @@ margin-right: auto
 
 .banner
 { 
-background: url('http://tohno-chan.com/uploads/user/bannerBGv2_0_ib4f.png'); 
+background: url(' '); 
 background-position:center;
 background-repeat:no-repeat !important;
 padding: 0 6px 7px 0;
@@ -279,7 +351,7 @@ padding: 0 6px 7px 0;
 
 .fpfooter
 {
-background: url('http://tohno-chan.com/uploads/user/frontcorner_ib4f.png');  
+background: url(' ');  
 background-position:left; 
 background-repeat:no-repeat !important;
 height:60px;
@@ -291,7 +363,56 @@ margin-bottom:-50px;
 }
 
 
-.tabletop, .mainBox h2
+/* search.php box */ 
+.ban {
+    background: #333333!important;
+    color: #E5E5E5!important;
+	border:1px solid #4b4b4b!important;
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+
+/* ///////////////////// staff page elements bellow here ////////////////////////// */
+
+
+/* rebuild page */ 
+div.ban h2 {
+    background: #333333!important;
+    color: #E5E5E5!important;
+    font-size: 12pt;
+	border:1px solid #4b4b4b!important;
+
+}
+
+
+form table tr th {
+/* bars on the top and side of the config editor page but also affects .postblock, use !important; on the post block so this doesn't effect that too */
+border:1px solid #000000;
+background-color: #072e4f!important;
+}
+
+table.mod.config-editor td {
+/* devider line on config editor page */
+    text-align: left;
+    padding: 5px;
+    border-bottom: 1px solid #000000;
+}
+
+
+table.modlog tr th {
+/*bar on top of the mod/users page that lists off staff */
+border:1px solid #000000;
+background-color: #072e4f!important;
+}
+
+th.sortable {  
+/*bar on top of the ban list page */
+border:1px solid #000000;
+background-color: #072e4f!important;
+}
+
+ .tabletop
 {
 font-weight:bold;
 color: #E5E5E5;
@@ -308,7 +429,7 @@ background-color: #003333!important;
 padding:5px;
 }
 
-.tablesub, .mainBox
+.tablesub
 {
 font-weight:none;
 color: #E5E5E5;
@@ -320,7 +441,7 @@ padding:5px;
  .tablesub:hover 
 {
 border:1px solid #000000;
-background-color:#003333 !important;
+background-color:#072e4f !important;
 background:#FFCCAA none repeat scroll 0;
 color:#E5E5E5;
 font-weight:none;
@@ -377,7 +498,7 @@ padding-bottom:10px;
 	padding-bottom: 2px; 
 	padding-left: 10px; 
 	padding-right: 10px; 
-	background-color: #003333 ;	
+	background-color: #072e4f ;	
         color: #E5E5E5;
         background-repeat: no-repeat;
         repeat scroll 0;
@@ -397,45 +518,36 @@ padding-bottom:10px;
 	font-size: 80%;
 }
 
-.NewsContent, h2
+.NewsContent, h2 
 {
 	color: #E5E5E5;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-size: 10pt;
 }
+
 hr {
-	border-top: 1px solid #297085;
-        color:#297085;	
+	border-top: 1px solid #339999;
+        color:#339999;	
         height: 1px;
 	margin-top: 5px;
 	margin-bottom: 15px;
 	float: clear;
 	font-size: 0px; 
 }
-.Spacer {
-  border-bottom: 1px solid;
-  color: #339999;
-  height: 1px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  float: clear;
-  font-size: 0px;
+span.quote {
+		color: #789922;
 }
-.PagingTable
-{
-border:solid 1px #555 !important;
-
-background:transparent !important;
+div.pages {
+	color: #E5E5E5;
+	background: #333333;
+	border: #666666 1px solid;
+	font-family: sans-serif;
+	font-size: 10pt;
 }
-
-.PagingTable td
-{
-	border: 0px solid rgb(216, 178, 178);
- background-image:url('');
-	padding: 0px;
+div.pages a.selected {
+	color: #E5E5E5;
 }
-
 
 input
 { 
@@ -457,8 +569,27 @@ border: 1px solid #cecece;
 color:#E5E5E5;
 }
 
-form table tr th {
-/* bars on the top and side of the config editor page but also affects .postblock, use !important; on the post block so this doesn't effect that too */
+div.boardlist {
+  color: #E5E5E5;
+}
+
+/* stats box on the front page */ 
+.mainBox {
+	background-color: #333333;
+
+font-weight:none;
+padding:1px;
 border:1px solid #000000;
-background-color: #2C2C2C;
+	color: #E5E5E5;
+}
+
+/* bar at the top of the stats box on the front page */ 
+.mainBox h2 {
+	background-color: #003333 !important;
+background-repeat:repeat;
+background-position:center !important;
+font-weight:none;
+text-align:center !important;
+	color: #E5E5E5;
+border:1px solid #000000;
 }

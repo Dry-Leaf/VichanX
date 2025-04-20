@@ -938,6 +938,7 @@ pre {
 
 pre {
 /* Better code tags */
+  white-space: pre-wrap; /* 4/19/25 */
   max-width: inherit;
   word-wrap: normal;
   overflow: auto;

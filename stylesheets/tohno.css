@@ -1,97 +1,49 @@
+
+
 body {
-	background:#0000ff;
-	color:#ffffff;
-    font-family:courier;
-	font-size:15px;
+        background-image: url('http://tohno-chan.com/images/themes/Tohno/bgcorner.jpg'), url('http://Tohno-chan.com/images/themes/Tohno/starbg.jpg');
+	background-position: right bottom, left top;
+        background-repeat: no-repeat, repeat;
+        background-color:#8f3da6;
+        background-attachment:fixed,fixed;
+        color:#fcc9ce;
+
 }
-a:link, a:visited, .intro a.email span.name {
-	color:#ffffff;
-	text-decoration: none;
-    font-family:courier;
-		font-size:15px;
+
+
+
+a {
+	color:#fde3e4;
 }
 a:hover {
-	color:#ffffff;
-	text-decoration: underline;
-    font-family:courier;
-		font-size:15px;
-}
-.reflink{
-    /* WTF is this? */
-	font-weight: bold;
-    font-family:courier;
+	color:#DD0000;
 }
 .reflink a:hover{
-	/* WTF is this? */
 	font-weight: bold;
-    font-family:courier;
 }
+
+
 .adminbar {
-	/* WTF is this? */   
 	text-align:right;
 	clear:both;
 	float:right;
 }
-
-
-
-header div.boardname,h1 {
-	/* board name, such as "/a/ - anime" */
-    font-size:30px;
-	text-align: center;
-	color: #ffffff;
-	border:solid 2px #ffffff ;
-	text-decoration: none;
-	padding: 4px;
-    font-family:courier;
-	
-	
- }
- 
-header div.subtitle {
-	/* the text bellow the board name */
-	color:#ffffff;
-    font-family:courier;
-    font-size:15px;
-	border:solid 2px #ffffff ;
-	border-top:solid 0px #ffffff ;
-	padding: 4px;
+.logo {
+	clear:both;
+	text-align:center;
+	font-size:2em;
+	color:#e77899;
+	width:100%;
 }
-
-
-div.banner {
-		/* posting mode bar at the top of the page */ 
-	color: #FFFFFF;
-	font-weight: bold;
-	font-size: 110%;
-	background:#ff0000;
-	padding: 3px;
+.replymode {
+	background:#E04000;
+	text-align:center;
+	padding:2px;
+	color:#FFFFFF;
+	width:100%;
 }
-
-div.banner a {
-		/* WTF is this? */ 
-	color: #000000;
-}
-
-img.board_image
-{
-		/* this is the banner */
-	padding: 4px;		
-    border:solid 2px #ffffff ;
-	    filter: grayscale(100%); /* Current draft standard */
-    -webkit-filter: grayscale(100%); /* New WebKit */
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%); 
-    -o-filter: grayscale(100%); /* Not yet supported in Gecko, Opera or IE */ 
-    filter: url(resources.svg#desaturate); /* Gecko */
-    filter: gray; /* IE */
-    -webkit-filter: grayscale(1); /* Old WebKit */
-}
-
-
 .catalogmode {
-		/* it's the catalog */ 
-	background:#0000ff;
+	background:#0040E0;
 	text-align:center;
 	padding:2px;
 	color:#FFFFFF;
@@ -99,56 +51,32 @@ img.board_image
 }
 .postarea {
 }
-
 .rules {
-	margin-left: 1em;
-	/*text-indent: 0em;*/
-	
+	/*font-size:0.7em;*/
+	width: 468px;
+	font-size: 10px;
+	font-family: sans-serif;
 }
 .rules li {
 	margin-left: 1em;
 	/*text-indent: 0em;*/
 }
-
 .postblock {
-    /* boxes such as name email and comment next to new post text input boxes */ 
-	background:#0000ff;
-	color: #ffffff;
-    border:0px solid #ffffff;
-    font-size:10pt;
-    font-weight:bold;
-	padding: 1px;
-    font-family:courier;
+-moz-border-radius:30px; 
+padding-left: 5px ;
+padding-right: 5px ;
+border: 2px solid #c35197;
+	background:#e88da8;
+	color:#fde3e4;
+	font-weight:750;
 }
-
-.postform
-{
-	background: #0000ff;
-	color: #ffffff;
-    border:2px solid #ffffff;
-    font-size:10pt;
-    font-weight:bold;
-	padding: 1px;
-    font-family:courier;
-}
-
-.postbuttons {
-	/* WTF is this? */  
-}
-
-.unimportant, .unimportant * {
-	/* details about the a file posted, such as 294.84 KB, 666x950, 96874706_p0.jpg */  
-        font-family:courier;
-			font-size:10px;
-}
-
 .footer {
 	text-align:center;
-	font-size:15px;
+	font-size:12px;
 	font-family:serif;
 }
 .passvalid {
-	background:#0000ff;
+	background:#EEAA88;
 	text-align:center;
 	width:100%;
 	color:#ffffff;
@@ -163,21 +91,23 @@ img.board_image
 
 }
 .managehead {
-	background:#0000ff;
-	color:#ffffff;
+	background:#AAAA66;
+	color:#400000;
 	padding:0px;
 }
 .postlists {
-	background:#0000ff;
-	color:#ffffff;
+	background:#FFFFFF;
+	width:100%;
+	padding:0px;
+	color:#800000;
 }
 .row1 {
-	background:#0000ff;
-	color:#ffffff;
+	background:#EEEECC;
+	color:#800000;
 }
 .row2 {
-	background:#0000ff;
-	color:#ffffff;
+	background:#DDDDAA;
+	color:#800000;
 }
 .unkfunc {
 	background:inherit;
@@ -186,18 +116,18 @@ img.board_image
 .filesize {
 	text-decoration:none;
 }
-.intro span.subject {
-		/* This is where the subject of a post or thread goes */ 
-	background:#0000ff;
-	color:#ff0000;
+.filetitle {
+	background:inherit;
+	font-size:1.2em;
+	color:#661250;
+	font-weight:800;
 }
-.intro span.name {
-		/* This is a users name, typicaly Anonymous */ 
-	color:#ffffff !important;
-	font-weight: bold;
+.postername {
+	color:#bc50a0;
+	font-weight:bold;
 }
 .postertrip {
-	color:#338099 !important
+	color:#bc50a0;
 }
 .oldpost {
 	color:#CC1105;
@@ -206,35 +136,25 @@ img.board_image
 .omittedposts {
 	color:#707070;
 }
-div.post.reply {
-	/* This is the comment or reply box found in a thread responding to the OP */ 
-	background: #0000ff;
-	color: #ffffff;
-	border: 2px solid #ffffff;
-	width: 100% !important;
+.reply {
+-moz-border-radius:30px; 
+
+border: 2px solid #c35197; 
+	background: #e88da8;
+	color: #63269d;
 }
+.highlight {
+-moz-border-radius:30px; 
 
-
-div.post.reply.highlighted {
-		/* This is the comment or reply box WHEN HIGHLIGHTED */ 
-	background: #0000ff;
-	color: #ffffff;
-	border: 2px solid #ff0000;
-	width: 100% !important;
+border: 2px solid #cc5d97; 
+	background:#f9a4ad;
+	color:#84339a;
 }
-
-div.post.reply div.body a:link, div.post.reply div.body a:visited {
-	color: #69ddd9;
-}
-div.post.reply div.body a:link:hover, div.post.reply div.body a:visited:hover {
-	color: #0000ff;
-}
-
-
 .doubledash {
-	color:#E5E5E5;
-	padding-right: 3px;
-	vertical-align: top;
+        color:#5f16a7;
+	vertical-align:top;
+	clear:both;
+	float:left;
 }
 .replytitle {
 	font-size: 1.2em;
@@ -242,146 +162,75 @@ div.post.reply div.body a:link:hover, div.post.reply div.body a:visited:hover {
 	font-weight:800;
 }
 .commentpostername {
-			/* WTF is this? might be garbage */ 
-	color:#ff00ff;
+	color:#117743;
 	font-weight:800;
 }
 .thumbnailmsg {
 	font-size: small;
-	color:#0000ff;
+	color:#800000;
 }
 
 .abbrev {
 	color:#707070;
 }
-.highlight {
-background-color:#00ff00 !important;
-padding:3px !important;
 
-}
 
 #watchedthreads {
-	background-color: #0000ff !important;
-        border: 2px dotted #ffffff;
+	background-color: #F0E0D6 !important;
 }
 
 .reflinkpreview {
-	background-color: #0000ff !important;
+-moz-border-radius:30px; 
 
+        border: 2px solid #c35197 !important;
+	background-color: #8f3da6 !important;
 }
 
-input[type="text"], textarea, select {
-	/* text input boxes for making a new post */
-
-	background:#0000ff;
-	color:#ffffff;
-	font-weight:none;
-	padding:1px;
-	border: 2px solid #ffffff;
+#box{
+border-style:solid;
+border:solid;
+border:thin;
+border-color:#000066;
 }
+input.btn { 
+-moz-border-radius:30px; 
 
-input[type="button"] {
-/* noko sage and BB code buttons around post box * also try class="btn"  */
-	color:#ffffff; 
-    font-family:courier;
-	background-color:#0000ff; 
-	border: 0px solid; 
-	padding:4px;
+border: 2px solid #c35197;
+  color:#fde3e4; 
+  font: bold 70% 'trebuchet ms',helvetica,sans-serif; 
+  background-color:#d35d98; 
+  filter:progid:DXImageTransform.Microsoft.Gradient 
+  (GradientType=0,StartColorStr='#ffffffff',EndColorStr='#ffeeddaa'); 
+} 
 
-}
-
-input[type="submit" i]{
-/* submit button ONLY next to post box*/
-	color:#ffffff; 
-    font-family:courier;
-	background-color:#0000ff; 
-	border: 0px solid; 
-	padding:4px;
-
-}
-
-.boardinfo
-{
-font-weight:none;
-font-size: 10pt;
-color: #ffffff;
-text-align: left;
-padding:5px;
-}
 
 .hl
 {
 font-weight:bold;
 font-size:10pt;
-background-image:url(' ');
-background-color: #0000ff !important;
+background-image:url('http://www.tohno-chan.com/uploads/user/submenubgv2_ib4f.png');
+background-color: #9988EE !important;
 padding:5px;
-border: 2px solid #ffffff;  
-}
-
-/* Stats box on the front page. */
-.mainBox h2 {
-    background: #0000ff;
-    color: #ffffff;
-	border: 2px solid #ffffff;  
-}
-
-.tablesub
-{
-font-weight:none;
-color: #ffffff;
-border:2px solid #ffffff;
-background-color: #0000ff;
-padding:5px;
-}
-
-.tablesub:hover 
-{
-font-weight:none;
-background-image:url(' ');
-color:#0000ff;
-background-color: #D6DAF0 !important;
-font-size:10pt;
-padding:5px;
-border: 2px solid #ffffff; 
- 
-}
-
-
-.picslot
-{
-font-weight:none;
-background-image:url(' ');
-background-color: #0000ff;
-padding:4px;
 border: 1px solid #000000;  
-border-top: 1px solid #000000;
 }
 
 
-.picitself
-{
-img-position: center top !important;
-filter:alpha(opacity=60);
-opacity:0.9;
-max-width:200px;
-max-height:120px;
-display: block;
-margin-left: auto;
-margin-right: auto
-}
+
+
+
+
 
 .banner
 { 
-background: url(' '); 
+background: url('http://Tohno-chan.com/images/themes/Tohno/banbg.jpg'); 
 background-position:center;
-background-repeat:no-repeat !important;
-padding: 0 6px 7px 0;
+background-repeat:no-repeat;
+padding: 0 4px 21px 0;
 }
 
 .fpfooter
 {
-background: url(' ');  
+background: url('http://tohno-chan.com/uploads/user/frontcorner_ib4f.png');  
 background-position:left; 
 background-repeat:no-repeat !important;
 height:60px;
@@ -392,102 +241,87 @@ margin-bottom:-50px;
 
 }
 
-/* ///////////////////// staff page elements bellow here ////////////////////////// */
-
-
-/* rebuild page */ 
-div.ban h2 {
-    background: #0000ff;
-    color: #E5E5E5;
-    font-size: 12pt;
-	font-weight: bold;
-	border:2px solid #fffff;
-}
-
-form table tr th {
-/* bars on the top and side of the config editor page but also affects .postblock, use !important; on the post block so this doesn't effect that too */
-border:2px solid #ffffff;
-background-color: #0000ff!important;
-}
-
-table.mod.config-editor td {
-/* devider line on config editor page */
-    text-align: left;
-    padding: 5px;
-    border-bottom: 2px solid #ffffff;
-}
-
-
-table.modlog tr th {
-/*bar on top of the mod/users page that lists off staff */
-border:2px solid #ffffff;
-background-color: #0000ff!important;
-}
-
-th.sortable {  
-/*bar on top of the ban list page */
-border:2px solid #ffffff;
-background-color: #0000ff!important;
-}
 
  .tabletop
- /* on the front page, this will be the bar that says boardmap recent images and so on. */
 {
-border:2px solid #ffffff;
-font-weight:bold;
-background-color: #0000ff !important;
-color: #ffffff;
-padding:5px;
+       -moz-border-radius:30px; 
+
+        border: 2px solid #c35197; 
+	background: #ce5791;
+	color: #63269d;
+        font-weight:bold;
+        padding:5px;
+        margin:2px;
+
 }
  .tabletop2
 {
-    /* on the front page, this will be the bar that says recent posts. */  
-border:2px solid #ffffff;
-font-weight:bold;
-background-color: #0000ff !important;
-color: #ffffff;
-padding:5px;
-}
+       -moz-border-radius:30px; 
 
+        border: 2px solid #c35197; 
+	background: #ce5791;
+	color: #63269d;
+        font-weight:bold;
+        padding:5px;
+        margin:2px;
+
+}
 .tablesub
-    /* on the front page, this is where the boards are listed as well as the recent posts */  
 {
-border:2px solid #ffffff;
-font-weight:bold;
-background-color: #0000ff !important;
-padding:5px;
+-moz-border-radius:30px; 
+
+border: 2px solid #c35197; 
+	background: #e88da8;
+	color: #63269d;
+font-weight:none;
+  font-weight:none;
+  font-size:10pt;
+  padding:5px;
+        margin:2px;
+
 }
 
  .tablesub:hover 
-     /* This is the tablesub element when you hover over it whith your mouse. */  
 {
-border:2px solid #ffffff;
-font-weight:bold;
-background-color: #0000ff !important;
-color: #ffffff;
-padding:5px;
+        -moz-border-radius:30px; 
+        border: 2px solid #c35197; 
+	background: #ce5791;
+	color: #63269d;
+        font-weight:none;
+        font-size:10pt;
+        padding:5px;
+        margin:2px;
+-moz-box-shadow:     0px 0px  20px 5px    #d56699;
+-webkit-box-shadow:  0px 0px  20px 5px    #d56699;
+box-shadow:          0px 0px  20px 5px    #d56699;
 }
 
 .picslot
 {
-					/* space around recent image thumbnails on the front page */ 
-border:2px solid #ffffff;
+-moz-border-radius:30px; 
+        border: 2px solid #d56699; 
+	background: #e88da8;
+	color: #63269d;
 font-weight:none;
-background-color: #0000ff;
-padding:4px;
+
+padding:10px;
+        margin:2px;
+-moz-box-shadow:     0px 0px  20px 10px    #d56699;
+-webkit-box-shadow:  0px 0px  20px 10px    #d56699;
+box-shadow:          0px 0px  20px 10px    #d56699;
+
 }
 
 .picitself
-					/* this can be used for adding effects to the recent image thumbnail, such as making it transparent */ 
 {
-    filter: grayscale(100%); /* Current draft standard */
-    -webkit-filter: grayscale(100%); /* New WebKit */
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%); 
-    -o-filter: grayscale(100%); /* Not yet supported in Gecko, Opera or IE */ 
-    filter: url(resources.svg#desaturate); /* Gecko */
-    filter: gray; /* IE */
-    -webkit-filter: grayscale(1); /* Old WebKit */
+img-position: center top !important;
+filter:alpha(opacity=60);
+opacity:0.9;
+max-width:200px;
+max-height:113px;
+display: block;
+ margin-left: auto;
+margin-right: auto;
 }
 
 .reply blockquote, blockquote
@@ -499,35 +333,41 @@ padding-bottom:10px;
 
 .NewsMenuCurrent
 {
-						/* currently selected tab on the front page, which doesn't work with main for some reason */ 
-	background: #0000ff ;
-    border: 2px solid #ffffff;
-	border-bottom: 0px;
+-moz-border-radius:30px; 
+        border: 2px solid #c35197; 
+	background: #d56699;
+	color: #63269d;
 	padding-top: 3px; 
 	padding-bottom: 2px; 
 	padding-left: 10px; 
 	padding-right: 10px; 
+	cursor: hand;
+
 }	
 
 .NewsMenu
 {
-					/* tabs on the front page */ 
-	border: 2px solid #ffffff;  
-    border-bottom: 0px solid #ffffff;  
+        -moz-border-radius:30px; 
+        border: 2px solid #c35197; 
+	background: #e88da8;
+	color: #63269d; 
 	padding-top: 3px; 
 	padding-bottom: 2px; 
 	padding-left: 10px; 
-	padding-right: 10px; 
-	background-color: #0000ff ;	
+	padding-right: 10px; 	
+        background-image:url('');
+        cursor: hand;
+	cursor: pointer;
 }
 
 .NewsTitleStrip
 {
-				/* bar on the front page that says main */ 
-	background: #0000ff ;
-    border: 2px solid #ffffff;
+        -moz-border-radius:30px; 
+        border: 2px solid #c35197; 
+	background: #d56699;
+	color: #63269d;
 	font-weight: bold;
-	color: #ffffff;
+	color: #000000;
 	padding: 3px;
 	padding-left: 5px;
 	font-size: 80%;
@@ -535,53 +375,58 @@ padding-bottom:10px;
 
 .NewsContent
 {
-	color: #ffffff;
+	color: #000000;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-size: 10pt;
 }
 
-hr {
-			/* Divider line between posts */ 
-	border-top: 1px solid #ffffff;
-    color:#ffffff;	
-    height: 1px;
-	margin-top: 5px;
-	margin-bottom: 15px;
-	font-size: 0px; 
-}
-
-div.pages {
-		/* board pages box on the bottom of a board page which also has the catalog link */ 
-	color: #ffffff;
-	background: #0000ff;
-	border: #ffffff 0px solid;
-	font-family: sans-serif;
-	font-weight: bold;
-	font-size: 10pt;
-	border-radius: 5px;
-    box-shadow:         0px 0px 6px #e3e3e3;
-}
-div.pages a.selected {
-	color:#2ac5e3;
-}
 
 input
 { 
-		/* box with the choose file button and no file selected text */
-font-weight:bold;
-background:#0000ff; 
-padding:1px;
-border: 2px solid #ffffff; 
-color:#ffffff;
+-moz-border-radius:30px; 
+
+border: 2px solid #c35197;
+font-weight:none;
+background:#feebea url( ) repeat scroll left top; 
+padding:1px; 
+color:#5f16a7;
 }
 
 .comment
 { 
+-moz-border-radius:30px; 
 
+border: 2px solid #c35197;
 font-weight:none;
-background:#0000ff url( ) repeat scroll left top; 
+background:#feebea url( ) repeat scroll left top; 
 padding:1px;
-border: 2px solid #ffffff; 
-color:#E5E5E5;
+color:#5f16a7;
+}
+
+.PagingTable
+{
+-moz-border-radius:50px; 
+background: #d35d98;
+border: 2px solid #f2a3b2; 
+color:#702fad;
+}
+
+.Spacer{
+border-bottom: 1px solid;
+color:#5f16a7;	
+height: 1px;
+margin-top: 5px;
+margin-bottom: 15px;
+float: clear;
+font-size: 0px; 
+}
+hr{
+border-bottom: 1px solid;
+color:#5f16a7;	
+height: 1px;
+margin-top: 5px;
+margin-bottom: 15px;
+float: clear;
+font-size: 0px; 
 }

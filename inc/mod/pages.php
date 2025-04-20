@@ -2503,7 +2503,7 @@ function mod_config($board_config = false) {
 	if (!hasPermission($config['mod']['edit_config'], $board_config))
 		error($config['error']['noaccess']);
 	
-	$config_file = $board_config ? $board['dir'] . 'config.php' : 'inc/secrets.php';
+	$config_file = $board_config ? $board['dir'] . 'config.php' : 'inc/instance-config.php';
 	
 	if ($config['mod']['config_editor_php']) {
 		$readonly = !(is_file($config_file) ? is_writable($config_file) : is_writable(dirname($config_file)));
@@ -2941,35 +2941,86 @@ function mod_pages($board = false) {
 	mod_page(_('Pages'), $config['file_mod_pages'], array('pages' => $pages, 'token' => make_secure_link_token('edit_pages' . ($board ? ('/' . $board) : '')), 'board' => $board));
 }
 
-function mod_edit_spam() {
+function mod_spam_patterns() {
 	global $config;
 
-	// A mod who may view the ban list also has permission to access the spam
-	// editor.
+	// A mod who may view the ban list also has permission to access to view the
+	// spam pattern list.
 	if (!hasPermission($config['mod']['view_banlist']))
 		error($config['error']['noaccess']);
+	
+	$repo = $config['spam']['pattern']['repo']();
+	$entries = $repo->get(0, null);
 
-	$entries = [ 'Foo', 'Bar', 'Foobar' ];
+	mod_page(_('Spam patterns'), $config['file_mod_spam_patterns'], [
+		'headers' => ['Select', 'Type', 'Pattern'],
+		'entries' => $entries,
+		'token' => make_secure_link_token('spam/patterns/add')
+	]);
+}
 
-	/*$f = fopen($config['spam']['file'], 'rb');
+function mod_spam_patterns_add() {
+	global $config;
 
-	if ($f !== false) {
-		if (flock($f, LOCK_SH)) {
-			while (!feof($f)) {
-				$entry = trim(fgets($f));
-				if ($entry !== false && strlen($entry) > 0) {
-					array_push($entries, $entry);
-				}
-			}
+	// A mod who may apply a ban also has permission to add a spam pattern to the
+	// list.
+	if (!hasPermission($config['mod']['ban']))
+		error($config['error']['noaccess']);
+
+	$phrase = trim($_POST['pattern'] ?? '');
+
+	if (strlen($phrase) === 0)
+		error('No valid pattern');
+
+	$repo = $config['spam']['pattern']['repo']();
+
+	try {
+		$repo->add(Himedere\Spam\SpamPatternType::Literal, $phrase);
+	}
+
+	catch (\Exception $e) {
+		error($e->getMessage());
+	}
+
+	header('Location: ?/spam/patterns', true, $config['redirect_http']);
+}
+
+function mod_spam_patterns_delete() {
+	global $config;
+
+	// A mod who may apply a ban also has permission to delete a spam phrase from
+	// the list.
+	if (!hasPermission($config['mod']['ban']))
+		error($config['error']['noaccess']);
+
+	/*if ($pos < 0)
+		error('Invalid phrase identifier');
+
+	$f = fopen($config['spam']['file'], 'rb');
+	$tmp = tempnam(dirname($config['spam']['file']), "spam");
+
+	if ($f !== false && flock($f, LOCK_SH)) {
+		$f2 = fopen($tmp, 'wb');
+
+		if ($f2 !== false && flock($f, LOCK_EX)) {
+			while (ftell($f) < $pos)
+				fwrite($f2, fgets($f));			
+
+			// Ignore the line to delete
+			fgets($f);
+
+			while (!feof($f))
+				fwrite($f2, fgets($f));
+
+			fclose($f2);
 		}
 
 		fclose($f);
-	}*/
+	}
 
-	$headers = ['#', 'Phrase'];
+	rename($tmp, $config['spam']['file']);*/
 
-	mod_page(_('Spam Editor'), $config['file_mod_edit_spam'],
-		[ 'headers' => $headers, 'entries' => $entries ]);
+	header('Location: ?/spam/patterns', true, $config['redirect_http']);
 }
 
 function mod_spam_log() {

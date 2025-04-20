@@ -80,7 +80,7 @@
 			<li><a href="?/recent/25">{% trans 'Recent posts' %}</a></li>
 		{% endif %}
 		{% if mod|hasPermission(config.mod.view_banlist) %}
-			<li><a href="?/edit_spam">{% trans 'Spam editor' %}</a></li>
+			<li><a href="?/spam/patterns">{% trans 'Spam patterns' %}</a></li>
 		{% endif %}
 		{% if mod|hasPermission(config.mod.view_banlist) %}
 			<li><a href="?/spam_log">{% trans 'Spam log' %}</a></li>

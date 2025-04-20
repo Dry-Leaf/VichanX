@@ -304,22 +304,6 @@
 		'tag'
 	);
 
-	// Path to the spam file. Please  make sure the path to the file exists,
-	// although the file itself doesn't need to be, and that its properly
-	// protected so that clients can't access it.
-	$config['spam']['file'] = 'spam.txt';
-
-	// Whether to log posts caught using the spam file.
-	$config['spam']['log']['enabled'] = true;
-
-	// Path to the spam log file. Please make sure the path to the file exists,
-	// although the file itself doesn't need to be, and that its properly
-	// protected so that clients can't access it.
-	$config['spam']['log']['file'] = 'spam.log';
-
-	// The size (in bytes) a spam log can become.
-	$config['spam']['log']['max_size'] = 4096;
-
 	// Enable reCaptcha to make spam even harder. Rarely necessary.
 	$config['recaptcha'] = false;
 
@@ -485,65 +469,6 @@
 	// Set to -1 to disable.
 	// $config['flood_cache'] = 60 * 60 * 24; // 24 hours
 	$config['flood_cache'] = -1;
-
-	// A filter that checks posts' bodies against known spam phrases in a file.
-	// Each line in the file is interpreted as a spam phrase. Empty lines are
-	// ignored.
-	// 
-	// Note: This filter's logic intermixes various concerns that would be better
-	// refactored out.
-	$config['filters'][] = array(
-		'condition' => array(
-			'custom' => function($p) use ($config) {
-				$matched = false;
-				$f = fopen($config['spam']['file'], 'rb');
-
-				while (!feof($f)) {
-					$l = trim(fgets($f));
-
-					// Use strlen to ignore empty lines.
-					// strpos only performs literal checks. Regular expressions or fuzzy
-					// search would be better but more costly methods.
-					if (strlen($l) > 0 && strpos($p['body'], $l) !== false) {
-						if ($config['spam']['log']['enabled']) {
-							// Overwrite and start anew if the log file is
-							// greater than the maximum allowable size. Otherwise
-							// just append to it.
-							$mode =
-								(file_exists($config['spam']['log']['file'])
-									&& filesize($config['spam']['log']['file'])
-										> $config['spam']['log']['max_size'])
-								? 'wb' : 'ab';
-
-							// Format: timestamp|board|thread #|spam phrase|post
-							$entry = implode('|', [
-								date('m/d/y H:i:s', time()),
-								$p['board'],
-								$p['thread'],
-								'"' . addcslashes($l, '"') . '"',
-								'"' . addcslashes($p['body'], '"') . '"'
-							]);
-
-							$log_file = fopen($config['spam']['log']['file'], $mode);
-							if (flock($log_file, LOCK_EX)) {
-								fwrite($log_file, "{$entry}\n");
-							}
-							fclose($log_file);
-						}
-
-						$matched = true;
-						break;
-					}
-				}
-
-				fclose($f);
-
-				return $matched;
-			}
-		),
-		'action' => 'reject',
-		'message' => 'Your post is considered to be spam.'
-	);
 	
 	// Filter flood prevention conditions ("flood-match") depend on a table which contains a cache of recent
 	// posts across all boards. This table is automatically purged of older posts, determining the maximum
@@ -659,7 +584,6 @@
 	// $config['custom_tripcode']['#test123'] = '!HelloWorld';
 	// Example: Custom secure tripcode.
 	// $config['custom_tripcode']['##securetrip'] = '!!somethingelse';
-	$config['custom_tripcode']['#buttplug'] = '<font color="red"> ## Admin ##</font>';
 
 
 	// Allow users to mark their image as a "spoiler" when posting. The thumbnail will be replaced with a

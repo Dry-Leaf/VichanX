@@ -66,3 +66,191 @@ table.modlog tr th {
 .desktop-style div.boardlist:nth-child(1) {
 	background-color: #F0E0D6;
 }
+
+
+
+
+.tablesub
+{
+font-weight:none;
+background-image:url('http://www.tohno-chan.com/uploads/user/submenubgv2_ib4f.png');
+background-color: #D6DAF0 !important;
+font-size:10pt;
+padding:5px;
+border: 1px solid #000000; 
+border-top: 1px solid #000000; 
+border-left: 1px solid #000000;
+}
+
+.tablesub:hover 
+{
+font-weight:none;
+background-image:url('http://www.tohno-chan.com/uploads/user/tablesubBGHOVER_ib4f.png');
+color:#0000ff;
+background-color: #D6DAF0 !important;
+font-size:10pt;
+padding:5px;
+border: 1px solid #000000; 
+border-top: 1px solid #000000; 
+border-left: 1px solid #000000; 
+}
+
+
+.picslot
+{
+font-weight:none;
+background-image:url('http://www.tohno-chan.com/uploads/user/picslotBG_ib4f.png');
+background-color: #D6DAF0 !important;
+padding:4px;
+border: 1px solid #000000;  
+border-top: 1px solid #000000;
+}
+
+
+.picitself
+{
+img-position: center top !important;
+filter:alpha(opacity=60);
+opacity:0.9;
+max-width:200px;
+max-height:120px;
+display: block;
+margin-left: auto;
+margin-right: auto
+}
+
+.banner
+{ 
+background: url('http://tohno-chan.com/uploads/user/bannerBGv2_0_ib4f.png'); 
+background-position:center;
+background-repeat:no-repeat !important;
+padding: 0 6px 7px 0;
+}
+
+.fpfooter
+{
+background: url('http://tohno-chan.com/uploads/user/frontcorner_ib4f.png');  
+background-position:left; 
+background-repeat:no-repeat !important;
+height:60px;
+top:30px;
+padding-top:50px;
+padding-bottom:-60px; 
+margin-bottom:-50px;
+
+}
+
+
+.tabletop, .mainBox h2
+{
+border:0px solid #000000;
+background-color:#EEAA88;
+font-weight:bold;
+padding:5px;
+color: #800000;
+}
+ .tabletop2
+{
+border:0px solid #000000;
+background-color:#EEAA88;
+font-weight:bold;
+padding:5px;
+color: #800000;
+}
+.tablesub, .mainBox
+{
+border:0px solid #000000;
+font-weight:none;
+background-color: #FFDDBB !important;
+  color:#800000;
+  font-weight:none;
+  font-size:10pt;
+  padding:5px;
+}
+
+ .tablesub:hover 
+{
+border:0px solid #000000;
+background-color:#FFCCAA !important;
+background:#FFCCAA none repeat scroll 0;
+color:#800000;
+font-weight:none;
+font-size:10pt;
+padding:5px;
+}
+
+.picslot
+{
+border:0px solid #000000;
+	background:#FFDDBB !important;
+font-weight:none;
+
+padding:4px;
+}
+
+.picitself
+{
+img-position: center top !important;
+filter:alpha(opacity=60);
+opacity:0.9;
+max-width:200px;
+max-height:113px;
+display: block;
+ margin-left: auto;
+margin-right: auto;
+}
+
+.reply blockquote, blockquote
+{
+margin-bottom:0;
+padding-bottom:10px;
+}
+
+
+.NewsMenuCurrent
+{
+	background: #FFCCAA;
+    color: #800000;
+        border: 0px solid #000000;
+	border-bottom: 0px;
+	padding-top: 3px; 
+	padding-bottom: 2px; 
+	padding-left: 10px; 
+	padding-right: 10px; 
+	cursor: hand;
+	cursor: pointer;
+}	
+
+.NewsMenu
+{
+	border: 0px solid #000000;  
+	padding-top: 3px; 
+	padding-bottom: 2px; 
+	padding-left: 10px; 
+	padding-right: 10px; 
+	background-color: #FFDDBB;	
+        background-image:url('');
+        cursor: hand;
+    color: #800000;
+}
+
+.NewsTitleStrip
+{
+	background: #FFCCAA;
+        background-image:url('');
+        border: 0px solid #000000;
+	font-weight: bold;
+    color: #800000;
+	padding: 3px;
+	padding-left: 5px;
+	font-size: 80%;
+}
+
+.NewsContent
+{
+color: #800000;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 10pt;
+}
+

@@ -88,7 +88,7 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 
 \t<table cellspacing=\"0px\" cellpadding=\"0px\">
 \t\t<tr>
-\t\t\t<td class=\"NewsMenu\" onclick=\"ChangeTab(0);\" id=\"TabMenu0\" >
+\t\t\t<td class=\"NewsMenuCurrent\" onclick=\"ChangeTab(0);\" id=\"TabMenu0\" >
 \t\t\t\tMain
 \t\t\t</td>
 \t\t\t<td class=\"NewsMenu\" onclick=\"ChangeTab(1);\" id=\"TabMenu1\" >
@@ -146,6 +146,13 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 <td width=\"33%\" class=\"tablesub\"><div class=\"boards\"><center><a href=\"/vn/\" TARGET=\"_top\">/vn/ - Visual Novels</a></center></div></td>
 </tr>
 
+</tr>
+<tr>
+<td width=\"33%\" class=\"tablesub\"><div class=\"boards\"><center><a href=\"/kf/\" TARGET=\"_top\">/kf/ - Kemono Friends</a></center></div></td>
+<td width=\"33%\" class=\"tablesub\"><div class=\"boards\"><center><a href=\" \" TARGET=\"_top\"> </a></center></div></td>
+<td width=\"33%\" class=\"tablesub\"><div class=\"boards\"><center><a href=\"/moba/\" TARGET=\"_top\">/moba/ - Mobile Games</a></center></div></td>
+</tr>
+
 <tr>
 <th class=\"tabletop\" colspan=\"3\">Hobbies/Interests</th>
 </tr>
@@ -173,11 +180,11 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 <tr>
 <td width=\"33%\" class=\"tablesub\"><div class=\"boards\"><center><a href=\"/irc/\" TARGET=\"_top\">/irc/ - IRC</a></center></div></td>
 <td width=\"33%\" class=\"tablesub\"><div class=\"boards\"><center><a href=\"/ddl/\" TARGET=\"_top\">/ddl/ - Data</a></center></div></td>
-<td width=\"33%\" class=\"tablesub\"><div class=\"boards\"><center><a href=\"/arc/\" TARGET=\"_top\">/arc/ - Archive</a></center></div></td>
+<td width=\"33%\" class=\"tablesub\"><div class=\"boards\"><center><a href=\"/arc/\" TARGET=\"_top\">/arc/ - Archive (WIP)</a></center></div></td>
 </tr>
 <tr>
 <td width=\"33%\" class=\"tablesub\"><div class=\"boards\"><center><a href=\"/ns/\" TARGET=\"_top\">/ns/ - Hentai</a></center></div></td>
-<td width=\"33%\" class=\"tablesub\"><div class=\"boards\"><center><a href=\"/kf\" TARGET=\"_top\"> /kf/ - Kemono Friends</a></center></div></td>
+<td width=\"33%\" class=\"tablesub\"><div class=\"boards\"><center><a href=\" \" TARGET=\"_top\"></a></center></div></td>
 <td width=\"33%\" class=\"tablesub\"><div class=\"boards\"><center><a href=\"/pic/\" TARGET=\"_top\">/pic/ - Dump</a></center></div></td>
 </tr>
 <tr>
@@ -207,24 +214,24 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 </tr>
 
 ";
-        // line 164
+        // line 171
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["recent_posts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 165
+            // line 172
             echo "<tr> <td div style=\" border: 0px solid #000000;  padding-top : 1px;border-top: 0px solid #000000;\"> <div class=\"tablesub\"><div class=\"replysub\"\ttitle=\"";
             echo strip_tags($this->getAttribute($context["post"], "body", []));
             echo "\">
 \t";
-            // line 166
+            // line 173
             echo $this->getAttribute($context["post"], "board_name", []);
             echo ": 
 \t<a href=\"";
-            // line 167
+            // line 174
             echo $this->getAttribute($context["post"], "link", []);
             echo "\">
 \t";
-            // line 168
+            // line 175
             echo $this->getAttribute($context["post"], "snippet", []);
             echo "
 \t";
@@ -232,7 +239,7 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 169
+        // line 176
         echo "</a></div></td></tr>
 
 </table></td>
@@ -243,18 +250,18 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 
 
 \t";
-        // line 178
+        // line 185
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["recent_images"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 179
+            // line 186
             echo "\t<tr>
     <td div style=\" border: 0px solid #000000; padding: 0px; border-top: 0px solid #000000;\"> <div class=\"picslot\"> <div class=\"picitself\"> <center> <a href=\"";
-            // line 180
+            // line 187
             echo $this->getAttribute($context["post"], "link", []);
             echo "\"> </div>
 \t<img src=\"";
-            // line 181
+            // line 188
             echo $this->getAttribute($context["post"], "src", []);
             echo "\"  border=\"0\" /  div class=\"picitself\">
 \t\t\t\t";
@@ -262,7 +269,7 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 182
+        // line 189
         echo " </a></td></div>
 
 </tr></table>
@@ -292,35 +299,35 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
 <div id=\"Tab1\" style=\"display: none;\">
 
 \t\t";
-        // line 210
+        // line 217
         if ((twig_length_filter($this->env, ($context["news"] ?? null)) == 0)) {
-            // line 211
+            // line 218
             echo "\t\t\t<p style=\"text-align:center\" class=\"unimportant\">(No news to show.)</p>
 \t\t";
         } else {
-            // line 213
+            // line 220
             echo "\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["news"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["entry"]) {
-                // line 214
+                // line 221
                 echo "\t\t\t\t<div class=\"NewsTitleStrip\"><h2 id=\"";
                 echo $this->getAttribute($context["entry"], "id", []);
                 echo "\">
 \t\t\t\t\t";
-                // line 215
+                // line 222
                 if ($this->getAttribute($context["entry"], "subject", [])) {
-                    // line 216
+                    // line 223
                     echo "\t\t\t\t\t\t";
                     echo $this->getAttribute($context["entry"], "subject", []);
                     echo "
 \t\t\t\t\t";
                 } else {
-                    // line 218
+                    // line 225
                     echo "\t\t\t\t\t\t<em>no subject</em>
 \t\t\t\t\t";
                 }
-                // line 220
+                // line 227
                 echo "\t\t\t\t\t<span class=\"unimportant\"> &mdash; by ";
                 echo $this->getAttribute($context["entry"], "name", []);
                 echo " at ";
@@ -328,7 +335,7 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
                 echo "</span>
 \t\t\t\t</h2></div>
 \t\t\t\t<div class=\"NewsContent\"><p>";
-                // line 222
+                // line 229
                 echo $this->getAttribute($context["entry"], "body", []);
                 echo "</p></div>
 \t\t\t";
@@ -336,13 +343,11 @@ class __TwigTemplate_124012a130cac1aac0d44f38445eaa559c63dc2d4d907ba294098c0f10b
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entry'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 224
+            // line 231
             echo "\t\t";
         }
-        // line 225
+        // line 232
         echo "
-<div class=\"NewsTitleStrip\"> news subject </div>
-<div class=\"NewsContent\"> news content </div>
 
 </div>
 
@@ -799,15 +804,15 @@ We're very interested in what you think of the site and what you think might mak
 \t\t\t<h2>Stats</h2>
 \t\t\t<ul>
 \t\t\t\t<li>Total posts: ";
-        // line 683
+        // line 688
         echo $this->getAttribute(($context["stats"] ?? null), "total_posts", []);
         echo "</li>
 \t\t\t\t<li>Unique posters: ";
-        // line 684
+        // line 689
         echo $this->getAttribute(($context["stats"] ?? null), "unique_posters", []);
         echo "</li>
 \t\t\t\t<li>Active content: ";
-        // line 685
+        // line 690
         echo format_bytes($this->getAttribute(($context["stats"] ?? null), "active_content", []));
         echo "</li>
 \t\t\t</ul>
@@ -817,9 +822,9 @@ We're very interested in what you think of the site and what you think might mak
 \t<hr/>
 
 \t";
-        // line 692
-        $this->loadTemplate("footer.html", "themes/tohnochan/index.html", 692)->display($context);
-        // line 693
+        // line 697
+        $this->loadTemplate("footer.html", "themes/tohnochan/index.html", 697)->display($context);
+        // line 698
         echo "<script type=\"text/javascript\">
 \tinit_stylechooser();
 \treadyStyleSelector();
@@ -842,7 +847,7 @@ We're very interested in what you think of the site and what you think might mak
 
     public function getDebugInfo()
     {
-        return array (  823 => 693,  821 => 692,  811 => 685,  807 => 684,  803 => 683,  343 => 225,  340 => 224,  332 => 222,  324 => 220,  320 => 218,  314 => 216,  312 => 215,  307 => 214,  302 => 213,  298 => 211,  296 => 210,  266 => 182,  258 => 181,  254 => 180,  251 => 179,  247 => 178,  236 => 169,  228 => 168,  224 => 167,  220 => 166,  215 => 165,  211 => 164,  53 => 8,  50 => 7,  44 => 6,  39 => 5,  35 => 4,  30 => 1,);
+        return array (  828 => 698,  826 => 697,  816 => 690,  812 => 689,  808 => 688,  350 => 232,  347 => 231,  339 => 229,  331 => 227,  327 => 225,  321 => 223,  319 => 222,  314 => 221,  309 => 220,  305 => 218,  303 => 217,  273 => 189,  265 => 188,  261 => 187,  258 => 186,  254 => 185,  243 => 176,  235 => 175,  231 => 174,  227 => 173,  222 => 172,  218 => 171,  53 => 8,  50 => 7,  44 => 6,  39 => 5,  35 => 4,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

@@ -43,7 +43,7 @@
 
 	<table cellspacing="0px" cellpadding="0px">
 		<tr>
-			<td class="NewsMenu" onclick="ChangeTab(0);" id="TabMenu0" >
+			<td class="NewsMenuCurrent" onclick="ChangeTab(0);" id="TabMenu0" >
 				Main
 			</td>
 			<td class="NewsMenu" onclick="ChangeTab(1);" id="TabMenu1" >
@@ -101,6 +101,13 @@
 <td width="33%" class="tablesub"><div class="boards"><center><a href="/vn/" TARGET="_top">/vn/ - Visual Novels</a></center></div></td>
 </tr>
 
+</tr>
+<tr>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="/kf/" TARGET="_top">/kf/ - Kemono Friends</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href=" " TARGET="_top"> </a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="/moba/" TARGET="_top">/moba/ - Mobile Games</a></center></div></td>
+</tr>
+
 <tr>
 <th class="tabletop" colspan="3">Hobbies/Interests</th>
 </tr>
@@ -128,11 +135,11 @@
 <tr>
 <td width="33%" class="tablesub"><div class="boards"><center><a href="/irc/" TARGET="_top">/irc/ - IRC</a></center></div></td>
 <td width="33%" class="tablesub"><div class="boards"><center><a href="/ddl/" TARGET="_top">/ddl/ - Data</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/arc/" TARGET="_top">/arc/ - Archive</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="/arc/" TARGET="_top">/arc/ - Archive (WIP)</a></center></div></td>
 </tr>
 <tr>
 <td width="33%" class="tablesub"><div class="boards"><center><a href="/ns/" TARGET="_top">/ns/ - Hentai</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/kf" TARGET="_top"> /kf/ - Kemono Friends</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href=" " TARGET="_top"></a></center></div></td>
 <td width="33%" class="tablesub"><div class="boards"><center><a href="/pic/" TARGET="_top">/pic/ - Dump</a></center></div></td>
 </tr>
 <tr>
@@ -223,8 +230,6 @@ $results = $tc_db->
 			{% endfor %}
 		{% endif %}
 
-<div class="NewsTitleStrip"> news subject </div>
-<div class="NewsContent"> news content </div>
 
 </div>
 
