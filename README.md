@@ -8,3 +8,4 @@ To-Do:
 * Auto-update threads
 * Allow users to select from which boards recent posts are visible on the front page.
 * Kakusu (allows users to hide threads and posts)
+* ShiftJIS art support with Saitamaar font
