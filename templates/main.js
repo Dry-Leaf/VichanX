@@ -271,7 +271,7 @@ function dopost(form) {
 function citeReply(id, with_link) {
 	var textarea = document.getElementById('body');
 
-	if (!textarea) return false;
+	if (!id || !textarea) return false;
 	
 	if (document.selection) {
 		// IE
