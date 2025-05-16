@@ -1368,3 +1368,18 @@ padding: 3px;
 	padding-bottom: 10px;
 	font-size: 10pt;
 }
+
+/* Post editing style */
+.edit_history {
+	font-size: smaller;
+	margin-top: 10px;
+}
+
+.edit_history > details {
+	margin-left: 1.05em;
+}
+
+summary {
+	cursor: pointer;
+}
+/* */

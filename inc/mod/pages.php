@@ -2950,16 +2950,15 @@ function mod_spam_patterns() {
 		error($config['error']['noaccess']);
 	
 	$repo = $config['spam']['pattern']['repo']();
-	$entries = $repo->get(0, null);
+	$entries = $repo->get(0, 10);
 
 	mod_page(_('Spam patterns'), $config['file_mod_spam_patterns'], [
-		'headers' => ['Select', 'Type', 'Pattern'],
 		'entries' => $entries,
 		'token' => make_secure_link_token('spam/patterns/add')
 	]);
 }
 
-function mod_spam_patterns_add() {
+function mod_spam_patterns_new() {
 	global $config;
 
 	// A mod who may apply a ban also has permission to add a spam pattern to the
@@ -2967,22 +2966,59 @@ function mod_spam_patterns_add() {
 	if (!hasPermission($config['mod']['ban']))
 		error($config['error']['noaccess']);
 
-	$phrase = trim($_POST['pattern'] ?? '');
+	switch ($_SERVER['REQUEST_METHOD'])
+	{
+		case 'GET':
+			mod_page(_('New spam pattern'), $config['file_mod_spam_patterns_new'], [
+				'token' => make_secure_link_token("spam/patterns/new"),
+				'pattern_types' => array_map(
+					fn ($case) => $case->name,
+					(new \ReflectionEnum(Himedere\SpamPatternType::class))->getCases()
+				),
+				'pattern_scopes' => array_map(
+					fn ($case) => $case->name,
+					(new \ReflectionEnum(Himedere\SpamPatternScope::class))->getCases()
+				)
+			]);
 
-	if (strlen($phrase) === 0)
-		error('No valid pattern');
+			break;
 
-	$repo = $config['spam']['pattern']['repo']();
+		case 'POST':
+			try {
+				$types = array_map(
+					[Himedere\SpamPatternType::class, 'fromString'],
+					$_POST['type'] ?? []
+				);
 
-	try {
-		$repo->add(Himedere\Spam\SpamPatternType::Literal, $phrase);
+				$patterns = array_map(
+					function($p) {
+						$p_ = trim($p);
+						return strlen($p_) > 0
+							? $p_ : throw new \RuntimeException('A \'pattern\' must not be empty');
+					},
+					$_POST['pattern'] ?? []
+				);
+
+				if (count($types) !== count($patterns))
+					throw new \RuntimeException('Each \'type\' must be paired with a \'pattern\' and vice versa');
+
+				if (count($types) === 0)
+					throw new \RuntimeException('Nothing was submitted');
+
+				//$repo = $config['spam']['pattern']['repo']();
+				//$repo->add(Himedere\SpamPatternType::Literal, $pattern);
+			}
+
+			catch (\RuntimeException $e) {
+				error($e->getMessage());
+			}
+
+			header('Location: ?/spam/patterns', true, $config['redirect_http']);
+			break;
+
+		default:
+			http_response_code(405);
 	}
-
-	catch (\Exception $e) {
-		error($e->getMessage());
-	}
-
-	header('Location: ?/spam/patterns', true, $config['redirect_http']);
 }
 
 function mod_spam_patterns_delete() {

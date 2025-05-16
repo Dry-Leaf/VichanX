@@ -57,7 +57,7 @@ $pages = array(
 
 	'/spam_log'						  => 'spam_log',
 	'/spam/patterns'			  => 'spam_patterns',
-	'/spam/patterns/add'	  => 'secure_POST spam_patterns_add',
+	'/spam/patterns/new'	  => 'secure_POST spam_patterns_new',
 	'/spam/patterns/delete' => 'secure_POST spam_patterns_delete',
 
 	'/reports'				=> 'reports',			// report queue

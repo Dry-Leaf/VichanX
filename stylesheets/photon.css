@@ -93,7 +93,7 @@ textarea#body{
 
 
 html, body {
-	background: none;
+		background-color: transparent;
 	background-color: #EEEEEE;
 	color: #333333;
 	font-family: "Trebuchet MS",Trebuchet,serif;
@@ -113,7 +113,7 @@ a:hover {
 .adminbar a {
 	font-weight: bold;
 }
-.logo {
+.header div.boardname,h1  {
         clear:both;
         text-align:left;
         font-size:2em;
@@ -188,17 +188,17 @@ a:hover {
 	color: #666666;
 	font-size: .8em;
 }
-.filetitle {
+.intro span.subject {
 	background:inherit;
 	font-size:1.2em;
 	color:#002244;
 	font-weight:bold;
 }
-.postername {
+.intro span.name {
 	color:#004A99;
 	font-weight:bold;
 }
-.postertrip {
+span.trip {
 	color:#FF3300;
 }
 .oldpost {
@@ -208,7 +208,7 @@ a:hover {
 .omittedposts {
         color:#666666;
 }
-.reply {
+div.post.reply{
 	background:#DDDDDD;
 	border: solid 1px #CCCCCC;
 	padding: 0;
@@ -222,7 +222,7 @@ blockquote p {
 	margin: 0;
 	padding: 0;
 }
-.reply blockquote {
+div.post.replyblockquote {
 	margin: .5em;
 }
 .doubledash {
@@ -264,7 +264,7 @@ table td {
 .abbrev {
         color:#666666;
 }
-.highlight {
+div.post.replydiv.post.replydiv.post.replydiv.post.replydiv.post.replydiv.post.replydiv.post.replydiv.post.replydiv.post.replydiv.post.reply.highlightedededededededededed {
 	background:#EEDACB;
 	color:#333333;
 	border: 2px dashed #EE6600;
@@ -278,10 +278,10 @@ div.banner {
     background-color: inherit;
 }
 form table tr th {
-    background: none;
+    	background-color: transparent;
 }
 
-div.post.reply {
+div.postdiv.post.reply{
     background: none repeat scroll 0 0 #DDDDDD;
     border: 1px solid #CCCCCC;
     border-radius: 5px 5px 5px 5px;

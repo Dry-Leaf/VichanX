@@ -1,21 +1,23 @@
 body {
         background-image:url('https://tohno-chan.org/stylesheets/img/psp/pspbg.jpg') !important; 
+		 background-repeat: repeat;
         background-position: right top !important;
         background-attachment:fixed !important;
         background-color: #44a7d6;
 	    color:#ffffff;
-		        text-shadow:         0px 0px 6px #e3e3e3;
+		text-shadow:         3px 3px 4px #00000080;
         font-family:calibri;
+		background-size: cover;
 
 }
 a:link, a:visited, .intro a.email span.name {
-	color:#ffffff;
-    text-shadow: 0px 0px 4px #0b458a;
+	color:#5ae4ff;
+		text-shadow:         3px 3px 4px #00000080;
     font-weight: bold;
 }
 a:hover {
-	color:#2ac5e3;
-    text-shadow: 0px 0px 4px #0b458a;
+	color:#ffffff;
+	text-shadow: 0px 0px 4px #ffffff80;
     font-weight: bold;
 }
 .reflink{
@@ -25,9 +27,9 @@ a:hover {
 }
 .reflink a:hover{
 	/* WTF is this? */
-	font-weight: bold;
-	color:#000000 !important;
-	text-decoration: underline;
+	color:#ffffff;
+	text-shadow: 0px 0px 4px #ffffff80;
+    font-weight: bold;
 }
 .adminbar {
 	/* WTF is this? */   
@@ -44,7 +46,8 @@ header div.boardname,h1 {
 	color:#ffffff;
 	width:100%;
     font-weight: bold;
-    text-shadow:         0px 0px 6px #e3e3e3;
+				text-shadow:         0px 0px 3px #ffffff80;
+
  }
  
 header div.subtitle {
@@ -52,8 +55,12 @@ header div.subtitle {
     color: #E5E5E5;
     font-size:15px;
 	padding-bottom: 30px;
+		text-shadow:         3px 3px 4px #00000080;
 }
-
+.boardbanner
+ {
+	/*It's the board banner...*/
+}
 
 div.banner {
 		/* posting mode bar at the top of the page */ 
@@ -167,17 +174,23 @@ border:solid 0px #000000 ;
 }
 .intro span.subject {
 		/* This is where the subject of a post or thread goes */ 
-	color: #000000;
+	color: #aaa;
 	font-weight: bold;
-	text-shadow:    0px 0px 6px #000000;
+	text-shadow:    0px 0px 5px #aaa;
 }
 .intro span.name {
 		/* This is a users name, typicaly Anonymous */ 
 	color:#ffffff !important;
 	font-weight: bold;
 }
-.postertrip {
-	color:#338099 !important
+
+.intro a.email span.name {
+		color:#5ae4ff;
+}
+
+
+span.trip {
+	color:#ffffff;
 }
 .oldpost {
 	color:#CC1105;
@@ -210,9 +223,15 @@ div.post.reply div.body a:link, div.post.reply div.body a:visited {
 	color: #69ddd9;
 }
 div.post.reply div.body a:link:hover, div.post.reply div.body a:visited:hover {
-	color: #000000;
+	color:#ffffff;
+	text-shadow: 0px 0px 4px #ffffff80;
+    font-weight: bold;
 }
 
+span.quote {
+	color: #8de481;
+text-shadow: 3px 3px 4px #00000080;
+}
 
 .doubledash {
 	color:#E5E5E5;
@@ -433,6 +452,7 @@ color: #0a4283;
 border:0px solid #000000;
 background-color: #e3e3e3!important;
 padding:5px;
+	border-radius: 5px;
 }
  .tabletop2
 {
@@ -442,27 +462,30 @@ color: #0a4283;
 border:0px solid #000000;
 background-color: #e3e3e3;
 padding:5px;
+	border-radius: 5px;
 }
 
 .tablesub
     /* on the front page, this is where the boards are listed as well as the recent posts */  
 {
 font-weight:none;
-color: #E5E5E5;
+color: #ffffff;
 border:0px solid #000000;
 background-color: #91aedc!important;
 padding:5px;
+	border-radius: 5px;
 }
 
  .tablesub:hover 
      /* This is the tablesub element when you hover over it whith your mouse. */  
 {
 border:0px solid #000000;
-background-color:#4697cc;
-color:#E5E5E5;
+background-color: #91aedc!important;
+color:#ffffff;
 font-weight:none;
 font-size:10pt;
 padding:5px;
+	border-radius: 5px;
 }
 
 .picslot
@@ -473,6 +496,7 @@ color: #0a4283;
 border:0px solid #000000;
 background-color: #e3e3e3;
 padding:5px;
+	border-radius: 5px;
 }
 
 .picitself
@@ -503,6 +527,11 @@ color: #0a4283;
 border:0px solid #000000;
 background-color: #e3e3e3;
 padding:5px;
+	border-radius: 5px;
+		padding-top: 3px; 
+	padding-bottom: 2px; 
+	padding-left: 10px; 
+	padding-right: 10px; 
 }	
 
 .NewsMenu
@@ -519,6 +548,8 @@ padding:5px;
         repeat scroll 0;
         cursor: hand;
 	cursor: pointer;
+		border-radius: 5px;
+		font-weight:bold;
 }
 
 .NewsTitleStrip
@@ -529,20 +560,26 @@ color: #0a4283;
 border:0px solid #000000;
 background-color: #e3e3e3;
 padding:5px;
+	border-radius: 5px;
 }
 
 .NewsContent
 {
-	color: #E5E5E5;
+	color: #ffffff;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-size: 10pt;
 }
 
+h2 {
+  color: #0a4283;
+  text-shadow: 3px 3px 4px #00000080;
+}
+
 hr {
 			/* Divider line between posts */ 
 	border-top: 1px solid #ffffff;
-	box-shadow:         0px 0px 6px #e3e3e3;
+box-shadow: 3px 3px 4px #00000080;
         color:#297085;	
         height: 1px;
 	margin-top: 5px;
@@ -553,14 +590,14 @@ hr {
 
 div.pages {
 		/* board pages box on the bottom of a board page which also has the catalog link */ 
-	color: #0a4283;
+	color: #ffffff;
 	background: #e3e3e3;
 	border: #666666 0px solid;
 	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 10pt;
 	border-radius: 5px;
-    box-shadow:         0px 0px 6px #e3e3e3;
+	text-shadow: 3px 3px 4px #00000080;
 }
 div.pages a.selected {
 	color:#2ac5e3;
@@ -595,6 +632,7 @@ color: #E5E5E5;
 border:0px solid #000000;
 background-color: #91aedc!important;
 padding:5px;
+	border-radius: 5px;
 }
 
 /* bar at the top of the stats box on the front page */ 
@@ -604,4 +642,5 @@ color: #0a4283;
 border:0px solid #000000;
 background-color: #e3e3e3!important;
 padding:5px; 
+	border-radius: 5px;
 }
