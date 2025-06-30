@@ -687,6 +687,14 @@
 	$config['markup'][] = array("/\*\*(.+?)\*\*/", "<span class=\"spoiler\">\$1</span>");
 	$config['markup'][] = array("/^[ |\t]*==(.+?)==[ |\t]*$/m", "<span class=\"heading\">\$1</span>");
 
+        $config['markup'][] = array("/\[spoiler\](.+?)\[\/spoiler\]/s", "<span class=\"spoiler\">\$1</span>");
+    $config['markup'][] = array("/\[b\](.+?)\[\/b\]/s", "<b>\$1</b>"); // was <strong>
+        $config['markup'][] = array("/\[i\](.+?)\[\/i\]/s", "<i>\$1</i>");
+        $config['markup'][] = array("/\[u\](.+?)\[\/u\]/s", "<span style=\"text-decoration: underline\">\$1</span>"); /* was "<span style=\"border-bottom: 1px solid\">\$1</span>"); */
+        $config['markup'][] = array("/\[s\](.+?)\[\/s\]/s", "<strike>\$1</strike>");
+        $config['markup'][] = array("/\[code\][\r\n]*(.+?)\s*\[\/code\]\s*/ms", "<pre><code>$1</code></pre>");
+        $config['markup'][] = array("/\[aa\][\r\n]*(.+?)\s*\[\/aa\]\s*/ms", "<pre class=\"sjis\">$1</pre>");
+
 	// Code markup. This should be set to a regular expression, using tags you want to use. Examples:
 	// "/\[code\](.*?)\[\/code\]/is"
 	// "/```([a-z0-9-]{0,20})\n(.*?)\n?```\n?/s"
