@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "saitamaar";
+  src: url("/static/Saitamaar.woff2") format("woff2");
+  font-display: block;
+}
+
 body {
   background: #EEF2FF url('img/fade-blue.png') repeat-x 50% 0%;
   color: black;
@@ -376,6 +382,12 @@ span.heading {
   color: #AF0A0F;
   font-size: 11pt;
   font-weight: bold;
+}
+
+pre.sjis {
+  font-family: 'saitamaar', 'MS Pgothic', 'MS Pゴシック', 'IPAMonaPGothic', 'IPA モナー Pゴシック', 'Monapo', 'Mona';
+  line-height: 15px;
+  font-size: 14px;
 }
 
 span.spoiler {

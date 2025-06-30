@@ -94,13 +94,12 @@
 				BB Code
 			</th>
 
-<td>	
-<input name="b" style="margin-left:2px;" value="Bold" class="btn" onclick="BBCode('b')" type="button">
-<input name="i" style="margin-left:2px;" value="Italic" class="btn" onclick="BBCode('i')" type="button">
-<input name="u" style="margin-left:2px;" value="Underline" class="btn" onclick="BBCode('u')" type="button">
-<input name="s" style="margin-left:2px;" value="Strikeout" class="btn" onclick="BBCode('s')" type="button">
-<input name="sp" style="margin-left:2px;" value="Spoiler" class="btn" onclick="BBCode('spoiler')" type="button">
-<input name="co" style="margin-left:2px;" value="Code" class="btn" onclick="BBCode('code')" type="button">
+<td>
+{% set tags = [['b', 'Bold'], ['i', 'Italic'], ['u', 'Underline'], ['s',
+	'Strikeout'], ['spoiler', 'Spoiler'], ['code', 'Code'], ['aa', 'AA']] %}
+{% for tag in tags %}
+	<input value="{{ tag[1] }}" style="margin-left:2px;" class="btn" onclick="BBCode('{{ tag[0] }}')" type="button">
+{% endfor %}
 </td></tr></td>
 		</tr>
 		{% if config.recaptcha %}
