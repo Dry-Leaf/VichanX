@@ -1,3 +1,24 @@
+<script>
+	function BBCode(tag) {
+		const openTag = `[${tag}]`;
+		const closeTag = `[/${tag}]`;
+
+		const textarea = document.getElementById('body');
+		const value = textarea.value;
+		const startPos = textarea.selectionStart;
+		const endPos = textarea.selectionEnd;
+
+		if (startPos === endPos) {
+			textarea.value = value.substring(0, startPos) + openTag + closeTag + value.substring(endPos, value.length);
+			textarea.selectionStart = textarea.selectionEnd = startPos + openTag.length;
+		} else {
+			const selectedText = value.substring(startPos, endPos);
+			textarea.value = value.substring(0, startPos) + openTag + selectedText + closeTag + value.substring(endPos, value.length);
+		}
+
+		textarea.focus();
+	}
+</script>
 <form name="post" onsubmit="return dopost(this);" enctype="multipart/form-data" action="{{ config.post_url }}" method="post">
 {{ antibot.html() }}
 {% if id %}<input type="hidden" name="thread" value="{{ id }}">{% endif %}
@@ -74,12 +95,12 @@
 			</th>
 
 <td>	
-<input name="b" style="margin-left:2px;" value="Bold" class="btn" onclick="this.form.body.value=this.form.body.value.concat('[b][/b]');" type="button">
-<input name="i" style="margin-left:2px;" value="Italic" class="btn" onclick="this.form.body.value=this.form.body.value.concat('[i][/i]');" type="button">
-<input name="u" style="margin-left:2px;" value="Underline" class="btn" onclick="this.form.body.value=this.form.body.value.concat('[u][/u]');" type="button">
-<input name="s" style="margin-left:2px;" value="Strikeout" class="btn" onclick="this.form.body.value=this.form.body.value.concat('[s][/s]');" type="button">
-<input name="sp" style="margin-left:2px;" value="Spoiler" class="btn" onclick="this.form.body.value=this.form.body.value.concat('[spoiler][/spoiler]');" type="button">
-<input name="co" style="margin-left:2px;" value="Code" class="btn" onclick="this.form.body.value=this.form.body.value.concat('[code][/code]');" type="button">
+<input name="b" style="margin-left:2px;" value="Bold" class="btn" onclick="BBCode('b')" type="button">
+<input name="i" style="margin-left:2px;" value="Italic" class="btn" onclick="BBCode('i')" type="button">
+<input name="u" style="margin-left:2px;" value="Underline" class="btn" onclick="BBCode('u')" type="button">
+<input name="s" style="margin-left:2px;" value="Strikeout" class="btn" onclick="BBCode('s')" type="button">
+<input name="sp" style="margin-left:2px;" value="Spoiler" class="btn" onclick="BBCode('spoiler')" type="button">
+<input name="co" style="margin-left:2px;" value="Code" class="btn" onclick="BBCode('code')" type="button">
 </td></tr></td>
 		</tr>
 		{% if config.recaptcha %}
