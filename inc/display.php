@@ -159,7 +159,7 @@ function pm_snippet($body, $len=null) {
 	//ascii art replace
 	$body = preg_replace('@<pre\b class="sjis">.*?<\/pre>@is', '*aa*', $body);
 
-  //spoiler replace
+	//spoiler replace
 	$body = preg_replace('@<span\b class="spoiler">.*?<\/span>@is', '*spoiler*', $body);
 	
 	// Strip tags
