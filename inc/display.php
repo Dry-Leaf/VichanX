@@ -155,6 +155,12 @@ function pm_snippet($body, $len=null) {
 	
 	// Replace line breaks with some whitespace
 	$body = preg_replace('@<br/?>@i', '  ', $body);
+
+	//ascii art replace
+	$body = preg_replace('@<pre\b class="sjis">.*?<\/pre>@is', '*aa*', $body);
+
+  //spoiler replace
+	$body = preg_replace('@<span\b class="spoiler">.*?<\/span>@is', '*spoiler*', $body);
 	
 	// Strip tags
 	$body = strip_tags($body);
