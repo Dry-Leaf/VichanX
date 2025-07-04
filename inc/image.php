@@ -497,6 +497,14 @@ class ImageBMP extends ImageBase {
 	}
 }
 
+class ImageWEBP extends ImageBase {
+	public function from() {
+		$this->image = @imagecreatefromwebp($this->src);
+	}
+	public function to($src) {
+		imagewebp($this->image, $src);
+	}
+}
 
 if (PHP_MAJOR_VERSION <= 7 && PHP_MINOR_VERSION < 2) {
 	include 'inc/image/bmp.php';
