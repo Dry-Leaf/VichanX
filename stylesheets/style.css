@@ -12,7 +12,6 @@ body {
   margin: 0 4px;
   padding-left: 4px;
   padding-right: 4px;
-  padding-top: 4vh;
 }
 
 .hidden {
@@ -572,10 +571,6 @@ table.mod.config-editor input[type="text"] {
   background: inherit;
 }
 
-div.boardlist.bottom {
-  text-align: center;
-}
-
 .desktop-style body {
   padding-top: 20px;
 }
@@ -997,19 +992,15 @@ span.pln {
 /* === SPECIFIC PAGES & FEATURES === */
 
 /* Board List */
-div.boardlist:first-child {
-  color: #89A;
-  font-size: 16px;
+div.boardlist {
+  background-color: inherit;
   text-align: center;
-  background-color: #E5E5E5;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   padding-top: 3px;
   padding-bottom: 3px;
   padding-right: 2px;
-  font-size: 1.1em;
+  font-size: inherit;
   overflow: auto;
   max-height: 4vh;
   z-index: 10;
