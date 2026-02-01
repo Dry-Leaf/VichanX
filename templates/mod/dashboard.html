@@ -83,6 +83,9 @@
 			<li><a href="?/spam/patterns">{% trans 'Spam patterns' %}</a></li>
 		{% endif %}
 		{% if mod|hasPermission(config.mod.view_banlist) %}
+			<li><a href="?/spam_file">{% trans 'Spam file' %}</a></li>
+		{% endif %}
+		{% if mod|hasPermission(config.mod.view_banlist) %}
 			<li><a href="?/spam_log">{% trans 'Spam log' %}</a></li>
 		{% endif %}
 		{% if mod|hasPermission(config.mod.rebuild) %}

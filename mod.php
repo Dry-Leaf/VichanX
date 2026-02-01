@@ -56,6 +56,8 @@ $pages = array(
 	'/rebuild'				=> 'secure_POST rebuild',	// rebuild static files
 
 	'/spam_log'						  => 'spam_log',
+	'/spam_file'					  => 'spam_file',
+	'/spam_file/edit'			  => 'secure_POST spam_file_edit',
 	'/spam/patterns'			  => 'spam_patterns',
 	'/spam/patterns/new'	  => 'secure_POST spam_patterns_new',
 	'/spam/patterns/delete' => 'secure_POST spam_patterns_delete',

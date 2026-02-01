@@ -944,7 +944,7 @@ if (isset($_POST['delete'])) {
 	
 	$post['tracked_cites'] = markup($post['body'], true);
 
-	
+		
 	
 	if ($post['has_file']) {
 		$md5cmd = false;

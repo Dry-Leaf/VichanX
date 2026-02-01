@@ -3075,7 +3075,7 @@ function mod_spam_log() {
 			while (!feof($f)) {
 				$entry = fgetcsv($f, null, '|', '"', '\\');
 				if ($entry) {
-					array_push($entries, $entry);
+					array_unshift($entries, $entry);
 				}
 			}
 		}
@@ -3086,6 +3086,48 @@ function mod_spam_log() {
 	$headers = ['#', 'Timestamp', 'Board', 'Thread #', 'Spam Phrase', 'Post'];
 
 	mod_page(_('Spam Log'), $config['file_mod_spam_log'], [ 'entries' => $entries, 'headers' => $headers ]);
+}
+
+function mod_spam_file() {
+	global $config;
+
+	// A mod who may view the ban list also has permission to access the spam file.
+	if (!hasPermission($config['mod']['view_banlist']))
+		error($config['error']['noaccess']);
+
+	$f = fopen($config['spam']['pattern']['file'], 'rb');
+	$patterns = [];
+
+	if ($f !== false) {
+		if (flock($f, LOCK_SH)) {
+			while (!feof($f)) {
+				$l = trim(fgets($f));			
+				array_push($patterns, $l);
+			}
+		}
+		fclose($f);
+	}
+
+	mod_page(_('Spam File'), $config['file_mod_spam_file'], [ 'patterns' => $patterns, 'token' => make_secure_link_token('spam_file/edit') ]);
+}
+
+function mod_spam_file_edit() {
+	global $config;
+
+	// A mod who may ban a user also has permission to edit the spam file.
+	if (!hasPermission($config['mod']['ban']))
+		error($config['error']['noaccess']);
+
+	if (!array_key_exists('content', $_POST))
+		error(('No content to save to spam file. Malformed request?'));
+
+	if (!copy($config['spam']['pattern']['file'], $config['spam']['pattern']['file'] . '.bak'))
+		error(('Failed to back up spam file.'));
+
+	if (file_put_contents($config['spam']['pattern']['file'], $_POST['content'], LOCK_EX) === false)
+		error(('Failed to write to spam file.'));
+
+	header('Location: ?/spam_file', true, $config['redirect_http']);	
 }
 ///////////////////////////////////////////////
 
