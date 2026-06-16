@@ -81,3 +81,16 @@
 .hidden-board {
     display: none !important;
 }
+
+.boards {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+}
+
+.boardcheck {
+    display: none;
+}
+
+#boardmap:checked ~ tr .tablesub .boards .boardcheck {
+    display: inherit;
+}

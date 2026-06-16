@@ -52,27 +52,31 @@ function doBoardMapPart($list, $root, &$boards)
             }
             if (gettype($key) == "string") {
                 $body .=
-                    ' <td width="33%" class="tablesub"><div class="boards"><center><a href="' .
+                    ' <td width="33%" class="tablesub"><div class="boards"><div></div><a href="' .
                     $board .
-                    '/" TARGET="_top">/' .
+                    '" TARGET="_top">/' .
                     $key .
                     "/ - " .
                     $config["board_descriptions"][$key] .
-                    "</a></center></div></td>";
+                    '</a></div><input type="checkbox" class="boardcheck" value="' .
+                    $key .
+                    '"></td>';
                 $counter += 1;
             } else {
                 if ($board == "") {
                     $body .=
-                        '<td width="33%" class="tablesub"><div class="boards"><center><a href=" " target="_top"></a></center></div></td>';
+                        '<td width="33%" class="tablesub"><div class="boards"><a href=" " target="_top"></a></div></td>';
                 } else {
                     $body .=
-                        ' <td width="33%" class="tablesub"><div class="boards"><center><a href="/' .
+                        ' <td width="33%" class="tablesub"><div class="boards"><a href="/' .
                         $board .
                         '/" TARGET="_top">/' .
                         $board .
                         "/ - " .
                         $config["board_descriptions"][$board] .
-                        "</a></center></div></td>";
+                        '</a></div><input type="checkbox" class="boardcheck" value="' .
+                        $board .
+                        '"></td>';
                 }
                 $counter += 1;
             }

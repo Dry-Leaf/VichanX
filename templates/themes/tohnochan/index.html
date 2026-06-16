@@ -59,7 +59,7 @@
 
 	<table cellspacing="0px" cellpadding="0px">
 		<tr>
-			<td class="NewsMenu" onclick="ChangeTab(0);" id="TabMenu0" >
+			<td class="NewsMenuCurrent" onclick="ChangeTab(0);" id="TabMenu0" >
 				Main
 			</td>
 			<td class="NewsMenu" onclick="ChangeTab(1);" id="TabMenu1" >
@@ -95,9 +95,9 @@
   <tr>
 <td><td  valign="top"><div class="recent_posts"><table width="100%"  cellpadding="0" cellspacing="1"></div>
 
+<tr id="boardmap">
 <tr>
-<tr>
-<th class="tabletop" colspan="3">Board map <a href="#settings">⚙</a></th>
+<th class="tabletop" colspan="3">Board map <a href="#boardmap">⚙</a></th>
 </tr>
 
 {{ boardlist.board_map }}
