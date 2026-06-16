@@ -52,7 +52,7 @@ function doBoardMapPart($list, $root, &$boards)
             }
             if (gettype($key) == "string") {
                 $body .=
-                    ' <td width="33%" class="tablesub"><div class="boards"><div></div><a href="' .
+                    ' <td width="33%" class="tablesub"><div class="boards"><a href="' .
                     $board .
                     '" TARGET="_top">/' .
                     $key .

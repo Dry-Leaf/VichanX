@@ -87,8 +87,13 @@
     grid-template-columns: 1fr auto 1fr;
 }
 
+.boards a {
+    grid-column: 2;
+}
+
 .boardcheck {
     display: none;
+    grid-column: 3;
 }
 
 #boardmap:checked ~ tr .tablesub .boards .boardcheck {
