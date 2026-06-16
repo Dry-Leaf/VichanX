@@ -27,7 +27,7 @@ function doBoardMapPart($list, $root, &$boards)
     global $config;
 
     $body = "";
-    $counter = 1;
+    $counter = 0;
     foreach ($list as $key => $board) {
         if (is_array($board)) {
             $inner_body = doBoardMapPart($board, $root, $boards);
@@ -48,7 +48,7 @@ function doBoardMapPart($list, $root, &$boards)
             }
             if ($counter % 3 == 0) {
                 $body .= "</tr><tr>";
-                $counter = 1;
+                $counter = 0;
             }
             if (gettype($key) == "string") {
                 $body .=
