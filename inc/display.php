@@ -47,7 +47,7 @@ function doBoardMapPart($list, $root, &$boards)
                 continue;
             }
             if ($counter % 3 == 0) {
-                $board . "</tr><tr>";
+                $body .= "</tr><tr>";
                 $counter = 1;
             }
             if (gettype($key) == "string") {
