@@ -58,9 +58,9 @@ function doBoardMapPart($list, $root, &$boards)
                     $key .
                     "/ - " .
                     $config["board_descriptions"][$key] .
-                    '</a></div><input type="checkbox" class="boardcheck" value="' .
+                    '</a><input type="checkbox" class="boardcheck" value="' .
                     $key .
-                    '"></td>';
+                    '"></div></td>';
                 $counter += 1;
             } else {
                 if ($board == "") {
@@ -74,9 +74,9 @@ function doBoardMapPart($list, $root, &$boards)
                         $board .
                         "/ - " .
                         $config["board_descriptions"][$board] .
-                        '</a></div><input type="checkbox" class="boardcheck" value="' .
+                        '</a><input type="checkbox" class="boardcheck" value="' .
                         $board .
-                        '"></td>';
+                        '"></div></td>';
                 }
                 $counter += 1;
             }
