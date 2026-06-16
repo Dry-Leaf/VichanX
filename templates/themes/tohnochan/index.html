@@ -7,7 +7,6 @@
   	<script src="slogan.js" defer></script>
 </head>
 <body>
-	{{ boardlist.top }}
 	<header>
 <center>
 <div style="float:center;">
@@ -504,25 +503,6 @@ We're very interested in what you think of the site and what you think might mak
 
 
 <!--------------------------------------news tab test zone------------------------------------------------------>
-
-
-	<div class="box-wrap">
-	    <fieldset>
-		<legend>Boards</legend>
-		<ul>
-			{% for board in boards %}
-				<li class="boardlinksurl">
-					<a href="{{ config.board_path|sprintf(board.uri) }}">
-						{{ board.title|e }}
-					</a>
-				</li>
-			{% endfor %}
-		</ul>
-	    </fieldset>
-	    <br>
-
-
-
 		<div class="mainBox">
 			<h2>Stats</h2>
 			<ul>
