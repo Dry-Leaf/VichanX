@@ -29,15 +29,22 @@ function doBoardMapPart($list, $root, &$boards)
     $body = "";
     foreach ($list as $key => $board) {
         if (is_array($board)) {
-            $body .=
-                " <tr>" . doBoardMapPart($board, $root, $boards) . "</tr> ";
+            $inner_body = doBoardMapPart($board, $root, $boards);
+            if ($inner_body == "") {
+                return $body;
+            }
+            $body .= " <tr>" . $inner_body . "</tr> ";
         } else {
             if (gettype($key) == "string") {
                 if ($key == "category") {
+                    if ($board == "site") {
+                        return "";
+                    }
                     $body .=
                         '<th class="tabletop" colspan="3">' .
                         $board .
                         "</th></tr><tr>";
+                    continue;
                 }
                 $body .=
                     ' <td width="33%" class="tablesub"><div class="boards"><center><a href="' .
@@ -56,7 +63,7 @@ function doBoardMapPart($list, $root, &$boards)
                         ' <td width="33%" class="tablesub"><div class="boards"><center><a href="/' .
                         $board .
                         '/" TARGET="_top">/' .
-                        $key .
+                        $board .
                         "/ - " .
                         $config["board_descriptions"][$board] .
                         "</a></center></div></td>";
