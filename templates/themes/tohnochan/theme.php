@@ -232,8 +232,6 @@ class index
         )) or error(db_error());
         $news = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        $board_map = doBoardMapPart();
-
         return Element("themes/tohnochan/index.html", [
             "settings" => $settings,
             "config" => $config,
