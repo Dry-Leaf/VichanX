@@ -96,6 +96,6 @@
     grid-column: 3;
 }
 
-#boardmap:checked ~ tr .tablesub .boards .boardcheck {
+#boardmap:checked ~ tr .tablesub .boardcheck {
     display: inherit;
 }
