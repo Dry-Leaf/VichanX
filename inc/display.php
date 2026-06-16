@@ -27,6 +27,7 @@ function doBoardMapPart($list, $root, &$boards)
     global $config;
 
     $body = "";
+    $counter = 1;
     foreach ($list as $key => $board) {
         if (is_array($board)) {
             $inner_body = doBoardMapPart($board, $root, $boards);
@@ -35,17 +36,21 @@ function doBoardMapPart($list, $root, &$boards)
             }
             $body .= " <tr>" . $inner_body . "</tr> ";
         } else {
-            if (gettype($key) == "string") {
-                if ($key == "category") {
-                    if ($board == "site") {
-                        return "";
-                    }
-                    $body .=
-                        '<th class="tabletop" colspan="3">' .
-                        $board .
-                        "</th></tr><tr>";
-                    continue;
+            if ($key === "category") {
+                if ($board == "site") {
+                    return "";
                 }
+                $body .=
+                    '<th class="tabletop" colspan="3">' .
+                    $board .
+                    "</th></tr><tr>";
+                continue;
+            }
+            if ($counter % 3 == 0) {
+                $board . "</tr><tr>";
+                $counter = 1;
+            }
+            if (gettype($key) == "string") {
                 $body .=
                     ' <td width="33%" class="tablesub"><div class="boards"><center><a href="' .
                     $board .
@@ -54,6 +59,7 @@ function doBoardMapPart($list, $root, &$boards)
                     "/ - " .
                     $config["board_descriptions"][$key] .
                     "</a></center></div></td>";
+                $counter += 1;
             } else {
                 if ($board == "") {
                     $body .=
@@ -68,6 +74,7 @@ function doBoardMapPart($list, $root, &$boards)
                         $config["board_descriptions"][$board] .
                         "</a></center></div></td>";
                 }
+                $counter += 1;
             }
         }
     }
