@@ -240,7 +240,6 @@ class index
             "recent_posts" => $recent_posts,
             "stats" => $stats,
             "news" => $news,
-            "board_map" >= $board_map,
             "boards" => listBoards(),
         ]);
     }
