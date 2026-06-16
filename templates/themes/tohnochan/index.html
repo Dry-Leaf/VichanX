@@ -35,6 +35,7 @@
 
 	let local_excluded = localStorage.getItem("local_excluded");
 	if (local_excluded === null) {
+	  localStorage.setItem("local_excluded", "");
       local_excluded = "";
 	}
 
