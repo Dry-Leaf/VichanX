@@ -1,116 +1,14 @@
 <!doctype html>
 <html>
 <head>
-
-<style>
-    /* FORCE the overlay to cover everything */
-    #css-loading-overlay {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100vh !important;
-        background-color: #ffffff !important; /* CHANGE THIS to your desired color */
-        z-index: 9999999 !important; /* Higher than almost any theme */
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        flex-direction: column !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        
-        /* ANIMATION SETTINGS */
-        /* Change '3s' to match your desired wait time */
-        animation: fadeOutOverlay 3s ease-in-out 8s forwards !important;
-    }
-
-    /* Style the text/logo inside */
-    #css-loading-overlay .loading-text {
-        font-family: Arial, sans-serif !important;
-        font-size: 24px !important;
-        color: #000000 !important;
-        margin: 0 !important;
-        text-align: center !important;
-    }
-
-    /* Fade Out Animation */
-    @keyframes fadeOutOverlay {
-        0% { opacity: 1; visibility: visible; }
-        100% { opacity: 0; visibility: hidden; display: none !important; }
-    }
-
-    /* Prevent scrolling during load */
-    body {
-        overflow: hidden !important;
-        animation: enableScroll 1s ease-in-out 3s forwards !important;
-    }
-
-    @keyframes enableScroll {
-        0% { overflow: hidden !important; }
-        100% { overflow: auto !important; }
-    }
-</style>
-
 	<title>{{ settings.title }}</title>
 	<link rel="stylesheet" media="screen" href="{{ config.root }}{{ settings.css }}"/>
-	{% if config.url_favicon %}<link rel="shortcut icon" href="{{ config.url_favicon }}" />{% endif %}
 	{% include 'header.html' %}
   	<script src="slogan.js" defer></script>
-	
 </head>
 <body>
-<!-- START LANDING OVERLAY HTML -->
-<div id="css-loading-overlay">
-    <h2>
-	
-	
-	
-	
-	
-	
-	
-	
-	<center>
-<img alt="background" src="https://bluearchive.tohno-chan.org/templates/themes/tohnochan/img/1.png" /></center>
-<center>
-
-   <font size="8" face="sans-serif" color="#000000">
-<b>SITE NOT FOUND</b><br/><br/>
-    </font>
-    <font size="5" face="sans-serif" color="#000000" >
-
-well, this is awkward. The site you're looking for is not here.<br/><br/>
-Is this your site? 
-      <a class="www" href="https://tohno-chan.org" target="_blank" >
-      <span><font size="5" face="sans-serif" color="#378bb5" ><u>Get more info</u></font></span></a>
-
- or 
-
-      <a class="www" href="https://tohno-chan.org" target="_blank" color="#378bb5">
-        <span><font size="5" face="sans-serif" color="#378bb5" ><u>contact support</u></font></span></a>.
-<br/><br/><br/>
-    </font>
-
-</center>
-<center>
-<img alt="background" src="https://bluearchive.tohno-chan.org/templates/themes/tohnochan/img/2.png" />
-</center>
-
-
-
-
-	
-	
-	
-	
-	
-	
-	</h2>
-    <!-- You can replace the text above with an <img> tag for your logo -->
-</div>
-<!-- END LANDING OVERLAY HTML -->
+	{{ boardlist.top }}
 	<header>
-	
 <center>
 <div style="float:center;">
 <img alt="logo" src="/images/main/logospin.gif" /><img alt="background" src="/images/main/sitefrontnew.png" />
@@ -119,10 +17,8 @@ Is this your site?
 
 		<div class="slogan"><p id="slogan"></p></div>
 	</header>
-<!--------------------------------------news tab------------------------------------------------------>
-		
-<center><div class="extra"></div></center>
-<center><div class="extra2"></a></div></center>
+<!--------------------------------------news tab test zone------------------------------------------------------>
+
 
 <script type="text/javascript">
 
@@ -137,15 +33,33 @@ Is this your site?
 		}
 	}
 
+	let local_excluded = localStorage.getItem("local_excluded");
+	if (local_excluded === null) {
+      local_excluded = "";
+	}
+
+	let excludedSet = new Set(local_excluded.split(",").filter(Boolean));
+
+	document.addEventListener("DOMContentLoaded", function() {
+        let rows = document.querySelectorAll(".recent-post-row");
+
+        rows.forEach(row => {
+            let boardName = row.getAttribute("data-board");
+
+            if (excludedSet.has(boardName)) {
+                row.classList.add("hidden-board");
+            }
+        });
+    });
 </script>
 
 <br/><br/>
-<center><b></b></center>
+
 <div class="NewsDiv">
 
 	<table cellspacing="0px" cellpadding="0px">
 		<tr>
-			<td class="NewsMenuCurrent" onclick="ChangeTab(0);" id="TabMenu0" >
+			<td class="NewsMenu" onclick="ChangeTab(0);" id="TabMenu0" >
 				Main
 			</td>
 			<td class="NewsMenu" onclick="ChangeTab(1);" id="TabMenu1" >
@@ -191,23 +105,16 @@ Is this your site?
 </tr>
 
 <tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/an/" TARGET="_top">/an/ - Anime</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/ma/" TARGET="_top">/ma/ - Manga</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/vg/" TARGET="_top">/vg/ - Video Games</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/a/" TARGET="_top">/a/ - Anime</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/m/" TARGET="_top">/m/ - Manga</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/vg/" TARGET="_top">/vg/ - Video Games</a></center></div></td>
 
 
 </tr>
 <tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/foe/" TARGET="_top">/foe/ - Touhou</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/mp3/" TARGET="_top">/mp3/ - Music</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/vn/" TARGET="_top">/vn/ - Visual Novels</a></center></div></td>
-</tr>
-
-</tr>
-<tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/kf/" TARGET="_top">/kf/ - Kemono Friends</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href=" " TARGET="_top"> </a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/moba/" TARGET="_top">/moba/ - Mobile Games</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/foe/" TARGET="_top">/foe/ - Touhou</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/mp3/" TARGET="_top">/mp3/ - Music</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/vn/" TARGET="_top">/vn/ - Visual Novels</a></center></div></td>
 </tr>
 
 <tr>
@@ -215,9 +122,9 @@ Is this your site?
 </tr>
 
 <tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/fig/" TARGET="_top">/fig/ - Collectibles</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/navi/" TARGET="_top">/navi/ - Science & technology</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/cr/" TARGET="_top">/cr/ - Creativity</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/fig/" TARGET="_top">/fig/ - Collectibles</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/navi/" TARGET="_top">/navi/ - Science & technology</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/cr/" TARGET="_top">/cr/ - Creativity</a></center></div></td>
 
 </tr>
 
@@ -226,28 +133,28 @@ Is this your site?
 </tr>
 
 <tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/so/" TARGET="_top">/so/ - Ronery</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/mai/" TARGET="_top">/mai/ - Waifu</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/ot/" TARGET="_top">/ot/ - Otaku Tangents</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/so/" TARGET="_top">/so/ - Ronery</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/mai/" TARGET="_top">/mai/ - Waifu</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/ot/" TARGET="_top">/ot/ - Otaku Tangents</a></center></div></td>
 </tr>
 
 <tr>
 <th class="tabletop" colspan="3">Other</th>
 </tr>
 <tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/irc/" TARGET="_top">/irc/ - IRC</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/ddl/" TARGET="_top">/ddl/ - Data</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/arc/" TARGET="_top">/arc/ - Archive (WIP)</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/irc/" TARGET="_top">/irc/ - IRC</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/ddl/" TARGET="_top">/ddl/ - Data</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/arc/" TARGET="_top">/arc/ - Archive</a></center></div></td>
 </tr>
 <tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/ns/" TARGET="_top">/ns/ - Hentai</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href=" " TARGET="_top"></a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/pic/" TARGET="_top">/pic/ - Dump</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/ns/" TARGET="_top">/ns/ - Hentai</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/kf" TARGET="_top"> /kf/ - Kemono Friends</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.com/pic/" TARGET="_top">/pic/ - Dump</a></center></div></td>
 </tr>
 <tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/lol/" TARGET="_top">/lol/ - Funposting</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/tat/" TARGET="_top">/tat/ - Debates</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="/fb/ " TARGET="_top">/fb/ - feedback</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/lol/" TARGET="_top">/lol/ - Funposting</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/tat/" TARGET="_top">/tat/ - Debates</a></center></div></td>
+<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/fb/ " TARGET="_top">/fb/ - feedback</a></center></div></td>
 </tr>
 <td><br/> </td>
 
@@ -271,8 +178,8 @@ $results = $tc_db->
 </tr>
 
 {% for post in recent_posts %}
-<tr> <td div style=" border: 0px solid #000000;  padding-top : 1px;border-top: 0px solid #000000;"> <div class="tablesub"><div class="replysub"	title="{{ post.body|striptags }}">
-	{{ post.board_name }}: 
+	<tr class="recent-post-row" data-board="{{ post.board_name }}"> <td div style=" border: 0px solid #000000;  padding-top : 1px;border-top: 0px solid #000000;"> <div class="tablesub"><div class="replysub">
+	{{ post.board_name }}:
 	<a href="{{ post.link }}">
 	{{ post.snippet }}
 	{% endfor %}</a></div></td></tr>
@@ -300,27 +207,20 @@ $results = $tc_db->
 
 
 
+
+
+
+
+
+
+
+
+
+
 		</div>
 	</div>
 
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
-<!-----------------------------------------------------news tab----------------------------------------------------------->
+<!--news tab-->
 <div id="Tab1" style="display: none;">
 
 		{% if news|length == 0 %}
@@ -339,6 +239,8 @@ $results = $tc_db->
 			{% endfor %}
 		{% endif %}
 
+<div class="NewsTitleStrip"> news subject </div>
+<div class="NewsContent"> news content </div>
 
 </div>
 
@@ -348,161 +250,22 @@ $results = $tc_db->
 
 
 
-<!-----------------------------------------------------faq tab----------------------------------------------------------->
-<!-----------------------------------------------------faq tab----------------------------------------------------------->
-<!-----------------------------------------------------faq tab----------------------------------------------------------->
-<!-----------------------------------------------------faq tab----------------------------------------------------------->
-<!-----------------------------------------------------faq tab----------------------------------------------------------->
-<!-----------------------------------------------------faq tab----------------------------------------------------------->
-<!-----------------------------------------------------faq tab----------------------------------------------------------->
-<!-----------------------------------------------------faq tab----------------------------------------------------------->
-<!-----------------------------------------------------faq tab----------------------------------------------------------->
-<!-----------------------------------------------------faq tab----------------------------------------------------------->
 
+
+<!--faq tab-->
 <div id="Tab2" style="display: none;">
-<div class="NewsTitleStrip"><h2 id="{{ entry.id }}">Introduction
-				</h2></div>
-
-<div class="NewsContent">T.o.h.n.o - Chan<br/>
-True<br/>
-Otaku<br/>
-Hikikomori<br/>
-Neet<br/>
-Organization<br/>
-Channel<br/><br/>
+<?php
+//Faq
+$results = $tc_db-><div class="NewsTitleStrip">'xxxxxxxxxxxxxx'</div>
+<div class="NewsContent">'yyyyyyyyyyyyyy'</div>
+<br/>
+<br/>
+<br/>
 </div>
 
 
-<div class="NewsTitleStrip"><h2 id="{{ entry.id }}">Tips
-				</h2></div>
-
-<div class="NewsContent">Spoiler tags are done in the same way as back on 4chan:<br/>
-<br/>
-Spoiler: [spoiler]text[/spoiler]<br/>
-<i>Italic:</i> [i]text[/i]<br/>
-<b>Bold:</b> [b]text[/b]<br/>
-<s>Strike-through:</s> [s]text[/s]<br/>
-<u>Underline:</u> [u]text[/u]<br/>
-ASCII art: [aa]text[/aa]<br/>
-<br/>
-A few possibly useful tips:<br/>
-<br/>
-Most site errors can be easily fixed by hitting the back button, refreshing the page. </div>
-<div class="NewsTitleStrip">Links</div>
-<div class="NewsContent">Our IRC channel:<br/>
-#tohno-chan on irc.rizon.net.<br/>
-If you do not have an IRC client, you can still join by heading over to our /irc/ board.<br/>
-<a href="https://web.archive.org/web/20250126093552/http://tohno-chan.org/irc/">http://tohno-chan.org/irc/</a><br/>
-<br/>
-Our MAL club:<br/>
-<a href="https://web.archive.org/web/20250126093552/http://myanimelist.net/clubs.php?cid=22369">http://myanimelist.net/clubs.php?cid=22369</a><br/>
-<br/>
-Our Steam group:<br/>
-<a href="https://web.archive.org/web/20250126093552/http://steamcommunity.com/groups/tohno-chan">http://steamcommunity.com/groups/tohno-chan</a><br/>
-<br/>
-Our figure collection club:<br/>
-<a href="https://web.archive.org/web/20250126093552/http://myfigurecollection.net/club/524">http://myfigurecollection.net/club/524</a><br/>
-<br/>
-There is no official tohno-chan facebook, discord, twitter, or reddit page and there never will be. If you come across one be aware it is not supported or affiliated with us in any way shape or form.</div>
-<div class="NewsTitleStrip">Credits</div>
-<div class="NewsContent">I'd like to extend a special thanks to a few guys that really helped out around here.<br/>
-To Popo for giving me the push I needed to break away from the original version of our site, and who helped in finding our current host, and with setting things up.<br/>
-To Hamish who helped a lot in the development of our kusaba site that we used for many years<br/>
-To Imoto, fbw, and plasticman, and others, for going above and beyond to not only fix issues with our current version of TC, but to create new features for it as well.<br/>
-To asie for helping in his own way. <br/>
-To DSG for being gay<br/>
-To Ayu-Ayu for proffreeding thi's mess.<br/>
-To our mods who do an awesome job of keeping this place nice and clean.<br/>
-And to everyone else who has stuck with us for whatever reason all this time. You are what keeps the site going, because after all, without all the users, this site would be nothing.<br/></div>
-<div class="NewsTitleStrip">Frequently asked questions.</div>
-<div class="NewsContent">
-Q: Will you ever force Anonymous?<br/>
-A: No, shut up.<br/>
-<br/>
-Q: How does I became a mod????<br/>
-A: If you would like to be a moderator for the site, message "Tohno_" or "Tohno" via IRC on Rizon.<br/>
-<br/>
-Q: What's the significance of the site logo thing? <br/>
-A: It's an envelope, commonly used in japan for giving gifts of money. Tohno Minagi, would hand out rice tickets in these envelopes.<br/>
-<br/>
-Q: What's the deal with "Ford Driver"?<br/>
-A: It's what we call normalfags.<br/>
-<br/>
-Q: "are you gonna send us to dubai tohno?"<br/>
-A: Yes.<br/>
-<br/>
-Q: Can you add X theme/style to the site?<br/>
-A: Yeah sure, why not?<br/>
-<br/>
-Q: How about this banner I made, can you add it to the site?<br/>
-A: sure, post it in /fb/ and I'll add it in when I get a chance.<br/>
-<br/>
-Q: How can I contact the site staff or admin?<br/>
-A: Quickest way to do this is on the IRC channel, there's usually two or three mods there at any given time. You can also message "Tohno_" or "Tohno" on rizon.net. This loser has no life, so if he doesn't respond right away he's either asleep or... probably just asleep.<br/>
-<br/>
-Q: Are you guys serious about the waifu thing?<br/>
-A: Yes, stop asking that.<br/>
-<br/>
-Q: How does post edit work?<br/>
-A: That's currently being worked on. For the time being it doesn't work.<br/>
-<br/>
-Q: Why is tohno-chan so slow?<br/>
-A: Because shut up.<br/>
-<br/>
-Q: Do you sell user data? <br/>
-A: No.<br/>
-<br/>
-Q: I don't see any ads, How does this site make money?<br/>
-A: It doesn't.<br/>
-<br/>
-Q: Do you collect user data?<br/>
-A: We don't need or want your data. We just use Cookies for passwords and theme/style selection.<br/>
-<br/>
-Q: Who or what is this "Haruhi"?<br/>
-A: The almighty lord and savior of this world.<br/>
-<br/>
-Q: Why did my post get deleted?<br/>
-A: Because it sucked.<br/>
-<br/>
-Q: How do I donate money to help with the site's server costs?<br/>
-A: You know damn well you'd never ask that.<br/>
-<br/>
-Q: What is love?<br/>
-A: Baby don't hurt me.<br/>
-<br/>
-Q: Where do I go to make a request for a feature?<br/>
-A: Head on over to /fb/ to drop us some feedback.<br/>
-<br/>
-Q: Is this where the party's at?<br/>
-A: No, it's the next website over.<br/>
-<br/>
-Q: I don't agree with someone's opinion, what do I do?<br/>
-A: Tell them they don't belong on this site in the most condescending way possible. That's what all the cool kids do, you want to be cool right?<br/>
-<br/>
-Q: Do tripcodes here work the same as on 4chan?<br/>
-A: Unsecured trips should work the same, secure trips would use a different algorithm (kinda impossible to use the same one they got) so the trip would come out different.
-<br/><br/>
-Q: HTTPS touched my no-no places, can you remove it?<br/>
-A: Life is rape. Deal with it.<br/>
-</div>
-</div>
-
-
-<!-----------------------------------------------------rules tab----------------------------------------------------------->
-<!-----------------------------------------------------rules tab----------------------------------------------------------->
-<!-----------------------------------------------------rules tab----------------------------------------------------------->
-<!-----------------------------------------------------rules tab----------------------------------------------------------->
-<!-----------------------------------------------------rules tab----------------------------------------------------------->
-<!-----------------------------------------------------rules tab----------------------------------------------------------->
-<!-----------------------------------------------------rules tab----------------------------------------------------------->
-<!-----------------------------------------------------rules tab----------------------------------------------------------->
-<!-----------------------------------------------------rules tab----------------------------------------------------------->
-<!-----------------------------------------------------rules tab----------------------------------------------------------->
+<!--rules tab-->
 <div id="Tab3" style="display: none;">
-<div class="NewsTitleStrip"><h2 id="{{ entry.id }}">
-Rules
-</h2></div>
-<div class="NewsContent">
 <br/><br/>Tohno-chan is an anime-themed image board for NEETs, hikikomori, (true) otaku, and other social outcasts. Please take this into consideration when posting.
 <br/><br/>_____
 
@@ -558,7 +321,7 @@ Rules
 
 <br/><br/>13) Drug discussion outside of /420/
 <br/>- This deals with any and all discussion related to illegal narcotics or controlled substances as well as sharing links on where to buy/acquire them.
-<br/>- Discussion related to these substances is strictly to be kept on http://tohno-chan.org/420
+<br/>- Discussion related to these substances is strictly to be kept on http://tohno-chan.com/420
 <br/>- However, even on /420/ any discussion related to the sale or purchasing of illegal drugs is still forbidden (see rule 1).
 <br/><br/>_____
 
@@ -597,31 +360,35 @@ Rules
 <br/><br/>_____
 
 <br/><br/>Those that cannot follow the rules shown on this page will be dealt with by our moderators as they they see fit. Don't be surprised if your post gets deleted. Minor infractions may likely result in a warning. Major infractions or multiple warnings will result in a ban with the duration depending on the situation and the judgement of the moderator carrying out the ban.
+</div>
+
+
+<!--Donations-->
+<div id="Tab5" style="display: none;">
+<div class="NewsTitleStrip">supporters</div><br/>
+<br/>
+
+Here you can find a list of our currently supported donation platforms/methods. Bellow that, are some generious people who help keep us going!<br/>
+<br/><br/>patreon.com/tohno
+<br/><br/>ko-fi.com/tohno
+<br/><br/>
+<br/><br/>Shinden9 - via patreon
+<br/><br/>赤いアオカケス - via patreon
+<br/><br/>Cedar - via patreon
+<br/><br/>Vexed - via patreon
+<br/><br/>Killo - via ko-fi
 
 </div>
 
 
 
-
-</div>
-
-
-<!-----------------------------------------------------boards tab----------------------------------------------------------->
-<!-----------------------------------------------------boards tab----------------------------------------------------------->
-<!-----------------------------------------------------boards tab----------------------------------------------------------->
-<!-----------------------------------------------------boards tab----------------------------------------------------------->
-<!-----------------------------------------------------boards tab----------------------------------------------------------->
-<!-----------------------------------------------------boards tab----------------------------------------------------------->
-<!-----------------------------------------------------boards tab----------------------------------------------------------->
-<!-----------------------------------------------------boards tab----------------------------------------------------------->
-<!-----------------------------------------------------boards tab----------------------------------------------------------->
-<!-----------------------------------------------------boards tab----------------------------------------------------------->
-
+<!--boards tab-->
 <div id="Tab4" style="display: none;">
-<div class="NewsTitleStrip"><h2 id="{{ entry.id }}">
-boards
-</h2></div>
+<div class="NewsTitleStrip">Boards</div>
 <div class="NewsContent">
+
+
+
   <center>Here you can find a brief description of each board. </center><br/>
  <center>Most are pretty self explanatory, but many people, especially those new here, might not be sure about what goes where.</center>
 <br/>
@@ -713,56 +480,6 @@ Here you can upload files or post links to files hosted off-site for sharing wit
 <b>/fb/ - Feedback</b> <br/>
 Here you can leave suggestions or ask questions regarding the site itself and even just discuss things related to the site.<br/>
 We're very interested in what you think of the site and what you think might make it better for you the users.<br/>
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-<!-----------------------------------------------------supporters tab----------------------------------------------------------->
-<!-----------------------------------------------------supporters tab----------------------------------------------------------->
-<!-----------------------------------------------------supporters tab----------------------------------------------------------->
-<!-----------------------------------------------------supporters tab----------------------------------------------------------->
-<!-----------------------------------------------------supporters tab----------------------------------------------------------->
-<!-----------------------------------------------------supporters tab----------------------------------------------------------->
-<!-----------------------------------------------------supporters tab----------------------------------------------------------->
-<!-----------------------------------------------------supporters tab----------------------------------------------------------->
-<!-----------------------------------------------------supporters tab----------------------------------------------------------->
-<!-----------------------------------------------------supporters tab----------------------------------------------------------->
-<div id="Tab5" style="display: none;">
-<div class="NewsTitleStrip"><h2 id="{{ entry.id }}">
-support
-</h2></div>
-<div class="NewsContent">
-Here you can find a list of our currently supported donation platforms/methods. Bellow that, are some generious people who help keep us going!<br/>
-Unfortualy I can't really do payjerk, long story short they slapped me with a life time ban and blamed TC. So here's a few alternatives.<br/>
-<br/><br/>
-<br/><br/>patreon.com/tohno
-<br/><br/>ko-fi.com/tohno
-<br/><br/>BTC: 3MBnj9rdUVNp557QA41QMH4AsgRJGjK9oC
-<br/><br/>
-<br/><br/>
-<br/><br/>Shinden9 - via patreon
-<br/><br/>赤いアオカケス - via patreon
-<br/><br/>Cedar - via patreon
-<br/><br/>Vexed - via patreon
-<br/><br/>pervert - via patreon
-<br/><br/>Killo - via ko-fi
-<br/><br/>orqcxha - via ko-fi
-<br/><br/>ninipro - via ko-fi
-
-</div>
-
-
-
-
-</div>
-
 
 
 
@@ -771,7 +488,7 @@ Unfortualy I can't really do payjerk, long story short they slapped me with a li
 		</div>
 	</div>
 		</div>
-		
+
 
 
 </div>
@@ -840,14 +557,25 @@ Unfortualy I can't really do payjerk, long story short they slapped me with a li
 
 
 <!--------------------------------------news tab test zone------------------------------------------------------>
-	
-	
-	<div class="box-wrap">
 
+
+	<div class="box-wrap">
+	    <fieldset>
+		<legend>Boards</legend>
+		<ul>
+			{% for board in boards %}
+				<li class="boardlinksurl">
+					<a href="{{ config.board_path|sprintf(board.uri) }}">
+						{{ board.title|e }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	    </fieldset>
 	    <br>
 
-	   
-	   
+
+
 		<div class="mainBox">
 			<h2>Stats</h2>
 			<ul>
@@ -857,15 +585,10 @@ Unfortualy I can't really do payjerk, long story short they slapped me with a li
 			</ul>
 		</div>
 	</div>
-	
+
 	<hr/>
 
 	{% include 'footer.html' %}
-<script type="text/javascript">
-	init_stylechooser();
-	readyStyleSelector();
-</script>
-
 
 </body>
 </html>
