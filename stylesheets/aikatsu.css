@@ -17,7 +17,7 @@ color:#e4007f;
 text-decoration: none;
 }
 
-a:hover {
+a:hover, .options_tab_icon.active, .intro a.post_no:hover {
 color:#308be8; 
 text-decoration: underline;
 }
@@ -215,7 +215,7 @@ font-weight:800;
 font-family:arial,helvetica,sans-serif;
 font-size:10pt;
 }
-.postertrip {
+span.trip {
 color:#3ecafb;
 font-family:arial,helvetica,sans-serif;
 font-size:10pt;
@@ -303,7 +303,7 @@ padding:3px !important;
 
 }
 
-input[type="text"], textarea, select {
+input[type="text"], textarea {
 	/* text input boxes for making a new post */
 	border-radius: 10px;
 	background: url('https://tohno-chan.org/stylesheets/img/aikatsu/textBG.jpg'); font-weight:none;
@@ -464,7 +464,7 @@ font-weight:bold;
 font-size:10pt;
 background-color:  transparent;
 padding:16px;
-color:#3430dc;
+color:#5ab4d4;
 	border: transparent; 
 }
  .tabletop2
@@ -477,8 +477,9 @@ font-weight:bold;
 font-size:10pt;
 background-color:  transparent;
 padding:16px;
-color:#3430dc;
-	border: transparent; 
+color:#5ab4d4;
+border: transparent; 
+background-size: unset;
 }
 
 .boards
@@ -619,23 +620,20 @@ padding-bottom:10px;
 .NewsMenuCurrent
 {
 						/* currently selected tab on the front page, which doesn't work with main for some reason */ 
-background-color:  transparent;
-background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/newstab.png');
+background: url('https://tohno-chan.org/stylesheets/img/aikatsu/textBG.jpg');
+background-color: #ffffff !important;
 background-position:center;
 background-repeat: no-repeat; 
 text-align:center!important;
-padding-top: 3px; 
-padding-bottom: 2px; 
-padding-left: 10px;  
-padding-right: 10px; 
 cursor: hand;
 cursor: pointer;
 font-size:10pt;
-width:100px;
+width:80px;
 height:40px;
-color:#3430DC;
+color: #ffa6ce;
 font-weight:bold;
-border: 0px solid #fc9acb; 
+border: 2px solid #fc9acb; 
+border-radius: 50px;
 }	
 
 .NewsMenu
@@ -656,7 +654,7 @@ cursor: pointer;
 font-size:10pt;
 width:100px;
 height:40px;
-color:#E4007F;
+color:#5ab4d4;
 font-weight:bold;
 border: 0px solid #fc9acb; 
 }
@@ -670,7 +668,7 @@ background-image:url('https://tohno-chan.org/stylesheets/img/aikatsu/newsstrip.j
 background-repeat:no-repeat;
 background-position:center Left!important;
 font-weight: bold;
-color:#3430DC;
+color:#5ab4d4;
 padding: 12px;
 border: 0px solid #e6027e; 
 }
@@ -738,3 +736,101 @@ color:#E5E5E5;
 	padding: unset;
 	border: unset;
 }
+
+
+div.boardlist 
+{
+	/* this is the board map on the top of the page that follows the page as you scroll */
+		border-radius: 10px;
+  color: #4bb2d3;
+  font-family: courier;
+  background-color: #ffffff;
+  font-size: 10pt;
+  font-weight: 800;
+  border: 2px solid #fee9ee;
+  padding: 3px;
+}
+	
+	
+div.boardlist a:link 
+{
+    /* links in the board map */
+	
+}
+
+div.boardlist.bottom
+{
+    /* list of boards on the bottom of a page */
+	border-radius: 10px;
+  color: #4bb2d3;
+  font-family: courier;
+  background-color: #ffffff;
+  font-size: 10pt;
+  font-weight: 800;
+  border: 2px solid #fee9ee;
+  padding: 3px;
+}
+
+.options_tab_icon.active {
+ color: #4bb2d3;
+}
+
+h2 {
+  color: #4BB2D3;
+  font-size: 11pt;
+  margin: 0;
+    margin-bottom: 0px;
+  padding: 0;
+}
+
+span.quote {
+  color: #e4007f;
+}
+
+
+
+select {
+	border-radius: 10px;
+	background: url('https://tohno-chan.org/stylesheets/img/aikatsu/textBG.jpg'); font-weight:none;
+	color:#ea7aac; 
+	font-weight:none;
+	border: 2px solid #fee9ee; 
+	background-color: #ffffff !important;
+	background-position:bottom right;
+	background-repeat:repeat-x;
+}
+
+
+div.ban {
+border-radius: 10px;
+  background-image: url('https://tohno-chan.org/stylesheets/img/aikatsu/postsv2.jpg');
+  background-repeat: repeat;
+  background-position: center !important;
+  font-weight: none;
+  background-color: #ffffff;
+  padding: 5px;
+  text-align: center;
+  color: #07599C;
+  border: 2px solid #ffce3a;
+}
+
+
+div.ban h2 {
+border-radius: 10px;
+  color: #4bb2d3;
+  font-family: courier;
+  background-color: #ffffff;
+  font-size: 10pt;
+  font-weight: 800;
+  border: 2px solid #fee9ee;
+  padding: 3px;
+}
+
+
+
+
+
+
+
+
+

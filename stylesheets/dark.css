@@ -28,8 +28,6 @@ a:hover {
 	float:right;
 }
 
-
-
 header div.boardname,h1 {
 	/* board name, such as "/a/ - anime" */
 	clear: both;
@@ -60,6 +58,8 @@ div.banner {
 div.banner a {
 	color: #000000;
 }
+
+
 
 img.board_image
 {

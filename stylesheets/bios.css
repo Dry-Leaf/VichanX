@@ -1,30 +1,37 @@
+@font-face {
+    font-family: 'ibm'; /*a name to be used later*/
+    src: url('https://www.tohno-chan.org/stylesheets/fonts/ibm.ttf'); /*URL to font*/
+}
+
+
 body {
 	background:#0000ff;
 	color:#ffffff;
     font-family:courier;
 	font-size:15px;
+	font-family: 'ibm';
 }
 a:link, a:visited, .intro a.email span.name {
 	color:#ffffff;
 	text-decoration: none;
-    font-family:courier;
+	font-family: 'ibm';
 		font-size:15px;
 }
 a:hover {
 	color:#ffffff;
 	text-decoration: underline;
-    font-family:courier;
+	font-family: 'ibm';
 		font-size:15px;
 }
 .reflink{
     /* WTF is this? */
 	font-weight: bold;
-    font-family:courier;
+	font-family: 'ibm';
 }
 .reflink a:hover{
 	/* WTF is this? */
 	font-weight: bold;
-    font-family:courier;
+	font-family: 'ibm';
 }
 .adminbar {
 	/* WTF is this? */   
@@ -43,7 +50,7 @@ header div.boardname,h1 {
 	border:solid 2px #ffffff ;
 	text-decoration: none;
 	padding: 4px;
-    font-family:courier;
+	font-family: 'ibm';
 	
 	
  }
@@ -51,7 +58,7 @@ header div.boardname,h1 {
 header div.subtitle {
 	/* the text bellow the board name */
 	color:#ffffff;
-    font-family:courier;
+	font-family: 'ibm';
     font-size:15px;
 	border:solid 2px #ffffff ;
 	border-top:solid 0px #ffffff ;
@@ -73,21 +80,10 @@ div.banner a {
 	color: #000000;
 }
 
-img.board_image
-{
-		/* this is the banner */
-	padding: 4px;		
-    border:solid 2px #ffffff ;
-	    filter: grayscale(100%); /* Current draft standard */
-    -webkit-filter: grayscale(100%); /* New WebKit */
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%); 
-    -o-filter: grayscale(100%); /* Not yet supported in Gecko, Opera or IE */ 
-    filter: url(resources.svg#desaturate); /* Gecko */
-    filter: gray; /* IE */
-    -webkit-filter: grayscale(1); /* Old WebKit */
-}
 
+
+img {filter: contrast(400%) sepia(200%) invert(100%) brightness(350%) saturate(500%);}
+img:hover {filter: unset;}
 
 .catalogmode {
 		/* it's the catalog */ 
@@ -118,7 +114,7 @@ img.board_image
     font-size:10pt;
     font-weight:bold;
 	padding: 1px;
-    font-family:courier;
+	font-family: 'ibm';
 }
 
 .postform
@@ -129,7 +125,7 @@ img.board_image
     font-size:10pt;
     font-weight:bold;
 	padding: 1px;
-    font-family:courier;
+	font-family: 'ibm';
 }
 
 .postbuttons {
@@ -138,7 +134,7 @@ img.board_image
 
 .unimportant, .unimportant * {
 	/* details about the a file posted, such as 294.84 KB, 666x950, 96874706_p0.jpg */  
-        font-family:courier;
+	font-family: 'ibm';
 			font-size:10px;
 }
 
@@ -190,11 +186,13 @@ img.board_image
 		/* This is where the subject of a post or thread goes */ 
 	background:#0000ff;
 	color:#ff0000;
+		font-family: 'ibm';
 }
 .intro span.name {
 		/* This is a users name, typicaly Anonymous */ 
 	color:#ffffff !important;
 	font-weight: bold;
+		font-family: 'ibm';
 }
 .postertrip {
 	color:#338099 !important
@@ -212,6 +210,7 @@ div.post.reply {
 	color: #ffffff;
 	border: 2px solid #ffffff;
 	width: 100% !important;
+		font-family: 'ibm';
 }
 
 
@@ -221,6 +220,7 @@ div.post.reply.highlighted {
 	color: #ffffff;
 	border: 2px solid #ff0000;
 	width: 100% !important;
+		font-family: 'ibm';
 }
 
 div.post.reply div.body a:link, div.post.reply div.body a:visited {
@@ -278,6 +278,7 @@ input[type="text"], textarea, select {
 	font-weight:none;
 	padding:1px;
 	border: 2px solid #ffffff;
+		font-family: 'ibm';
 }
 
 input[type="button"] {
@@ -287,6 +288,7 @@ input[type="button"] {
 	background-color:#0000ff; 
 	border: 0px solid; 
 	padding:4px;
+		font-family: 'ibm';
 
 }
 
@@ -297,6 +299,7 @@ input[type="submit" i]{
 	background-color:#0000ff; 
 	border: 0px solid; 
 	padding:4px;
+		font-family: 'ibm';
 
 }
 
@@ -317,6 +320,7 @@ background-image:url(' ');
 background-color: #0000ff !important;
 padding:5px;
 border: 2px solid #ffffff;  
+	font-family: 'ibm';
 }
 
 /* Stats box on the front page. */
@@ -324,6 +328,7 @@ border: 2px solid #ffffff;
     background: #0000ff;
     color: #ffffff;
 	border: 2px solid #ffffff;  
+		font-family: 'ibm';
 }
 
 .tablesub, .mainBox
@@ -480,14 +485,7 @@ padding:4px;
 .picitself
 					/* this can be used for adding effects to the recent image thumbnail, such as making it transparent */ 
 {
-    filter: grayscale(100%); /* Current draft standard */
-    -webkit-filter: grayscale(100%); /* New WebKit */
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%); 
-    -o-filter: grayscale(100%); /* Not yet supported in Gecko, Opera or IE */ 
-    filter: url(resources.svg#desaturate); /* Gecko */
-    filter: gray; /* IE */
-    -webkit-filter: grayscale(1); /* Old WebKit */
+
 }
 
 .reply blockquote, blockquote

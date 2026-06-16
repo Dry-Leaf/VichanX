@@ -1,7 +1,7 @@
 
 
 body {
-        background-image: url('http://tohno-chan.com/images/themes/Tohno/bgcorner.jpg'), url('http://Tohno-chan.com/images/themes/Tohno/starbg.jpg');
+        background-image: url('http://tohno-chan.org/stylesheets/img/Tohno/bgcorner.jpg'), url('http://tohno-chan.org/stylesheets/img/Tohno/starbg.jpg');
 	background-position: right bottom, left top;
         background-repeat: no-repeat, repeat;
         background-color:#8f3da6;
@@ -12,12 +12,15 @@ body {
 
 
 
-a {
-	color:#fde3e4;
+a, a:visited {
+  text-decoration: underline;
+  color: #F59EA6;
 }
-a:hover {
-	color:#DD0000;
+
+a:hover, .options_tab_icon.active, .intro a.post_no:hover {
+  color: #fdefee;
 }
+
 .reflink a:hover{
 	font-weight: bold;
 }
@@ -35,19 +38,23 @@ a:hover {
 	color:#e77899;
 	width:100%;
 }
-.replymode {
+div.banner {
 	background:#E04000;
 	text-align:center;
 	padding:2px;
 	color:#FFFFFF;
 	width:100%;
 }
-.catalogmode {
-	background:#0040E0;
-	text-align:center;
-	padding:2px;
-	color:#FFFFFF;
-	width:100%;
+div.banner 
+{
+	/* posting mode bar at the top of the page */ 
+border-radius: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 2px solid #c35197;
+  background: #e88da8;
+  color: #fde3e4;
+  font-weight: 750;
 }
 .postarea {
 }
@@ -62,7 +69,7 @@ a:hover {
 	/*text-indent: 0em;*/
 }
 .postblock {
--moz-border-radius:30px; 
+border-radius:30px;
 padding-left: 5px ;
 padding-right: 5px ;
 border: 2px solid #c35197;
@@ -122,29 +129,38 @@ border: 2px solid #c35197;
 	color:#661250;
 	font-weight:800;
 }
-.postername {
+.intro span.name {
 	color:#bc50a0;
 	font-weight:bold;
 }
-.postertrip {
+.intro a.email span.name {
+  color: #BD84AF;
+}
+.intro a.email span.name:hover {
+  color: #E6B2D9;
+}
+span.trip  {
 	color:#bc50a0;
 }
 .oldpost {
 	color:#CC1105;
 	font-weight:800;
 }
+span.quote {
+  color: #e47498;
+}
 .omittedposts {
 	color:#707070;
 }
-.reply {
--moz-border-radius:30px; 
+div.post.reply {
+border-radius:30px;
 
 border: 2px solid #c35197; 
 	background: #e88da8;
 	color: #63269d;
 }
-.highlight {
--moz-border-radius:30px; 
+div.post.reply.highlighted {
+	border-radius:30px;
 
 border: 2px solid #cc5d97; 
 	background:#f9a4ad;
@@ -180,7 +196,7 @@ border: 2px solid #cc5d97;
 }
 
 .reflinkpreview {
--moz-border-radius:30px; 
+border-radius:30px;
 
         border: 2px solid #c35197 !important;
 	background-color: #8f3da6 !important;
@@ -192,23 +208,22 @@ border:solid;
 border:thin;
 border-color:#000066;
 }
-input.btn { 
--moz-border-radius:30px; 
+input.btn,input[type="submit" i] { 
+border-radius:30px;
 
 border: 2px solid #c35197;
   color:#fde3e4; 
-  font: bold 70% 'trebuchet ms',helvetica,sans-serif; 
   background-color:#d35d98; 
-  filter:progid:DXImageTransform.Microsoft.Gradient 
-  (GradientType=0,StartColorStr='#ffffffff',EndColorStr='#ffeeddaa'); 
 } 
+
+
 
 
 .hl
 {
 font-weight:bold;
 font-size:10pt;
-background-image:url('http://www.tohno-chan.com/uploads/user/submenubgv2_ib4f.png');
+
 background-color: #9988EE !important;
 padding:5px;
 border: 1px solid #000000;  
@@ -220,19 +235,16 @@ border: 1px solid #000000;
 
 
 
-.banner
-{ 
-background: url('http://Tohno-chan.com/images/themes/Tohno/banbg.jpg'); 
-background-position:center;
-background-repeat:no-repeat;
-padding: 0 4px 21px 0;
+img.board_image {
+
+box-shadow: 0px 0px 10px #febebe;
+border: 0px solid #000000; 
 }
 
 .fpfooter
 {
-background: url('http://tohno-chan.com/uploads/user/frontcorner_ib4f.png');  
-background-position:left; 
-background-repeat:no-repeat !important;
+
+
 height:60px;
 top:30px;
 padding-top:50px;
@@ -242,9 +254,9 @@ margin-bottom:-50px;
 }
 
 
- .tabletop
+ .tabletop, .mainBox h2
 {
-       -moz-border-radius:30px; 
+border-radius:30px; 
 
         border: 2px solid #c35197; 
 	background: #ce5791;
@@ -256,7 +268,7 @@ margin-bottom:-50px;
 }
  .tabletop2
 {
-       -moz-border-radius:30px; 
+border-radius:30px;
 
         border: 2px solid #c35197; 
 	background: #ce5791;
@@ -266,9 +278,9 @@ margin-bottom:-50px;
         margin:2px;
 
 }
-.tablesub
+.tablesub, .mainBox
 {
--moz-border-radius:30px; 
+border-radius:30px;
 
 border: 2px solid #c35197; 
 	background: #e88da8;
@@ -283,7 +295,7 @@ font-weight:none;
 
  .tablesub:hover 
 {
-        -moz-border-radius:30px; 
+border-radius:30px;
         border: 2px solid #c35197; 
 	background: #ce5791;
 	color: #63269d;
@@ -291,14 +303,11 @@ font-weight:none;
         font-size:10pt;
         padding:5px;
         margin:2px;
--moz-box-shadow:     0px 0px  20px 5px    #d56699;
--webkit-box-shadow:  0px 0px  20px 5px    #d56699;
-box-shadow:          0px 0px  20px 5px    #d56699;
 }
 
 .picslot
 {
--moz-border-radius:30px; 
+border-radius:30px;
         border: 2px solid #d56699; 
 	background: #e88da8;
 	color: #63269d;
@@ -333,8 +342,8 @@ padding-bottom:10px;
 
 .NewsMenuCurrent
 {
--moz-border-radius:30px; 
-        border: 2px solid #c35197; 
+	border-radius:30px; 
+	border: 2px solid #c35197; 
 	background: #d56699;
 	color: #63269d;
 	padding-top: 3px; 
@@ -347,7 +356,7 @@ padding-bottom:10px;
 
 .NewsMenu
 {
-        -moz-border-radius:30px; 
+border-radius:30px;
         border: 2px solid #c35197; 
 	background: #e88da8;
 	color: #63269d; 
@@ -362,12 +371,12 @@ padding-bottom:10px;
 
 .NewsTitleStrip
 {
-        -moz-border-radius:30px; 
+border-radius:30px;
         border: 2px solid #c35197; 
 	background: #d56699;
 	color: #63269d;
 	font-weight: bold;
-	color: #000000;
+	color: #63269d;
 	padding: 3px;
 	padding-left: 5px;
 	font-size: 80%;
@@ -375,7 +384,7 @@ padding-bottom:10px;
 
 .NewsContent
 {
-	color: #000000;
+	color: #63269d;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-size: 10pt;
@@ -384,7 +393,7 @@ padding-bottom:10px;
 
 input
 { 
--moz-border-radius:30px; 
+border-radius:30px;
 
 border: 2px solid #c35197;
 font-weight:none;
@@ -395,7 +404,7 @@ color:#5f16a7;
 
 .comment
 { 
--moz-border-radius:30px; 
+border-radius:30px;
 
 border: 2px solid #c35197;
 font-weight:none;
@@ -406,27 +415,96 @@ color:#5f16a7;
 
 .PagingTable
 {
--moz-border-radius:50px; 
+border-radius:50px;
 background: #d35d98;
 border: 2px solid #f2a3b2; 
 color:#702fad;
 }
 
-.Spacer{
-border-bottom: 1px solid;
-color:#5f16a7;	
-height: 1px;
-margin-top: 5px;
+hr 
+{
+border: 1px solid;
+color:#c35197;	
 margin-bottom: 15px;
 float: clear;
 font-size: 0px; 
 }
-hr{
-border-bottom: 1px solid;
-color:#5f16a7;	
-height: 1px;
-margin-top: 5px;
-margin-bottom: 15px;
-float: clear;
-font-size: 0px; 
+
+
+.options_tab_icon.active {
+  color: #c35197;
 }
+
+h2 {
+  color: #c35197;
+  font-size: 11pt;
+  margin: 0;
+    margin-bottom: 0px;
+  padding: 0;
+}
+
+
+header div.boardname,h1 
+{
+	/* board name, such as "/a/ - anime" */
+  color: #c35197;
+}
+ 
+ 
+header div.subtitle 
+{
+	/* the text bellow the board name */
+  color: #c35197;
+}
+.intro span.subject {
+  color: #75207B;
+  font-weight: bold;
+}
+
+
+div.post.reply div.body a {
+  color: #FFCBD0;
+}
+
+div.pages 
+{
+	/* board pages box on the bottom of a board page which also has the catalog link */ 
+border-radius: 30px;
+  border: 2px solid #c35197;
+  color: #fde3e4;
+  background-color: #d35d98;
+}
+
+div.boardlist 
+{
+	/* this is the board map on the top of the page that follows the page as you scroll */
+		border-radius: 30px;
+  border: 2px solid #c35197;
+  color: #fde3e4;
+  background-color: #d35d98;
+}
+	
+	
+div.pages a.selected {
+  color: #fde3e4;
+  font-weight: bolder;
+}
+
+div.boardlist.bottom
+{
+    /* list of boards on the bottom of a page */
+	border-radius: 30px;
+  border: 2px solid #c35197;
+  color: #fde3e4;
+  background-color: #d35d98;
+}
+
+
+
+
+
+
+
+
+
+

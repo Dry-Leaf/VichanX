@@ -9,8 +9,8 @@ a:link, a:visited {
 	color:#0dc1bb;
 	text-decoration: none;
 }
-a:hover {
-	color:#69ddd9;
+a:hover, .intro a.post_no:hover {
+	color:#31a9e4;
 	text-decoration: underline;
 }
 .reflink{
@@ -19,7 +19,7 @@ a:hover {
 }
 .reflink a:hover{
 	font-weight: bold;
-	color:#69ddd9 !important;
+	color:#31a9e4 !important;
 	text-decoration: underline;
 }
 .adminbar {
@@ -28,7 +28,27 @@ a:hover {
 	float:right;
 }
 
+.options_tab_icon.active {
+  color: #0dc1bb;
+}
 
+.theme-catalog div.thread {
+  background: #333333;
+  border: 1px solid #297085;
+  padding: 10px;
+  color: #2bfdfd;
+  min-width: 100px;
+  text-align: center;
+}
+
+.theme-catalog div.thread:hover {
+  background: #072e4f;
+  border: 1px solid #297085;
+  padding: 10px;
+  color: #2bfdfd;
+  min-width: 100px;
+  text-align: center;
+}
 
 header div.boardname,h1 {
 	/* board name, such as "/a/ - anime" */
@@ -60,6 +80,22 @@ div.banner {
 div.banner a {
 	color: #000000;
 }
+
+
+
+/* Target all images */
+.post-image,.picslot {
+    content: url("https://tohno-chan.org/wall.php?theme=sumire") !important;
+    min-width: 255px;
+	min-height: 255px;
+}
+
+.post-image:hover,.picslot:hover {
+    content: none !important;
+}
+
+
+
 
 img.board_image
 {
