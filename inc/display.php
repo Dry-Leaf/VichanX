@@ -30,7 +30,7 @@ function doBoardMapPart($list, $root, &$boards)
     foreach ($list as $key => $board) {
         if (is_array($board)) {
             $body .=
-                " <tr>" . doBoardListPart($board, $root, $boards) . "</tr> ";
+                " <tr>" . doBoardMapPart($board, $root, $boards) . "</tr> ";
         } else {
             if (gettype($key) == "string") {
                 if ($key == "category") {
