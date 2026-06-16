@@ -36,7 +36,7 @@
 	let local_excluded = localStorage.getItem("local_excluded");
 	if (local_excluded === null) {
 	  localStorage.setItem("local_excluded", "");
-      local_excluded = "";
+      local_excluded = "tat";
 	}
 
 	let excludedSet = new Set(local_excluded.split(",").filter(Boolean));
@@ -98,65 +98,11 @@
 
 <tr>
 <tr>
-<th class="tabletop" colspan="3">Board map</th>
+<th class="tabletop" colspan="3">Board map <a href="#settings">⚙</a></th>
 </tr>
 
-<tr>
-<th class="tabletop" colspan="3">Media/Entertainment</th>
-</tr>
+{{ boardlist.board_map }}
 
-<tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/a/" TARGET="_top">/a/ - Anime</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/m/" TARGET="_top">/m/ - Manga</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/vg/" TARGET="_top">/vg/ - Video Games</a></center></div></td>
-
-
-</tr>
-<tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/foe/" TARGET="_top">/foe/ - Touhou</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/mp3/" TARGET="_top">/mp3/ - Music</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/vn/" TARGET="_top">/vn/ - Visual Novels</a></center></div></td>
-</tr>
-
-<tr>
-<th class="tabletop" colspan="3">Hobbies/Interests</th>
-</tr>
-
-<tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/fig/" TARGET="_top">/fig/ - Collectibles</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/navi/" TARGET="_top">/navi/ - Science & technology</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/cr/" TARGET="_top">/cr/ - Creativity</a></center></div></td>
-
-</tr>
-
-<tr>
-<th class="tabletop" colspan="3">General discussion</th>
-</tr>
-
-<tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/so/" TARGET="_top">/so/ - Ronery</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/mai/" TARGET="_top">/mai/ - Waifu</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/ot/" TARGET="_top">/ot/ - Otaku Tangents</a></center></div></td>
-</tr>
-
-<tr>
-<th class="tabletop" colspan="3">Other</th>
-</tr>
-<tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/irc/" TARGET="_top">/irc/ - IRC</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/ddl/" TARGET="_top">/ddl/ - Data</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/arc/" TARGET="_top">/arc/ - Archive</a></center></div></td>
-</tr>
-<tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/ns/" TARGET="_top">/ns/ - Hentai</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/kf" TARGET="_top"> /kf/ - Kemono Friends</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.com/pic/" TARGET="_top">/pic/ - Dump</a></center></div></td>
-</tr>
-<tr>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/lol/" TARGET="_top">/lol/ - Funposting</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/tat/" TARGET="_top">/tat/ - Debates</a></center></div></td>
-<td width="33%" class="tablesub"><div class="boards"><center><a href="http://tohno-chan.org/fb/ " TARGET="_top">/fb/ - feedback</a></center></div></td>
-</tr>
 <td><br/> </td>
 
 

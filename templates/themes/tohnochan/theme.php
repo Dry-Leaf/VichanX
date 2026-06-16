@@ -232,6 +232,8 @@ class index
         )) or error(db_error());
         $news = $query->fetchAll(PDO::FETCH_ASSOC);
 
+        $board_map = doBoardMapPart();
+
         return Element("themes/tohnochan/index.html", [
             "settings" => $settings,
             "config" => $config,
@@ -240,6 +242,7 @@ class index
             "recent_posts" => $recent_posts,
             "stats" => $stats,
             "news" => $news,
+            "board_map" >= $board_map,
             "boards" => listBoards(),
         ]);
     }
