@@ -93,9 +93,10 @@
 
 .boardcheck {
     display: none;
+    justify-self: end;
     grid-column: 3;
 }
 
 #boardmap:target ~ tr .tablesub .boardcheck {
-    display: inherit;
+    display: inline-block;
 }
