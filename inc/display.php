@@ -31,7 +31,7 @@ function doBoardMapPart($list, $root, &$boards)
         if (is_array($board)) {
             $inner_body = doBoardMapPart($board, $root, $boards);
             if ($inner_body == "") {
-                return $body;
+                continue;
             }
             $body .= " <tr>" . $inner_body . "</tr> ";
         } else {
