@@ -74,10 +74,9 @@
     });
 
     function toggleAnchor(event, targetId) {
-        if (window.location.hash === '#' + targetId) {
-            event.preventDefault();
-            history.replaceState(null, null, ' ');
-        }
+        event.preventDefault();
+        const table = document.querySelector('.tabletop').closest('table');
+        table.classList.toggle('show-checks');
     }
 </script>
 

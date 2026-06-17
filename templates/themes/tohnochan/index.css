@@ -97,6 +97,6 @@
     grid-column: 3;
 }
 
-#boardmap:target ~ tr .tablesub .boardcheck {
+table.show-checks .tablesub .boardcheck {
     display: inline-block;
 }
