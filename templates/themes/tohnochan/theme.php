@@ -28,7 +28,7 @@ class index
             );
         }
 
-        $this->excluded = explode(" ", $settings["exclude"]);
+        $settings->excluded = explode(" ", $settings["exclude"]);
 
         if (
             $action == "all" ||
@@ -67,7 +67,7 @@ class index
 
         $query = "";
         foreach ($boards as &$_board) {
-            if (in_array($_board["uri"], $this->excluded)) {
+            if (in_array($_board["uri"], $settings->excluded)) {
                 continue;
             }
             $query .= sprintf(
@@ -132,7 +132,7 @@ class index
         $limit = (int) $settings["limit_posts"];
 
         foreach ($boards as &$_board) {
-            if (in_array($_board["uri"], $this->excluded)) {
+            if (in_array($_board["uri"], $settings->excluded)) {
                 continue;
             }
 
@@ -171,7 +171,7 @@ class index
         // Total posts
         $query = "SELECT SUM(`top`) FROM (";
         foreach ($boards as &$_board) {
-            if (in_array($_board["uri"], $this->excluded)) {
+            if (in_array($_board["uri"], $settings->excluded)) {
                 continue;
             }
             $query .= sprintf(
@@ -186,7 +186,7 @@ class index
         // Unique IPs
         $query = "SELECT COUNT(DISTINCT(`ip`)) FROM (";
         foreach ($boards as &$_board) {
-            if (in_array($_board["uri"], $this->excluded)) {
+            if (in_array($_board["uri"], $settings->excluded)) {
                 continue;
             }
             $query .= sprintf(
@@ -201,7 +201,7 @@ class index
         // Active content
         $query = "SELECT DISTINCT(`files`) FROM (";
         foreach ($boards as &$_board) {
-            if (in_array($_board["uri"], $this->excluded)) {
+            if (in_array($_board["uri"], $settings->excluded)) {
                 continue;
             }
             $query .= sprintf(
