@@ -61,11 +61,14 @@
         }
 
         var rows = document.querySelectorAll(".recent-post-row");
+        var display = 0;
         for (var j = 0; j < rows.length; j++) {
             var row = rows[j];
             var boardName = row.getAttribute("data-board");
-            if (excludedSet.has(boardName)) {
+            if (excludedSet.has(boardName) || display == 14) {
                 row.classList.add("hidden-board");
+            } else {
+              display += 1;
             }
         }
     });
