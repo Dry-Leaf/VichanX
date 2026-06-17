@@ -45,6 +45,12 @@
         localStorage.setItem("local_excluded", [...excludedSet].join(','));
 	}
 
+	let local_excluded = localStorage.getItem("local_excluded");
+	if (local_excluded === null) {
+	  localStorage.setItem("local_excluded", "");
+      local_excluded = "tat";
+	}
+
     let board_checkboxes = document.querySelectorAll(".boardcheck");
     board_checkboxes.forEach(checkbox => {
               if (excludedSet.has(checkbox.value)) {
@@ -52,12 +58,6 @@
               }
               checkbox.addEventListener("change", editExclusion);
     });
-
-	let local_excluded = localStorage.getItem("local_excluded");
-	if (local_excluded === null) {
-	  localStorage.setItem("local_excluded", "");
-      local_excluded = "tat";
-	}
 
 	let excludedSet = new Set(local_excluded.split(",").filter(Boolean));
 
