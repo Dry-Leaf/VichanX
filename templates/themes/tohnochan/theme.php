@@ -241,6 +241,7 @@ class index
             "stats" => $stats,
             "news" => $news,
             "boards" => listBoards(),
+            "limit_posts" => $settings["limit_posts"],
         ]);
     }
 }
