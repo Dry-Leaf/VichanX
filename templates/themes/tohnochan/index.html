@@ -29,17 +29,17 @@
         }
     }
 
-    let local_excluded = localStorage.getItem("local_excluded");
+    var local_excluded = localStorage.getItem("local_excluded");
     if (local_excluded === null) {
-        localStorage.setItem("local_excluded", "tat"); // Fix: Set actual default in localStorage
+        localStorage.setItem("local_excluded", "tat");
         local_excluded = "tat";
     }
 
-    let excludedSet = new Set(local_excluded.split(",").filter(Boolean));
+    var excludedSet = new Set(local_excluded.split(",").filter(Boolean));
 
     function editExclusion(e) {
-        let isChecked = e.target.checked;
-        let value = e.target.value;
+        var isChecked = e.target.checked;
+        var value = e.target.value;
 
         if (isChecked) {
             excludedSet.delete(value);
@@ -47,26 +47,27 @@
             excludedSet.add(value);
         }
 
-        localStorage.setItem("local_excluded", [...excludedSet].join(','));
+        localStorage.setItem("local_excluded", Array.from(excludedSet).join(','));
     }
 
     document.addEventListener("DOMContentLoaded", function() {
+        var board_checkboxes = document.querySelectorAll(".boardcheck");
+        for (var i = 0; i < board_checkboxes.length; i++) {
+            var checkbox = board_checkboxes[i];
+            if (excludedSet.has(checkbox.value)) {
+                checkbox.checked = false;
+            }
+            checkbox.addEventListener("change", editExclusion);
+        }
 
-      let board_checkboxes = document.querySelectorAll(".boardcheck");
-      board_checkboxes.forEach(checkbox => {
-          if (excludedSet.has(checkbox.value)) {
-              checkbox.checked = false;
-          }
-          checkbox.addEventListener("change", editExclusion);
-      });
-
-      let rows = document.querySelectorAll(".recent-post-row");
-      rows.forEach(row => {
-          let boardName = row.getAttribute("data-board");
-          if (excludedSet.has(boardName)) {
-              row.classList.add("hidden-board");
-          }
-      });
+        var rows = document.querySelectorAll(".recent-post-row");
+        for (var j = 0; j < rows.length; j++) {
+            var row = rows[j];
+            var boardName = row.getAttribute("data-board");
+            if (excludedSet.has(boardName)) {
+                row.classList.add("hidden-board");
+            }
+        }
     });
 </script>
 
