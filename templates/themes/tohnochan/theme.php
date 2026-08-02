@@ -155,20 +155,19 @@ class index
 
             $test = sprintf(
                 "SELECT (COUNT(*) > %d) FROM ``posts_%s`` WHERE `thread` = :thread",
-                $config['noko50_min'],
+                $config['noko50_min'] - 1,
                 $_board["uri"]
             );
 
             if ($post["thread"]) {
                 $countQuery = prepare(sprintf(
                     "SELECT (COUNT(*) > %d) FROM ``posts_%s`` WHERE `thread` = :thread",
-                    $config['noko50_min'],
+                    $config['noko50_min'] - 1,
                     $_board["uri"]
                 ));
                 $countQuery->bindValue(':thread', $post["thread"], PDO::PARAM_INT);
                 $countQuery->execute();
                 $last50 = ((int)$countQuery->fetchColumn() === 1);
-                $last50 = true;
             }
 
             $post["link"] =
