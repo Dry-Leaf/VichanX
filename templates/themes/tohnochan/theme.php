@@ -161,10 +161,10 @@ class index
 
             if ($post["thread"]) {
                 $countQuery = prepare(sprintf(
-                    "SELECT COUNT(*) FROM ``posts_%s`` WHERE `thread` = 6",
+                    "SELECT COUNT(*) FROM ``posts_%s`` WHERE `thread` = :thread",
                     $post["board"]
                 ));
-                //$countQuery->bindValue(':thread', $post["thread"], PDO::PARAM_INT);
+                $countQuery->bindValue(':thread', $post["thread"], PDO::PARAM_INT);
                 $countQuery->execute();
                 $post["snippet"] = (int)$countQuery->fetchColumn();
                 $last50 = ((int)$countQuery->fetchColumn() >= $config['noko50_min'] - 1);
