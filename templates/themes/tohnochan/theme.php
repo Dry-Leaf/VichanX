@@ -95,6 +95,18 @@ class index
         while ($post = $query->fetch(PDO::FETCH_ASSOC)) {
             openBoard($post["board"]);
 
+            $last50 = false;
+
+            if ($post["thread"]) {
+                $countQuery = prepare(sprintf(
+                    "SELECT COUNT(*) FROM ``posts_%s`` WHERE `thread` = :thread",
+                    $post["board"]
+                ));
+                $countQuery->bindValue(':thread', $post["thread"], PDO::PARAM_INT);
+                $countQuery->execute();
+                $last50 = $countQuery->fetchColumn() >= $config['noko50_min'] - 1;
+            }
+
             if (isset($post["files"])) {
                 $files = json_decode($post["files"]);
             }
@@ -108,7 +120,7 @@ class index
                 $config["root"] .
                 $board["dir"] .
                 $config["dir"]["res"] .
-                link_for($post) .
+                link_for($post, $last50) .
                 "#" .
                 $post["id"];
 
