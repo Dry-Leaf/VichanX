@@ -153,12 +153,6 @@ class index
 
             $last50 = false;
 
-            $test = sprintf(
-                "SELECT COUNT(*) FROM ``posts_%s`` WHERE `thread` = %d",
-                $post["board"],
-                $post["thread"]
-            );
-
             if ($post["thread"]) {
                 $countQuery = prepare(sprintf(
                     "SELECT COUNT(*) FROM ``posts_%s`` WHERE `thread` = :thread",
@@ -167,7 +161,6 @@ class index
                 $countQuery->bindValue(':thread', $post["thread"], PDO::PARAM_INT);
                 $countQuery->execute();
                 $last50 = $countQuery->fetchColumn() >= $config['noko50_min'] - 1;
-                $post["snippet"] = $last50;
             }
 
             $post["link"] =
@@ -178,7 +171,7 @@ class index
                 "#" .
                 $post["id"];
             if ($post["body"] != "") {
-                //$post["snippet"] = $test;//pm_snippet($post["body"], 90);
+                $post["snippet"] = $test;//pm_snippet($post["body"], 90);
             } else {
                 $post["snippet"] = "<em>" . _("(no comment)") . "</em>";
             }
