@@ -82,21 +82,6 @@ div.banner a {
 }
 
 
-
-/* Target all images */
-.post-image,.picslot {
-    content: url("https://tohno-chan.org/wall.php?theme=sumire") !important;
-    min-width: 255px;
-	min-height: 255px;
-}
-
-.post-image:hover,.picslot:hover {
-    content: none !important;
-}
-
-
-
-
 img.board_image
 {
 border:solid 0px #000000 ;
