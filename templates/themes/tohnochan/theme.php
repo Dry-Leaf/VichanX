@@ -155,7 +155,7 @@ class index
                 $config["root"] .
                 $board["dir"] .
                 $config["dir"]["res"] .
-                link_for($post) .
+                link_for($post, true) .
                 "#" .
                 $post["id"];
             if ($post["body"] != "") {
