@@ -156,7 +156,7 @@ class index
             if ($post["thread"]) {
                 $config['noko50_count'];
                 $countQuery = prepare(sprintf(
-                    "SELECT COUNT(*) > `%d` FROM ``posts_%s`` WHERE `thread` = :thread",
+                    "SELECT (COUNT(*) > `%d`) FROM ``posts_%s`` WHERE `thread` = :thread",
                     $config['noko50_count'],
                     $_board["uri"]
                 ));
