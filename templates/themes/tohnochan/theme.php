@@ -154,9 +154,10 @@ class index
             $last50 = false;
 
             $test = sprintf(
-                "SELECT (COUNT(*) > %d) FROM `posts_%s` WHERE `thread` = :thread",
+                "SELECT (COUNT(*) > %d) FROM `posts_%s` WHERE `thread` = %d",
                 $config['noko50_min'] - 1,
-                $post["board"]
+                $post["board"],
+                $post["thread"]
             );
 
             if ($post["thread"]) {
