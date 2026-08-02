@@ -156,7 +156,7 @@ class index
             $test = sprintf(
                 "SELECT (COUNT(*) > %d) FROM ``posts_%s`` WHERE `thread` = :thread",
                 $config['noko50_min'] - 1,
-                $_board["uri"]
+                $post["board"]
             );
 
             if ($post["thread"]) {
