@@ -171,7 +171,7 @@ class index
                 "#" .
                 $post["id"];
             if ($post["body"] != "") {
-                $post["snippet"] = $test;//pm_snippet($post["body"], 90);
+                $post["snippet"] = pm_snippet($post["body"], 90);
             } else {
                 $post["snippet"] = "<em>" . _("(no comment)") . "</em>";
             }
