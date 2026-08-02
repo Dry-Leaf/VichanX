@@ -166,7 +166,7 @@ class index
                 ));
                 $countQuery->bindValue(':thread', $post["thread"], PDO::PARAM_INT);
                 $countQuery->execute();
-                $post["snippet"] = (int)$countQuery->fetchColumn();
+                $post["snippet"] = ((int)$countQuery->fetchColumn() >= $config['noko50_min'] - 1);
                 $last50 = ((int)$countQuery->fetchColumn() >= $config['noko50_min'] - 1);
             }
 
