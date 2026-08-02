@@ -156,13 +156,13 @@ class index
             if ($post["thread"]) {
                 $config['noko50_count'];
                 $countQuery = prepare(sprintf(
-                    "SELECT (COUNT(*) > %d) FROM ``posts_%s`` WHERE `thread` = :thread",
+                    "SELECT (COUNT(*) > %d) AS eval FROM ``posts_%s`` WHERE `thread` = :thread",
                     $config['noko50_count'],
                     $_board["uri"]
                 ));
                 $countQuery->bindValue(':thread', $post["thread"], PDO::PARAM_INT);
                 $countQuery->execute();
-                $last50 = $countQuery->fetch(PDO::FETCH_ASSOC);
+                $last50 = $countQuery->fetch(PDO::FETCH_ASSOC)['eval'] == 1;
             }
 
             $post["link"] =
