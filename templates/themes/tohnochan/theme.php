@@ -166,6 +166,7 @@ class index
                 ));
                 $countQuery->bindValue(':thread', $post["thread"], PDO::PARAM_INT);
                 $countQuery->execute();
+                $post["snippet"] = (int)$countQuery->fetchColumn();
                 $last50 = ((int)$countQuery->fetchColumn() >= $config['noko50_min'] - 1);
             }
 
@@ -177,7 +178,7 @@ class index
                 "#" .
                 $post["id"];
             if ($post["body"] != "") {
-                $post["snippet"] = $test;//pm_snippet($post["body"], 90);
+                //$post["snippet"] = $test;//pm_snippet($post["body"], 90);
             } else {
                 $post["snippet"] = "<em>" . _("(no comment)") . "</em>";
             }
