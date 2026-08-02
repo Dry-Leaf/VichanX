@@ -164,7 +164,7 @@ class index
                     "SELECT COUNT(*) FROM `posts_%s` WHERE `thread` = 6",
                     $_board["uri"]
                 ));
-                $countQuery->bindValue(':thread', $post["thread"], PDO::PARAM_INT);
+                //$countQuery->bindValue(':thread', $post["thread"], PDO::PARAM_INT);
                 $countQuery->execute();
                 $post["snippet"] = (int)$countQuery->fetchColumn();
                 $last50 = ((int)$countQuery->fetchColumn() >= $config['noko50_min'] - 1);
