@@ -161,7 +161,7 @@ class index
 
             if ($post["thread"]) {
                 $countQuery = prepare(sprintf(
-                    "SELECT COUNT(*) FROM `posts_%s` WHERE `thread` = :thread",
+                    "SELECT COUNT(*) FROM `posts_%s` WHERE `thread` = 6",
                     $_board["uri"]
                 ));
                 $countQuery->bindValue(':thread', $post["thread"], PDO::PARAM_INT);
