@@ -154,15 +154,15 @@ class index
             $last50 = false;
 
             $test = sprintf(
-                "SELECT COUNT(*) FROM `posts_%s` WHERE `thread` = %d",
+                "SELECT COUNT(*) FROM ``posts_%s`` WHERE `thread` = %d",
                 $post["board"],
                 $post["thread"]
             );
 
             if ($post["thread"]) {
                 $countQuery = prepare(sprintf(
-                    "SELECT COUNT(*) FROM `posts_%s` WHERE `thread` = 6",
-                    $_board["uri"]
+                    "SELECT COUNT(*) FROM ``posts_%s`` WHERE `thread` = 6",
+                    $post["board"]
                 ));
                 //$countQuery->bindValue(':thread', $post["thread"], PDO::PARAM_INT);
                 $countQuery->execute();
