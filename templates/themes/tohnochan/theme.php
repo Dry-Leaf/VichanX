@@ -151,11 +151,25 @@ class index
         while ($post = $query->fetch(PDO::FETCH_ASSOC)) {
             openBoard($post["board"]);
 
+            $last50 = false;
+
+            if ($post["thread"]) {
+                $config['noko50_count'];
+                $countQuery = prepare(sprintf(
+                    "SELECT COUNT(*) > `%d` FROM ``posts_%s`` WHERE `thread` = :thread",
+                    $config['noko50_count'],
+                    $_board["uri"]
+                ));
+                $countQuery->bindValue(':thread', $$post["thread"], PDO::PARAM_INT);
+                $countQuery->execute();
+                $last50 = $countQuery->fetch(PDO::FETCH_ASSOC);
+            }
+
             $post["link"] =
                 $config["root"] .
                 $board["dir"] .
                 $config["dir"]["res"] .
-                link_for($post, true) .
+                link_for($post, $last50) .
                 "#" .
                 $post["id"];
             if ($post["body"] != "") {
