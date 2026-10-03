@@ -15,7 +15,7 @@
 				'config' => $config
 			));
 
-			file_write($config['dir']['home'] . '/arc' . '/index.html', $element);
+			file_write($config['dir']['home'] . 'arc' . '/index.html', $element);
         }
 	}
 ?>
