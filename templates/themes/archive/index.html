@@ -60,7 +60,7 @@
 
     try {
       const response = await fetch(end_point, {
-        method: "GET",
+        method: "POST",
         body: formData,
       });
       console.log(await response.json());

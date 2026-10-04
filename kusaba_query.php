@@ -4,10 +4,10 @@ global $config;
 $dsn= 'sqlite:' . $config['dir']['home'] . 'kusaba_arc/archive.db';
 $pdo = new \PDO($dsn);
 
-$board = $_GET['board'];
-$start_date = strtotime($_GET['start_date']);
-$end_date =  strtotime($_GET['end_date']);
-$text_query = $_GET['text_query'];
+$board = $_POST['board'];
+$start_date = strtotime($_POST['start_date']);
+$end_date =  strtotime($_POST['end_date']);
+$text_query = $_POST['text_query'];
 
 if(!$start_date) {
     $start_date = 0;
