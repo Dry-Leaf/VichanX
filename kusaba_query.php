@@ -23,24 +23,24 @@ try {
         WHERE " . (empty($board)) ? "" : "board=:board " . "AND date BETWEEN :start_date AND :end_date
         ORDER BY date DESC");
 
-    $stmt->execute([
-        ':board' => $board,
-        ':start_date' => $start_date,
-        ':end_date' => $end_date
-    ]);
-
     if (empty($board)) {
-        $jsonData = array(
-            'start_date' => $start_date,
-            'end_date' => $end_date
-        );
+        $stmt->execute([
+            ':start_date' => $start_date,
+            ':end_date' => $end_date
+        ]);
     } else {
-        $jsonData = array(
-            'board' => $board,
-            'start_date' => $start_date,
-            'end_date' => $end_date
-        );
+        $stmt->execute([
+            ':board' => $board,
+            ':start_date' => $start_date,
+            ':end_date' => $end_date
+        ]);
     }
+
+    $jsonData = array(
+        'board' => $board,
+        'start_date' => $start_date,
+        'end_date' => $end_date
+    );
 
     $rows = [];
 
