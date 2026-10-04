@@ -18,10 +18,9 @@
 		{% for thread in threads %}
 		<tr>
 		    <div class="tablesub">
-				<a href="/kusaba_arc/{{ thread.board }}/res/{{ thread.id }}.html">/{{ thread.board }}/ - {{ thread.date }}: {{thread.snipper }}</a>
+				<a href="/kusaba_arc/{{ thread.board }}/res/{{ thread.id }}.html">/{{ thread.board }}/ - {{ thread.date }} - {{ thread.subject }} - {{thread.snippet }}</a>
 				[{{ thread.replies }} replies]
 			</div></tr>
-		{{ thread.snippet }}<br>
 		{% endfor %}
 		{% include 'footer.html' %}
 	</tbody>
