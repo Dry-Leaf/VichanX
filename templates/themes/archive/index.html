@@ -29,12 +29,12 @@
         <input type="submit" value="Search">
 	</form>
 
-	<table style="width: 100%;">
-	<tbody id="query_results">
+	<table id="query_results" style="width: 100%;">
+	<tbody>
 	    <tr background><th><div class="tabletop2">Archived Posts</div></th></tr>
 		{% for thread in threads %}
 		<tr><td>
-		    <div class="tablesub" style="font-size: 12pt;">
+		    <div class="tablesub" style="font-size: 12pt;display: flex;justify-content: space-between;">
 				<a title="{{ thread.first_post }}" href="/kusaba_arc/{{ thread.board }}/res/{{ thread.id }}.html">/{{ thread.board }}/ {{ thread.date }} : {{ thread.subject }} : {{thread.snippet }}</a>
 				<div style="display: inline;padding-left: 1ch;">[{{ thread.replies }} replies]</div>
 			</div></td></tr>
