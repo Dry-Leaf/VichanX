@@ -9,10 +9,19 @@ $start_date = strtotime($_GET['start_date']);
 $end_date =  strtotime($_GET['end_date']);
 $text_query = $_GET['text_query'];
 
+if(!$start_date) {
+    $start_date = 0;
+}
+
+if(!$end_date) {
+    $end_date = time();
+}
+
 try {
 
     $stmt = $pdo->prepare("SELECT board, thread_id,  strftime('%m-%d-%Y', date, 'unixepoch') as hdate, subject, snippet, first_post, replies FROM meta
-        WHERE board=:board AND date BETWEEN :start_date AND :end_date");
+        WHERE " . (empty($board)) ? "" : "board=:board " . "AND date BETWEEN :start_date AND :end_date
+        ORDER BY date DESC");
 
     $stmt->execute([
         ':board' => $board,
@@ -20,11 +29,18 @@ try {
         ':end_date' => $end_date
     ]);
 
-    $jsonData = array(
-        'board' => $board,
-        'start_date' => $start_date,
-        'end_date' => $end_date
-    );
+    if (empty($board)) {
+        $jsonData = array(
+            'start_date' => $start_date,
+            'end_date' => $end_date
+        );
+    } else {
+        $jsonData = array(
+            'board' => $board,
+            'start_date' => $start_date,
+            'end_date' => $end_date
+        );
+    }
 
     $rows = [];
 

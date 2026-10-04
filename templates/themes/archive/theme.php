@@ -12,7 +12,7 @@
 
             $dsn= 'sqlite:' . $config['dir']['home'] . 'kusaba_arc/archive.db';
             $pdo = new \PDO($dsn);
-            $rows = $pdo->query("SELECT board, thread_id,  strftime('%m-%d-%Y', date, 'unixepoch') as hdate, subject, snippet, first_post, replies FROM meta order by date desc LIMIT 50");
+            $rows = $pdo->query("SELECT board, thread_id,  strftime('%m-%d-%Y', date, 'unixepoch') as hdate, subject, snippet, first_post, replies FROM meta ORDER BY date DESC LIMIT 50");
 
             $threads = [];
 
