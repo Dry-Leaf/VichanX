@@ -65,7 +65,6 @@
       });
 
       const query_results = await response.json();
-      console.log(query_results);
 
       Array.from(query_display.querySelectorAll("tr")).forEach(node => {
         node.remove();
