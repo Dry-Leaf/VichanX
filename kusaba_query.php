@@ -4,10 +4,10 @@ global $config;
 $dsn= 'sqlite:' . $config['dir']['home'] . 'kusaba_arc/archive.db';
 $pdo = new \PDO($dsn);
 
-$_POST['board'];
-$_POST['start_date'];
-$_POST['end_date'];
-$_POST['text_query'];
+$board = $_POST['board'];
+$start_date = strtotime($_POST['start_date']);
+$end_date =  strtotime($_POST['end_date']);
+$text_query = $_POST['text_query'];
 
 try {
 
@@ -15,15 +15,21 @@ try {
         WHERE board=:board AND date BETWEEN :start_date AND :end_date");
 
     $stmt->execute([
-        ':board' => $_POST['board'],
-        ':start_date' => strtotime($_POST['start_date']),
-        ':end_date' => strtotime($_POST['end_date'])
+        ':board' => $board,
+        ':start_date' => $start_date,
+        ':end_date' => $end_date
     ]);
 
-    $jsonData = [];
+    $jsonData = array(
+        'board' => $board,
+        'start_date' => $start_date,
+        'end_date' => $end_date
+    );
+
+    $rows = [];
 
     while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-        $jsonData[] = [
+        $rows[] = [
             'board' => $row['board'],
             'id' => $row['thread_id'],
             'date' => $row['hdate'],
@@ -33,6 +39,8 @@ try {
             'replies' => $row['replies']
         ];
     }
+
+    $jsonData[] = ['results' => $rows];
 
     header('Content-Type: application/json');
     echo json_encode($jsonData);
