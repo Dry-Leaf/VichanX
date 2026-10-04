@@ -29,9 +29,9 @@
         <input type="submit" value="Search">
 	</form>
 
-	<table id="query_results" style="width: 100%;">
+	<table id="query_display" style="width: 100%;">
 	<tbody>
-	    <tr background><th><div class="tabletop2">Archived Posts</div></th></tr>
+	    <th><div class="tabletop2">Archived Posts</div></th>
 		{% for thread in threads %}
 		<tr><td>
 		    <div class="tablesub" style="font-size: 12pt;display: flex;justify-content: space-between;">
@@ -47,7 +47,7 @@
 <script>
   const end_point = "/kusaba_query.php";
 
-  const query_results = document.getElementById("query_results");
+  const query_display = document.getElementById("query_display");
 
   const form = document.getElementById("query_form");
   form.addEventListener("submit", (event) => {
@@ -63,7 +63,29 @@
         method: "POST",
         body: formData,
       });
-      console.log(await response.json());
+
+      const query_results = await response.json();
+      console.log(query_results);
+
+      Array.from(query_display.querySelectorAll("tr")).forEach(node => {
+        node.remove();
+      });
+
+      query_result.results.forEach(thread => {
+          const new_row = query_display.insertRow(-1)
+          const new_cell = new_row.insertCell(0);
+          const template = document.createElement('template');
+
+          const new_content = `<div class="tablesub" style="font-size: 12pt;display: flex;justify-content: space-between;">
+				<a title="${ thread.first_post }" href="/kusaba_arc/${ thread.board }/res/${ thread.id }.html">/${ thread.board }/ ${ thread.date } : ${ thread.subject } : ${thread.snippet }</a>
+				<div style="display: inline;padding-left: 1ch;">[${ thread.replies } replies]</div>
+			</div>`
+
+          template.innerHTML = new_content;
+          new_cell.appendChild(template.content.childNodes[0]);
+      });
+
+
     } catch (e) {
       console.error(e);
     }
