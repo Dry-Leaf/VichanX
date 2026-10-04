@@ -12,14 +12,14 @@
 
             $dsn= 'sqlite:' . $config['dir']['home'] . 'kusaba_arc/archive.db';
             $pdo = new \PDO($dsn);
-            $rows = $pdo->query('SELECT * FROM meta LIMIT 50');
+            $rows = $pdo->query('SELECT board, thread_id, date, subject, snippet, replies FROM meta LIMIT 50');
 
             $threads = [];
 
             while ($row = $rows->fetch(\PDO::FETCH_ASSOC)) {
                 $threads[] = [
                     'board' => $row['board'],
-                    'id' => $row['id'],
+                    'id' => $row['thread_id'],
                     'date' => $row['date'],
                     'subject' => $row['subject'],
                     'snippet' => $row['snippet'],
