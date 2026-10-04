@@ -19,9 +19,12 @@ if(!$end_date) {
 
 try {
 
-    $stmt = $pdo->prepare("SELECT board, thread_id,  strftime('%m-%d-%Y', date, 'unixepoch') as hdate, subject, snippet, first_post, replies FROM meta
-        WHERE " . (empty($board)) ? "" : "board=:board AND " . "date BETWEEN :start_date AND :end_date
-        ORDER BY date DESC");
+    $brd_clause = (empty($board)) ? "" : "board=:board AND ";
+    $sql_str = "SELECT board, thread_id,  strftime('%m-%d-%Y', date, 'unixepoch') as hdate, subject, snippet, first_post, replies FROM meta
+        WHERE " . $brd_clause . "date BETWEEN :start_date AND :end_date
+        ORDER BY date DESC";
+
+    $stmt = $pdo->prepare($sql_str);
 
     if (empty($board)) {
         $stmt->execute([
