@@ -62,6 +62,7 @@
       const response = await fetch(end_point, {
         method: "POST",
         body: formData,
+        cache: "no-cache"
       });
 
       const query_results = await response.json();
