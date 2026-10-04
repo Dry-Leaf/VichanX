@@ -45,14 +45,14 @@
 </body>
 
 <script>
-  const end_point = "/kusaba_query.php"
+  const end_point = "/kusaba_query.php";
 
   const query_results = document.getElementById("query_results");
 
   const form = document.getElementById("query_form");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    sendData();
+    query_archive();
   });
 
   function query_archive() {
