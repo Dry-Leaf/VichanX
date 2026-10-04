@@ -14,8 +14,8 @@ $stmt = $pdo->prepare("SELECT board, thread_id,  strftime('%m-%d-%Y', date, 'uni
 
 $stmt->execute([
     ':board' => $_POST['board'],
-    ':start_date' => $_POST['start_date'],
-    ':end_date' => $_POST['end_date']
+    ':start_date' => strtotime($_POST['start_date']),
+    ':end_date' => strtotime($_POST['end_date'])
 ]);
 
 $jsonData = [];
