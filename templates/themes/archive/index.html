@@ -78,7 +78,7 @@
           const new_content = `<div class="tablesub" style="font-size: 12pt;display: flex;justify-content: space-between;">
 				<a title="${ thread.first_post }" href="/kusaba_arc/${ thread.board }/res/${ thread.id }.html">/${ thread.board }/ ${ thread.date } : ${ thread.subject } : ${thread.snippet }</a>
 				<div style="display: inline;padding-left: 1ch;">[${ thread.replies } replies]</div>
-			</div>`
+			</div>`;
 
           template.innerHTML = new_content;
           new_cell.appendChild(template.content.childNodes[0]);
