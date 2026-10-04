@@ -20,24 +20,31 @@ if(!$end_date) {
 try {
 
     $brd_clause = (empty($board)) ? "" : "board=:board AND ";
-    $sql_str = "SELECT board, thread_id,  strftime('%m-%d-%Y', date, 'unixepoch') as hdate, subject, snippet, first_post, replies FROM meta
-        WHERE " . $brd_clause . "date BETWEEN :start_date AND :end_date
-        ORDER BY date DESC";
+
+    if (empty($text_query)) {
+        $sql_str = "SELECT board, thread_id,  strftime('%m-%d-%Y', date, 'unixepoch') as hdate, subject, snippet, first_post, replies FROM meta
+            WHERE " . $brd_clause . "date BETWEEN :start_date AND :end_date
+            ORDER BY date DESC";
+    } else {
+        $sql_str = "SELECT board, thread_id,  strftime('%m-%d-%Y', date, 'unixepoch') as hdate, subject, snippet, first_post, replies FROM meta
+            JOIN threads ON meta.id = threads.rowid
+            WHERE threads MATCH :text_query AND " . $brd_clause . "date BETWEEN :start_date AND :end_date
+            ORDER BY date DESC";
+    }
 
     $stmt = $pdo->prepare($sql_str);
 
-    if (empty($board)) {
-        $stmt->execute([
-            ':start_date' => $start_date,
-            ':end_date' => $end_date
-        ]);
-    } else {
-        $stmt->execute([
-            ':board' => $board,
-            ':start_date' => $start_date,
-            ':end_date' => $end_date
-        ]);
+    $stmt->bindValue(':start_date',$start_date);
+    $stmt->bindValue(':end_date',$end_date);
+
+    if (!empty($board)) {
+        $stmt->bindValue(':board',$board);
     }
+    if (!empty($text_query)) {
+        $stmt->bindValue(':text_query',$text_query);
+    }
+
+    $stmt->execute();
 
     $jsonData = array(
         'board' => $board,
