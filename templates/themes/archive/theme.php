@@ -22,7 +22,8 @@
                     'id' => $row['id'],
                     'date' => $row['date'],
                     'subject' => $row['subject'],
-                    'snippet' => $row['snippet']
+                    'snippet' => $row['snippet'],
+                    'replies' => $row['replies']
                 ];
             }
 
