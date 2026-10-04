@@ -12,7 +12,7 @@
 		<h1>/arc/ - Archive</h1>
 	</header>
 
-	<form action="/kusaba_query.php" style="margin-bottom: 1em;text-align: center;">
+	<form id="query_form" style="margin-bottom: 1em;text-align: center;">
         Board: <select style="margin-right: 2ch;width: 23ch;" name="board">
         <option value="" selected>All boards</option>
         <option value="an">/an/ - Anime</option>
@@ -30,7 +30,7 @@
 	</form>
 
 	<table style="width: 100%;">
-	<tbody>
+	<tbody id="query_results">
 	    <tr background><th><div class="tabletop2">Archived Posts</div></th></tr>
 		{% for thread in threads %}
 		<tr><td>
@@ -43,3 +43,29 @@
 	</table>
 	{% include 'footer.html' %}
 </body>
+
+<script>
+  const end_point = "/kusaba_query.php"
+
+  const query_results = document.getElementById("query_results");
+
+  const form = document.getElementById("query_form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendData();
+  });
+
+  function query_archive() {
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(end_point, {
+        method: "GET",
+        body: formData,
+      });
+      console.log(await response.json());
+    } catch (e) {
+      console.error(e);
+    }
+  }
+</script>
