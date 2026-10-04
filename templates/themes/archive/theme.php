@@ -31,7 +31,8 @@
             $element = Element('themes/archive/index.html', Array(
 				'settings' => $settings,
 				'config' => $config,
-				'threads' => $threads
+				'threads' => $threads,
+				'boardlist' => createBoardlist(false),
 			));
 
 			file_write($config['dir']['home'] . 'arc' . '/index.html', $element);

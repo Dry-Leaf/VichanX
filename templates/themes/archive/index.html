@@ -12,9 +12,26 @@
 		<h1>/arc/ - Archive</h1>
 	</header>
 
+	<form action="kusaba_query.php" style="margin-bottom: 1em;text-align: center;">
+        Board: <select style="margin-right: 2ch;width: 23ch;" name="board">
+        <option value="" selected>All boards</option>
+        <option value="an">/an/ - Anime</option>
+        <option value="fb">/fb/ - Feedback</option>
+        <option value="ma">/ma/ - Manga</option>
+        <option value="mai">/mai/ - Waifu</option>
+        <option value="ot">/ot/ - Otaku Tangents</option>
+        <option value="so">/so/ - Ronery</option>
+        <option value="test">/test/ - Test</option>
+        <option value="vg">/vg/ - Video Games</option></select>
+        Start: <input type="date" name="start_date" style="margin-right: 2ch;">
+        End: <input type="date" name="end_date" style="margin-right: 2ch;">
+        Text: <input type="text" name="text_query" style="margin-right: 2ch;">
+        <input type="submit" value="Search">
+	</form>
+
 	<table style="width: 100%;">
 	<tbody>
-	    <tr background><th><div class="tabletop2">Archived Posts</div></th></tr>x
+	    <tr background><th><div class="tabletop2">Archived Posts</div></th></tr>
 		{% for thread in threads %}
 		<tr><td>
 		    <div class="tablesub" style="font-size: 12pt;">
@@ -22,7 +39,7 @@
 				<div style="display: inline;padding-left: 1ch;">[{{ thread.replies }} replies]</div>
 			</div></td></tr>
 		{% endfor %}
-		{% include 'footer.html' %}
 	</tbody>
 	</table>
+	{% include 'footer.html' %}
 </body>
