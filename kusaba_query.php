@@ -29,7 +29,7 @@ try {
         $sql_str = "SELECT board, thread_id,  strftime('%m-%d-%Y', date, 'unixepoch') as hdate, subject, snippet, first_post, replies FROM meta
             JOIN threads ON meta.id = threads.rowid
             WHERE threads MATCH :text_query AND " . $brd_clause . "date BETWEEN :start_date AND :end_date
-            ORDER BY date DESC";
+            ORDER BY rank";
     }
 
     $stmt = $pdo->prepare($sql_str);
