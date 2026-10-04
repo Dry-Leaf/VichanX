@@ -9,28 +9,36 @@ $_POST['start_date'];
 $_POST['end_date'];
 $_POST['text_query'];
 
-$stmt = $pdo->prepare("SELECT board, thread_id,  strftime('%m-%d-%Y', date, 'unixepoch') as hdate, subject, snippet, first_post, replies FROM meta
-    WHERE board=:board AND date BETWEEN :start_date AND :end_date");
+try {
 
-$stmt->execute([
-    ':board' => $_POST['board'],
-    ':start_date' => strtotime($_POST['start_date']),
-    ':end_date' => strtotime($_POST['end_date'])
-]);
+    $stmt = $pdo->prepare("SELECT board, thread_id,  strftime('%m-%d-%Y', date, 'unixepoch') as hdate, subject, snippet, first_post, replies FROM meta
+        WHERE board=:board AND date BETWEEN :start_date AND :end_date");
 
-$jsonData = [];
+    $stmt->execute([
+        ':board' => $_POST['board'],
+        ':start_date' => strtotime($_POST['start_date']),
+        ':end_date' => strtotime($_POST['end_date'])
+    ]);
 
-while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-    $jsonData[] = [
-        'board' => $row['board'],
-        'id' => $row['thread_id'],
-        'date' => $row['hdate'],
-        'subject' => $row['subject'],
-        'snippet' => $row['snippet'],
-        'first_post' => $row['first_post'],
-        'replies' => $row['replies']
-    ];
+    $jsonData = [];
+
+    while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+        $jsonData[] = [
+            'board' => $row['board'],
+            'id' => $row['thread_id'],
+            'date' => $row['hdate'],
+            'subject' => $row['subject'],
+            'snippet' => $row['snippet'],
+            'first_post' => $row['first_post'],
+            'replies' => $row['replies']
+        ];
+    }
+
+    header('Content-Type: application/json');
+    echo json_encode($jsonData);
 }
 
-echo json_encode($jsonData);
+catch(Exception $e) {
+  echo 'Message: ' .$e->getMessage();
+}
 ?>
