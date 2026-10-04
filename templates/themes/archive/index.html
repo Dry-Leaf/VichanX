@@ -16,11 +16,11 @@
 	<tbody>
 	    <tr background><th><div class="tabletop2">Archived Posts</div></th></tr>x
 		{% for thread in threads %}
-		<tr>
+		<tr><td>
 		    <div class="tablesub">
 				<a href="/kusaba_arc/{{ thread.board }}/res/{{ thread.id }}.html">/{{ thread.board }}/ - {{ thread.date }} - {{ thread.subject }} - {{thread.snippet }}&nbps;</a>
 				[{{ thread.replies }} replies]
-			</div></tr>
+			</div></td></tr>
 		{% endfor %}
 		{% include 'footer.html' %}
 	</tbody>
