@@ -12,10 +12,18 @@
 		<h1>/arc/ - Archive</h1>
 	</header>
 
-	UPDATE TEST
-
-	{% for thread in threads %}
-	{{ thread.snippet }}<br>
-	{% endfor %}
-	{% include 'footer.html' %}
+	<table>
+	<tbody>
+	    <tr background><th><div class="tabletop2">Archived Posts</div></th></tr>
+		{% for thread in threads %}
+		<tr>
+		    <div class="tablesub">
+				<a href="/kusaba_arc/{{ thread.board }}/res/{{ thread.id }}.html">/{{ thread.board }}/ - {{ thread.date }}: {{thread.snipper }}</a>
+				[{{ thread.replies }} replies]
+			</div></tr>
+		{{ thread.snippet }}<br>
+		{% endfor %}
+		{% include 'footer.html' %}
+	</tbody>
+	</table>
 </body>
