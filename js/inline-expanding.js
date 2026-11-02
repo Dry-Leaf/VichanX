@@ -100,7 +100,7 @@ $(document).ready(function(){
 
 		for (var i = 0; i < link.length; i++) {
 			if (typeof link[i] == "object" && link[i].childNodes && typeof link[i].childNodes[0] !== 'undefined' &&
-					link[i].childNodes[0].src && link[i].childNodes[0].className.match(/post-image/) && !link[i].className.match(/file/)) {
+					link[i].childNodes[0].src && link[i].childNodes[0].className.match(/post-image/) && !link[i].className.match(/file/) && !link[i].className.match(/twittervideo/)) {
 				link[i].onclick = function(e) {
 					var img, post_body, still_open, canvas, scroll;
 					var thumb = this.childNodes[0];
@@ -143,7 +143,7 @@ $(document).ready(function(){
 						scroll = false;
 
 						//  scroll to thumb if not triggered by 'shrink all image'
-						if (e.target.className == 'full-image') {
+						if (e.target.className == 'full-image' && !e.target.parentElement.parentElement.parentElement.parentElement.classList.contains('post-hover')) {
 							scroll = true;
 						}
 
@@ -201,6 +201,7 @@ $(document).ready(function(){
 				var val = (n<0) ? 0 : n;
 
 				localStorage.inline_expand_max = val;
+				e.target.value = val;
 			});
 	}
 
@@ -209,6 +210,9 @@ $(document).ready(function(){
 
 		// allow to work with auto-reload.js, etc.
 		$(document).on('new_post', function(e, post) {
+			inline_expand_post.call(post);
+		});
+		$(document).on('rus_hover', function(e, post) {
 			inline_expand_post.call(post);
 		});
 	} else {

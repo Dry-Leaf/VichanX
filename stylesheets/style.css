@@ -1402,3 +1402,47 @@ summary {
 	cursor: pointer;
 }
 /* */
+
+div.twitterpost {
+	background: inherit;
+	border: inherit;
+	box-shadow: 1px 1px 1px 1px #0003;
+	display: inline-block;
+	max-width: unset;
+	margin: 5px;
+	padding: 5px 0 10px 10px;
+}
+div.twitterpost p {
+	font-size: 0.8em;
+	padding: 0;
+}
+div.twitterpost p a {
+	margin-right: 8px!important;
+}
+div.twitbody {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	margin: 0;
+	padding: 0.3em;
+	padding-right: calc(0.3em + 10px);
+}
+.twittermedia img.post-image {
+	max-width: 200px;
+	max-height: 200px;
+	margin-right: 10px;
+}
+.twittermedia img.full-image {
+	display: block;
+	max-width: 100%;
+	margin-right: 10px;
+}
+.twittermedia a.twittervideo {
+	display: inline-block;
+}
+.twittermedia a.twittervideo::after {
+	content: url(/static/mp4.gif);
+	display: block;
+	position: absolute;
+	opacity: 70%;
+	margin: 6px 0 0 6px;
+}

@@ -34,7 +34,7 @@ onready(function(){
 		
 			$mentioned = $post.find('p.intro span.mentioned');
 			if($mentioned.length == 0)
-				$mentioned = $('<span class="mentioned unimportant"></span>').appendTo($post.find('p.intro'));
+				$mentioned = $('<span class="mentioned unimportant"></span>').appendTo($post.find('p.intro:not(.twitter)'));
 			
 			if ($mentioned.find('a.mentioned-' + reply_id).length != 0)
 				return;
@@ -52,7 +52,7 @@ onready(function(){
 	$('div.post.reply').each(showBackLinks);
 	$('div.post.op').each(showBackLinks);
 
-        $(document).on('new_post', function(e, post) {
+		$(document).on('new_post', function(e, post) {
 		showBackLinks.call(post);
 		if ($(post).hasClass("op")) {
 			$(post).find('div.post.reply').each(showBackLinks);

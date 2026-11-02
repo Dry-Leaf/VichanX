@@ -510,34 +510,118 @@ function secure_link($href)
     return $href . "/" . make_secure_link_token($href);
 }
 
-function embed_html($link)
-{
-    global $config;
+function embed_html($link) {
+	global $config;
+	
+	foreach ($config['embedding'] as $embed) {
 
-    foreach ($config["embedding"] as $embed) {
-        if ($html = preg_replace($embed[0], $embed[1], $link)) {
-            if ($html == $link) {
-                continue;
-            } // Nope
-
-            $html = str_replace("%%tb_width%%", $config["embed_width"], $html);
-            $html = str_replace(
-                "%%tb_height%%",
-                $config["embed_height"],
-                $html,
-            );
-
-            return $html;
-        }
-    }
-
-    if ($link[0] == "<") {
-        // Prior to v0.9.6-dev-8, HTML code for embedding was stored in the database instead of the link.
-        return $link;
-    }
-
-    return "Embedding error.";
+		$matches = [];
+		$twitter_pattern = "/^(?:https?:\/\/)?(?:www\.)?(?:x\.com|fixupx\.com|xfixup\.com|fixvx\.com|twitter\.com|twittpr\.com|vxtwitter\.com|fxtwitter\.com|xcancel\.com|nitter\.net|nitter\.cf|xitter\.cf|nitter\.fullex\.fr|nitter\.teamqq\.de|nitter\.anoxinon\.de|nitter6\.kabii\.moe|nitter\.wisq\.net|nitter\.zebes\.info|nt\.vern\.cc|shitter\.thepixora\.com|x\.n0g\.xyz|tw\.eir-nya\.gay)\/@*([A-Za-z0-9_]{1,15})\/status\/([0-9]{1,19})(?:(?:\/|\?|#).*)?$/i";
+		if (preg_match($twitter_pattern, $link, $matches)) {
+			$twitter_user = $matches[1];
+			$twitter_post = $matches[2];
+			$fxtwitter_url = "https://api.fxtwitter.com/" . $twitter_user . "/status/" . $twitter_post;
+			
+			$curly = curl_init($fxtwitter_url);
+			curl_setopt_array($curly, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 5, CURLOPT_CONNECTTIMEOUT => 3, CURLOPT_FOLLOWLOCATION => true, CURLOPT_USERAGENT  => 'Kusoba/1.0']);
+			$fxtwitter_json = curl_exec($curly);
+			$status = curl_getinfo($curly, CURLINFO_HTTP_CODE);
+			curl_close($curly);
+			if ($fxtwitter_json === false || $status !== 200) {
+				$html = "<a target='_blank' rel='noopener noreferrer' href='https://x.com/" . $twitter_user . "/status/" . $twitter_post . "'>https://x.com/" . $twitter_user . "/status/" . $twitter_post . "</a>";
+				return $html;
+			};
+			$fxtwitter_post = json_decode($fxtwitter_json, true);
+			if (!isset($fxtwitter_post['tweet']['text'])) {
+				$html = "<a target='_blank' rel='noopener noreferrer' href='https://x.com/" . $twitter_user . "/status/" . $twitter_post . "'>https://x.com/" . $twitter_user . "/status/" . $twitter_post . "</a>";
+				return $html;
+			};
+			
+			$html = "<div class='twitterpost'>" .
+						"<p class='intro twitter'>" .
+							"<a class='email' target='_blank' rel='noopener noreferrer' href='" . $fxtwitter_post['tweet']['author']['url'] . "'>" .
+								"<span class='name'>@" . $fxtwitter_post['tweet']['author']['screen_name'] . "</span>" .
+							"</a>" .
+							"<time datetime='" . strftime('%Y-%m-%dT%H:%M:%SZ', $fxtwitter_post['tweet']['created_timestamp']) . "'>" .
+								strftime($config['post_date'], $fxtwitter_post['tweet']['created_timestamp']) .
+							"</time>" .
+							"<a target='_blank' rel='noopener noreferrer' href='" . $fxtwitter_post['tweet']['url'] . "'>X.com</a>" .
+						"</p>" .
+						"<div class='twitbody'>" . nl2br(htmlspecialchars($fxtwitter_post['tweet']['text'])) . "</div>";
+			if (isset($fxtwitter_post['tweet']['media'])) {
+				$html .= "<div class='twittermedia'>";
+				if (isset($fxtwitter_post['tweet']['media']['photos'])) {
+					foreach ($fxtwitter_post['tweet']['media']['photos'] as $photo) {
+						$html .= "<a target='_blank' rel='noopener noreferrer' href='" . $photo['url'] . "'>" .
+									"<img class='post-image' loading='lazy' src='" . $photo['url'] . "' />" .
+								"</a>";
+					}
+				}
+				if (isset($fxtwitter_post['tweet']['media']['videos'])) {
+					foreach ($fxtwitter_post['tweet']['media']['videos'] as $video) {
+						$html .= "<a class='twittervideo' target='_blank' rel='noopener noreferrer' href='" . $video['url'] . "'>" .
+									"<img class='post-image twittervideo' loading='lazy' src='" . $video['thumbnail_url'] . "' />" .
+								"</a>";
+					}
+				}
+				$html .= "</div>";
+			}
+			if (isset($fxtwitter_post['tweet']['quote'])) {
+				$html .= "<div class='twitterpost'>" .
+							"<p class='intro twitter'>" .
+								"<a class='email' target='_blank' rel='noopener noreferrer' href='" . $fxtwitter_post['tweet']['quote']['author']['url'] . "'>" .
+									"<span class='name'>@" . $fxtwitter_post['tweet']['quote']['author']['screen_name'] . "</span>" .
+								"</a>" .
+								"<time datetime='" . strftime('%Y-%m-%dT%H:%M:%SZ', $fxtwitter_post['tweet']['quote']['created_timestamp']) . "'>" .
+									strftime($config['post_date'], $fxtwitter_post['tweet']['quote']['created_timestamp']) .
+								"</time>" .
+								"<a target='_blank' rel='noopener noreferrer' href='" . $fxtwitter_post['tweet']['quote']['url'] . "'>X.com</a>" .
+							"</p>" .
+							"<div class='twitbody'>" . nl2br(htmlspecialchars($fxtwitter_post['tweet']['quote']['text'])) . "</div>";
+				if (isset($fxtwitter_post['tweet']['quote']['media'])) {
+					$html .= "<div class='twittermedia'>";
+					if (isset($fxtwitter_post['tweet']['quote']['media']['photos'])) {
+						foreach ($fxtwitter_post['tweet']['quote']['media']['photos'] as $photo) {
+							$html .= "<a target='_blank' rel='noopener noreferrer' href='" . $photo['url'] . "'>" .
+										"<img class='post-image' loading='lazy' src='" . $photo['url'] . "' />" .
+									"</a>";
+						}
+					}
+					if (isset($fxtwitter_post['tweet']['quote']['media']['videos'])) {
+						foreach ($fxtwitter_post['tweet']['quote']['media']['videos'] as $video) {
+							$html .= "<a class='twittervideo' target='_blank' rel='noopener noreferrer' href='" . $video['url'] . "'>" .
+										"<img class='post-image twittervideo' loading='lazy' src='" . $video['thumbnail_url'] . "' />" .
+									"</a>";
+						}
+					}
+					$html .= "</div>";
+				}
+				$html .= "</div>";
+			}
+			$html .= "</div>";
+			
+			return $html;
+		}
+		
+		if ($html = preg_replace($embed[0], $embed[1], $link)) {
+				if ($html == $link)
+					continue; // Nope
+			
+			$html = str_replace('%%tb_width%%', $config['embed_width'], $html);
+			$html = str_replace('%%tb_height%%', $config['embed_height'], $html);
+			
+			return $html;
+		}
+	}
+	
+	if ($link[0] == '<') {
+		// Prior to v0.9.6-dev-8, HTML code for embedding was stored in the database instead of the link.
+		return $link;
+	}
+	
+	return 'Embedding error.';
 }
+// multimedia, quotes
 
 class Post
 {
