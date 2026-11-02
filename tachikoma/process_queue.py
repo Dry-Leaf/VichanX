@@ -13,7 +13,7 @@ options.intra_op_num_threads = 1
 options.inter_op_num_threads = 1
 options.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
 
-session = ort.InferenceSession("tachikoma.onnx", providers=['CPUExecutionProvider'], sess_options=options)
+session = ort.InferenceSession("tachikoma/tachikoma.onnx", providers=['CPUExecutionProvider'], sess_options=options)
 input_name = session.get_inputs()[0].name
 
 data_transforms = {
